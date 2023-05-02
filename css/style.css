@@ -596,7 +596,7 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 
 .meta,
 .meta a {
-	color: #666;
+/*	color: #666; */
 }
 
 .meta a:hover {
