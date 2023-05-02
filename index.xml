@@ -6,10 +6,19 @@
     <description>Recent content on Nathan Obert</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 May 2023 14:28:10 -0700</lastBuildDate>
+    <lastBuildDate>Tue, 02 May 2023 05:00:00 -0700</lastBuildDate>
     
 	<atom:link href="https://www.nathanobert.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Git Cheatsheet</title>
+      <link>https://www.nathanobert.com/posts/cheatsheet-git/</link>
+      <pubDate>Tue, 02 May 2023 05:00:00 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/posts/cheatsheet-git/</guid>
+      <description>Introduction This cheat sheet from Alex arak14&amp;rsquo;s Cheatsheet. Git is a version constrol system often used by developers, and devops to store insource code and configurations. It has even been adapted to store websites that are rended to the internet (like this one!) using Hugo. Git repositories are distributed in that each developers has a local copy of the repository and a series of pushs, pulls, merges, forks occur for the repositories to synchronize with one another.</description>
+    </item>
     
     <item>
       <title>XRP to remote Gnome on Redhat Enterprise Linux 9</title>
@@ -34,10 +43,10 @@ sudo dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.
     
     <item>
       <title>Docker Cheatsheet</title>
-      <link>https://www.nathanobert.com/posts/cheetsheet-docker/</link>
+      <link>https://www.nathanobert.com/posts/cheatsheet-docker/</link>
       <pubDate>Mon, 01 May 2023 09:45:00 -0700</pubDate>
       
-      <guid>https://www.nathanobert.com/posts/cheetsheet-docker/</guid>
+      <guid>https://www.nathanobert.com/posts/cheatsheet-docker/</guid>
       <description>Introduction This is a quick cheat sheet from Sematext&amp;rsquo;s Docker Cheatsheet
 Docker Cheatsheet Tutorial series Get started with Docker: https://docs.docker.com/engine/getstarted/
 Installation Linux Install script provided by Docker:
@@ -49,20 +58,20 @@ Create Docker VM with Docker Machine You can use Docker Machine to:
     
     <item>
       <title>Elastic Developer Cheatsheet</title>
-      <link>https://www.nathanobert.com/posts/cheetsheet-elastic-dev/</link>
+      <link>https://www.nathanobert.com/posts/cheatsheet-elastic-dev/</link>
       <pubDate>Mon, 01 May 2023 09:45:00 -0700</pubDate>
       
-      <guid>https://www.nathanobert.com/posts/cheetsheet-elastic-dev/</guid>
+      <guid>https://www.nathanobert.com/posts/cheatsheet-elastic-dev/</guid>
       <description>Introduction This is a quick cheat sheet from Sematext&amp;rsquo;s Elastic Developer Cheatsheet
 Data Manipulation Put/Get/Delete index curl -XPUT localhost:9200/index-name -d &#39;{&amp;quot;settings&amp;quot;: { &amp;quot;number_of_shards&amp;quot;: 1}}&#39; curl -XGET localhost:9200/index-name?pretty curl -XDELETE localhost:9200/index-name  Put/Get/Delete template curl -XPUT localhost:9200/_template/template-name -d &#39;{ &amp;quot;template&amp;quot;: &amp;quot;logs*&amp;quot;, &amp;quot;mappings&amp;quot;: { &amp;quot;foo-type&amp;quot;: { &amp;quot;properties&amp;quot;: { &amp;quot;foo-field&amp;quot;: { &amp;quot;type&amp;quot;: &amp;quot;text&amp;quot; } } } }, &amp;quot;settings&amp;quot;: { &amp;quot;number_of_shards&amp;quot;: 1 } }&#39; curl -XGET localhost:9200/_template/template-name?pretty curl -XDELETE localhost:9200/_template/template-name  Bulk API echo &#39;{&amp;quot;index&amp;quot;: { &amp;quot;_index&amp;quot;: &amp;quot;logs01&amp;quot;, &amp;quot;_type&amp;quot;: &amp;quot;logs&amp;quot;}} {&amp;quot;title&amp;quot;: &amp;quot;this is an error&amp;quot;} {&amp;quot;index&amp;quot;: { &amp;quot;_index&amp;quot;: &amp;quot;logs02&amp;quot;, &amp;quot;_type&amp;quot;: &amp;quot;logs&amp;quot;}} {&amp;quot;title&amp;quot;: &amp;quot;this is a warning&amp;quot;} {&amp;quot;delete&amp;quot;: { &amp;quot;_index&amp;quot;: &amp;quot;logs03&amp;quot;, &amp;quot;_type&amp;quot;: &amp;quot;logs&amp;quot;, &amp;quot;_id&amp;quot;: &amp;quot;abc123&amp;quot;}} &#39; &amp;gt; /tmp/bulk curl localhost:9200/_bulk?</description>
     </item>
     
     <item>
       <title>Elastic Devops Cheatsheet</title>
-      <link>https://www.nathanobert.com/posts/cheetsheet-elastic-devops/</link>
+      <link>https://www.nathanobert.com/posts/cheatsheet-elastic-devops/</link>
       <pubDate>Mon, 01 May 2023 09:45:00 -0700</pubDate>
       
-      <guid>https://www.nathanobert.com/posts/cheetsheet-elastic-devops/</guid>
+      <guid>https://www.nathanobert.com/posts/cheatsheet-elastic-devops/</guid>
       <description>Introduction This is a quick cheat sheet from Sematext&amp;rsquo;s Elastic Devops Cheatsheet
 DevOps cheatsheet Allocation Allocation awareness Avoids putting two copies of the same shard on nodes with the same attribute (e.g. rack, availability zone). For example:
 node.attr.availability_zone: us-east1 # in elasticsearch.yml  Awareness is enabled at the cluster level:
@@ -71,10 +80,10 @@ curl -XPUT localhost:9200/_cluster/settings?pretty -d &#39;{ &amp;quot;persisten
     
     <item>
       <title>SOLR Metrics Cheatsheet</title>
-      <link>https://www.nathanobert.com/posts/cheetsheet-solr-metrics/</link>
+      <link>https://www.nathanobert.com/posts/cheatsheet-solr-metrics/</link>
       <pubDate>Mon, 01 May 2023 09:45:00 -0700</pubDate>
       
-      <guid>https://www.nathanobert.com/posts/cheetsheet-solr-metrics/</guid>
+      <guid>https://www.nathanobert.com/posts/cheatsheet-solr-metrics/</guid>
       <description>Introduction This is a quick cheat sheet from Sematext&amp;rsquo;s SOLR Metric&amp;rsquo;s Cheatsheet
 Solr Metrics API Retrieving all Metrics
 Get all metrics:
@@ -103,19 +112,19 @@ Kubectl autocomplete BASH source &amp;lt;(kubectl completion bash) # set up auto
     
     <item>
       <title>OpenSSL Cheatsheet</title>
-      <link>https://www.nathanobert.com/posts/cheetsheet-openssl/</link>
+      <link>https://www.nathanobert.com/posts/cheatsheet-openssl/</link>
       <pubDate>Mon, 01 May 2023 08:00:00 -0700</pubDate>
       
-      <guid>https://www.nathanobert.com/posts/cheetsheet-openssl/</guid>
+      <guid>https://www.nathanobert.com/posts/cheatsheet-openssl/</guid>
       <description>Introduction This cheat sheet from Dave Wongillies&amp;rsquo;s Cheatsheet. OpenSSL is a very strong tool when working with certificates. OpenSSL can be used to for a wide variaty of taks involving SSL/TLS. For instance you can use it to convert certificates from format to another, use it as a debugging tool, use it to generate certificates, use it to download certificates from hosts, and even use it as a connectivity tool if telnet is not available.</description>
     </item>
     
     <item>
       <title>Markdown Cheatsheet</title>
-      <link>https://www.nathanobert.com/posts/cheetsheet-markdown/</link>
+      <link>https://www.nathanobert.com/posts/cheatsheet-markdown/</link>
       <pubDate>Mon, 01 May 2023 05:49:00 -0700</pubDate>
       
-      <guid>https://www.nathanobert.com/posts/cheetsheet-markdown/</guid>
+      <guid>https://www.nathanobert.com/posts/cheatsheet-markdown/</guid>
       <description>Introduction This is a quick cheat sheet from Adam Pritchard&amp;rsquo;s Cheatsheet that is useful when writing markup to make sure the syntax is correct. Markdown is a syntax used to format text. It essentially is a short form version of Hypertext Mark Up Language (HTML). You can achieve similar formatting with far less effort and by writing in Markdown instead of HTML. There is a Live Demo of Markdown available. This is especially useful if you would like to see what the rendered interactively.</description>
     </item>
     

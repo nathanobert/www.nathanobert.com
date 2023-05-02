@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GIT on Nathan Obert</title>
+    <link>https://www.nathanobert.com/tags/git/</link>
+    <description>Recent content in GIT on Nathan Obert</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 02 May 2023 05:00:00 -0700</lastBuildDate>
+    
+	<atom:link href="https://www.nathanobert.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Git Cheatsheet</title>
+      <link>https://www.nathanobert.com/posts/cheatsheet-git/</link>
+      <pubDate>Tue, 02 May 2023 05:00:00 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/posts/cheatsheet-git/</guid>
+      <description>Introduction This cheat sheet from Alex arak14&amp;rsquo;s Cheatsheet. Git is a version constrol system often used by developers, and devops to store insource code and configurations. It has even been adapted to store websites that are rended to the internet (like this one!) using Hugo. Git repositories are distributed in that each developers has a local copy of the repository and a series of pushs, pulls, merges, forks occur for the repositories to synchronize with one another.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -13,10 +13,10 @@
     
     <item>
       <title>SOLR Metrics Cheatsheet</title>
-      <link>https://www.nathanobert.com/posts/cheetsheet-solr-metrics/</link>
+      <link>https://www.nathanobert.com/posts/cheatsheet-solr-metrics/</link>
       <pubDate>Mon, 01 May 2023 09:45:00 -0700</pubDate>
       
-      <guid>https://www.nathanobert.com/posts/cheetsheet-solr-metrics/</guid>
+      <guid>https://www.nathanobert.com/posts/cheatsheet-solr-metrics/</guid>
       <description>Introduction This is a quick cheat sheet from Sematext&amp;rsquo;s SOLR Metric&amp;rsquo;s Cheatsheet
 Solr Metrics API Retrieving all Metrics
 Get all metrics:

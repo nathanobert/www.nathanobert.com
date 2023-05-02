@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Git Cheatsheet - Nathan Obert</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Git Cheatsheet">
+		<meta property="og:title" content="Git Cheatsheet" />
+<meta property="og:description" content="Git Cheatsheet" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.nathanobert.com/posts/cheatsheet-git/" />
+<meta property="article:published_time" content="2023-05-02T05:00:00-07:00" />
+<meta property="article:modified_time" content="2023-05-02T05:00:00-07:00" />
+
+		<meta itemprop="name" content="Git Cheatsheet">
+<meta itemprop="description" content="Git Cheatsheet">
+<meta itemprop="datePublished" content="2023-05-02T05:00:00-07:00" />
+<meta itemprop="dateModified" content="2023-05-02T05:00:00-07:00" />
+<meta itemprop="wordCount" content="1238">
+
+
+
+<meta itemprop="keywords" content="DEVOPS,GIT,DEVELOPMENT," />
+		<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Git Cheatsheet"/>
+<meta name="twitter:description" content="Git Cheatsheet"/>
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo logo--mixed">
+		<a class="logo__link" href="/" title="Nathan Obert" rel="home">
+			<div class="logo__item logo__imagebox">
+					<img class="logo__img" src="/img/nathan.jpg">
+				</div><div class="logo__item logo__text">
+					<div class="logo__title">Nathan Obert</div>
+					
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/blog/">
+				
+				<span class="menu__text">Blog</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/cheatsheets/">
+				
+				<span class="menu__text">Cheatsheets</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/tags/">
+				
+				<span class="menu__text">Tags</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/posts/about/">
+				
+				<span class="menu__text">About</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Git Cheatsheet</h1>
+			<p class="post__lead">Cheatsheet for Git</p>
+			<div class="post__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Nathan Obert</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-05-02T05:00:00-07:00">2023-05-02</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/cheatsheets/" rel="category">Cheatsheets</a>
+	</span>
+</div></div>
+		</header>
+		
+	<figure class="post__thumbnail thumbnail">
+		
+		<img class="thumbnail__image" src="/img/git.png" alt="Git Cheatsheet">
+		
+	</figure>
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#commands">Commands</a>
+      <ul>
+        <li><a href="#getting-started">Getting Started</a></li>
+        <li><a href="#configuration">Configuration</a></li>
+        <li><a href="#credential-helper">Credential Helper</a></li>
+        <li><a href="#working-with-local-branch">Working with Local Branch</a></li>
+        <li><a href="#working-with-remote-branch">Working with Remote Branch</a></li>
+      </ul>
+    </li>
+    <li><a href="#resources">Resources</a>
+      <ul>
+        <li><a href="#reference">Reference</a></li>
+        <li><a href="#viewing-history">Viewing History</a></li>
+        <li><a href="#mergediff-tools">Merge/Diff Tools</a></li>
+        <li><a href="#rebasing-to-avoiding-merge">Rebasing to avoiding merge</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+	</div>
+</div><div class="content post__content clearfix">
+			<h2 id="introduction">Introduction</h2>
+<p>This cheat sheet from <a href="https://gist.github.com/akras14/3d242d80af8388ebca60">Alex arak14&rsquo;s Cheatsheet</a>.  Git is a version constrol system often used by developers, and devops to store insource code and configurations.   It has even been adapted to store websites that are rended to the internet (like this one!) using Hugo.  Git repositories are distributed in that each developers has a local copy of the repository and a series of pushs, pulls, merges, forks occur for the repositories to synchronize with one another.</p>
+<h1 id="git-cheat-sheet">Git Cheat Sheet</h1>
+<h2 id="commands">Commands</h2>
+<h3 id="getting-started">Getting Started</h3>
+<p><code>git init</code></p>
+<p>or</p>
+<p><code>git clone url</code></p>
+<h3 id="configuration">Configuration</h3>
+<pre><code>git config --global color.ui true
+git config --global push.default current
+git config --global core.editor vim
+git config --global user.name &quot;John Doe&quot;
+git config --global user.email foo@citrix.com
+git config --global diff.tool meld
+</code></pre><h3 id="credential-helper">Credential Helper</h3>
+<p>If you are using http, and are tried of entering your passed on every git command.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># enable to credential helper and ask it to store your password</span>
+git config --global credential.helper cache
+git config --global credential.helper store
+
+<span style="color:#75715e"># length of time in seconds before you have to re-type password</span>
+
+<span style="color:#75715e"># Cache for 1 hour</span>
+git config --global credential.helper <span style="color:#e6db74">&#34;cache --timeout=3600&#34;</span>
+
+<span style="color:#75715e"># Cache for 1 day</span>
+git config --global credential.helper <span style="color:#e6db74">&#34;cache --timeout=86400&#34;</span>
+
+<span style="color:#75715e"># Cache for 1 week</span>
+git config --global credential.helper <span style="color:#e6db74">&#34;cache --timeout=604800&#34;</span>
+
+<span style="color:#75715e"># Cache for 1 year</span>
+git config --global credential.helper <span style="color:#e6db74">&#34;cache --timeout=31449600&#34;</span>
+
+<span style="color:#75715e"># Cache for 32 years .... :)</span>
+git config --global credential.helper <span style="color:#e6db74">&#34;cache --timeout=10006387200&#34;</span>
+</code></pre></div><h3 id="working-with-local-branch">Working with Local Branch</h3>
+<h4 id="branching">Branching</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># See the list of all local branches</span>
+git branch
+
+<span style="color:#75715e"># Switch to existing local branch</span>
+git checkout branchname
+
+<span style="color:#75715e"># Checkout current branch into a new branch, named new-branch-name</span>
+git checkout -b new-branch-name
+
+<span style="color:#75715e"># Merge branch-name into the current branch</span>
+git merge branchname
+
+<span style="color:#75715e"># Merge branch without fast forwarding. This is what pull requests do.</span>
+<span style="color:#75715e"># It helps to preserve history of the changes as relavant to that branch</span>
+<span style="color:#75715e"># It&#39;s an advanced feature, but try it out with GUI to see the difference</span>
+<span style="color:#75715e"># between the regular merge and merge --no-ff</span>
+git merge --no-ff branchname
+
+<span style="color:#75715e"># Soft branch delete, will complain if the branch is not merged</span>
+git branch -d branchname
+
+<span style="color:#75715e"># Hard branch delete, will not complain about nothing. Like rm -rf in bash</span>
+git branch -D branchname
+</code></pre></div><h4 id="updating-current-branch">Updating Current Branch</h4>
+<p><strong>Standard Flow</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># See all commits</span>
+git log
+
+<span style="color:#75715e"># Pretty commit view, you can customize it as much as you want.</span> 
+<span style="color:#75715e"># Just google it :)</span>
+git log --pretty<span style="color:#f92672">=</span>format:<span style="color:#e6db74">&#34;%h %s&#34;</span> --graph
+
+<span style="color:#75715e"># See what you worked on in the past week</span>
+git log --author<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Alex&#39;</span> --after<span style="color:#f92672">={</span>1.week.ago<span style="color:#f92672">}</span> --pretty<span style="color:#f92672">=</span>oneline --abbrev-commit
+
+<span style="color:#75715e"># See only changes made on this branch (assuming it was branched form master branch)</span>
+git log --no-merges master..
+
+<span style="color:#75715e"># See status of your current git branch.</span> 
+<span style="color:#75715e"># Often will have advice on command that you need to run</span>
+git status
+
+<span style="color:#75715e"># Short view of status. Helpful for seeing things at a glance</span>
+git status -s
+
+<span style="color:#75715e"># Add modified file to be commited(aka stage the file)</span>
+git add filename
+
+<span style="color:#75715e"># Add all modified files to be commited(aka stage all files)</span>
+git add .
+
+<span style="color:#75715e"># Add only text files, etc.</span>
+git add <span style="color:#e6db74">&#39;*.txt&#39;</span>
+
+<span style="color:#75715e"># Tell git not to track file anymore</span>
+git rm filename
+
+<span style="color:#75715e"># Record changes to git. Default editor will open for a commit message.</span>
+<span style="color:#75715e"># (Visible via git log)</span>
+<span style="color:#75715e"># Once files are commited, they are history.</span>
+git commit 
+
+<span style="color:#75715e"># A short hand for commiting files and writing a commit message via one command</span>
+git commit -m <span style="color:#e6db74">&#39;Some commit message&#39;</span>
+
+<span style="color:#75715e"># Changing the history :) If you want to change your previous commit,</span> 
+<span style="color:#75715e"># you can, if you haven&#39;t pushed it yet to a remote repo</span>
+<span style="color:#75715e"># Simply make new changes, add them via git add, and run the following command.</span> 
+<span style="color:#75715e"># Past commit will be ammended.</span>
+git commit --amend
+</code></pre></div><p><strong>Advanced</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Unstage pending changes, the changes will still remain on file system</span>
+git reset
+
+<span style="color:#75715e"># Unstage pending changes, and reset files to pre-commit state. If</span> 
+git reset --hard HEAD
+
+<span style="color:#75715e"># Go back to some time in history, on the current branch</span>
+git reset tag
+git reset &lt;commit-hash&gt;
+
+<span style="color:#75715e"># Save current changes, without having to commit them to repo</span>
+git stash
+
+<span style="color:#75715e"># And later return those changes</span>
+git stash pop
+
+<span style="color:#75715e"># Return file to it&#39;s previous version, if it hasn’t been staged yet.</span>
+<span style="color:#75715e"># Otherwise use git reset filename or git reset --hard filename</span>
+git checkout filename 
+</code></pre></div><p><strong>Comparing changes</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># See current changes, that have not been staged yet.</span> 
+<span style="color:#75715e"># Good thing to check before running git add</span>
+git diff
+
+<span style="color:#75715e"># See current changes, that have not been commited yet (including staged changes)</span>
+git diff HEAD
+
+<span style="color:#75715e"># Compare current branch to some other branch</span>
+git diff branch-name
+
+<span style="color:#75715e"># Same as diff, but opens changes via difftool that you have configured</span>
+<span style="color:#75715e"># -d tells it to open it in a directory mode, instead of having to open</span>
+<span style="color:#75715e"># each file one at a time.</span>
+git difftool -d
+
+<span style="color:#75715e"># See only changes made in the current branch (compared to master branch)</span>
+<span style="color:#75715e"># Helpful when working on a stand alone branch for a while</span>
+git difftool -d master..
+
+<span style="color:#75715e"># See only the file names that has changed in current branch</span>
+git diff --no-commit-id --name-only --no-merges origin/master...
+
+<span style="color:#75715e"># Similar to above, but see statistics on what files have changed and how</span>
+git diff --stat <span style="color:#75715e">#Your diff condition</span>
+</code></pre></div><h3 id="working-with-remote-branch">Working with Remote Branch</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># See list of remote repos available. If you did git clone,</span> 
+<span style="color:#75715e"># you&#39;ll have at least one named &#34;origin&#34;</span>
+git remote
+
+<span style="color:#75715e"># Detailed view of remote repos, with their git urls</span>
+git remote -v
+
+<span style="color:#75715e"># Add a new remote. I.e. origin if it is not set</span>
+git remote add origin &lt;https://some-git-remote-url&gt;
+
+<span style="color:#75715e"># Push current branch to remote branch (usually with the same name)</span> 
+<span style="color:#75715e"># called upstream branch</span>
+git push
+
+<span style="color:#75715e"># If a remote branch is not set up as an upstream, you can make it so</span>
+<span style="color:#75715e"># The -u tells Git to remember the parameters</span>
+git push -u origin master 
+
+<span style="color:#75715e"># Otherwise you can manually specify remote and branch to use every time</span>
+git push origin branchname
+
+<span style="color:#75715e"># Just like pushing, you can get the latest updates from remote.</span> 
+<span style="color:#75715e"># By defaul Git will try to pull from &#34;origin&#34; and upstream branch</span>
+git pull
+
+<span style="color:#75715e"># Or you can tell git to pull a specific branch</span>
+git pull origin branchname
+
+<span style="color:#75715e"># Git pull, is actually a short hand for two command.</span>
+<span style="color:#75715e"># Telling git to first fetch changes from a remote branch</span>
+<span style="color:#75715e"># And then to merge them into current branch</span>
+git fetch <span style="color:#f92672">&amp;&amp;</span> git merge origin/remote-branch-name
+
+<span style="color:#75715e"># If you want to update history of remote branches, you can fetch and purge</span>
+git fetch -p
+
+<span style="color:#75715e"># To see the list of remote branches</span>
+<span style="color:#75715e"># -a stands for all</span>
+git branch -a 
+</code></pre></div><h2 id="resources">Resources</h2>
+<h3 id="reference">Reference</h3>
+<ul>
+<li>Try Github - <a href="https://try.github.io">https://try.github.io</a></li>
+<li>learnGitBranching <a href="http://pcottle.github.io/learnGitBranching/?NODEMO">http://pcottle.github.io/learnGitBranching/?NODEMO</a></li>
+<li>Pro Git - Free Book - <a href="http://git-scm.com/book">http://git-scm.com/book</a></li>
+</ul>
+<h3 id="viewing-history">Viewing History</h3>
+<ul>
+<li>Source Tree - <a href="http://www.sourcetreeapp.com/">http://www.sourcetreeapp.com/</a></li>
+<li>tig - <code>sudo apt-get install tig</code> or <code>brew install tig</code> etc</li>
+<li>gitk - <code>sudo apt-get install gitk</code></li>
+</ul>
+<h3 id="mergediff-tools">Merge/Diff Tools</h3>
+<ul>
+<li>Meld - <code>sudo apt-get install meld</code> or <code>brew install meld</code></li>
+<li>Open Diff</li>
+<li>p4v Merge - <a href="http://git-scm.com/book/en/Customizing-Git-Git-Configuration#External-Merge-and-Diff-Tools">http://git-scm.com/book/en/Customizing-Git-Git-Configuration#External-Merge-and-Diff-Tools</a></li>
+<li>Webstorm</li>
+</ul>
+<h3 id="rebasing-to-avoiding-merge">Rebasing to avoiding merge</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># If there are changes made on remote branch that you want to pull, you can avoid merging them, by rebasing your commits on top of the them.</span>
+git pull --rebase
+<span style="color:#75715e"># If conflicts arise during the rebase, resolve them manually, stage the modified files and continue the rebase.</span>
+git add .
+git rebase --continue
+<span style="color:#75715e"># If at any point, you want to abort the rebasing, you can run.</span>
+git rebase --abort
+</code></pre></div>
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/devops/" rel="tag">DEVOPS</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/git/" rel="tag">GIT</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/development/" rel="tag">DEVELOPMENT</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<figure class="authorbox__avatar">
+		<img alt="Nathan Obert avatar" src="/img/nathan.jpg" class="avatar" height="90" width="90">
+	</figure>
+	<div class="authorbox__header">
+		<span class="authorbox__name">About Nathan Obert</span>
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/posts/blog-xrdp-gnome-on-rhel9/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">XRP to remote Gnome on Redhat Enterprise Linux 9</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2023 Nathan Obert.
+
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/js/menu.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+</body>
+</html>

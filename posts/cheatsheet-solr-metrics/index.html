@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>SOLR Metrics Cheatsheet - Nathan Obert</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="SOLR Cheatsheet">
+		<meta property="og:title" content="SOLR Metrics Cheatsheet" />
+<meta property="og:description" content="SOLR Cheatsheet" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.nathanobert.com/posts/cheatsheet-solr-metrics/" />
+<meta property="article:published_time" content="2023-05-01T09:45:00-07:00" />
+<meta property="article:modified_time" content="2023-05-01T09:45:00-07:00" />
+
+		<meta itemprop="name" content="SOLR Metrics Cheatsheet">
+<meta itemprop="description" content="SOLR Cheatsheet">
+<meta itemprop="datePublished" content="2023-05-01T09:45:00-07:00" />
+<meta itemprop="dateModified" content="2023-05-01T09:45:00-07:00" />
+<meta itemprop="wordCount" content="486">
+
+
+
+<meta itemprop="keywords" content="SOLR,METRICS," />
+		<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SOLR Metrics Cheatsheet"/>
+<meta name="twitter:description" content="SOLR Cheatsheet"/>
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo logo--mixed">
+		<a class="logo__link" href="/" title="Nathan Obert" rel="home">
+			<div class="logo__item logo__imagebox">
+					<img class="logo__img" src="/img/nathan.jpg">
+				</div><div class="logo__item logo__text">
+					<div class="logo__title">Nathan Obert</div>
+					
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/blog/">
+				
+				<span class="menu__text">Blog</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/cheatsheets/">
+				
+				<span class="menu__text">Cheatsheets</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/tags/">
+				
+				<span class="menu__text">Tags</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/posts/about/">
+				
+				<span class="menu__text">About</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">SOLR Metrics Cheatsheet</h1>
+			<p class="post__lead">Cheatsheet for SOLR Metrics</p>
+			<div class="post__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Nathan Obert</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-05-01T09:45:00-07:00">2023-05-01</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/cheatsheets/" rel="category">Cheatsheets</a>
+	</span>
+</div></div>
+		</header>
+		
+	<figure class="post__thumbnail thumbnail">
+		
+		<img class="thumbnail__image" src="/img/solr.png" alt="SOLR Metrics Cheatsheet">
+		
+	</figure>
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#solr-metrics-api">Solr Metrics API</a></li>
+    <li><a href="#jetty-metrics">Jetty Metrics</a></li>
+    <li><a href="#jvm-metrics">JVM Metrics</a></li>
+    <li><a href="#solr-node-metrics">Solr Node Metrics</a></li>
+    <li><a href="#core-or-collection-metrics">Core Or Collection Metrics</a></li>
+    <li><a href="#troubleshooting">Troubleshooting</a></li>
+  </ul>
+</nav>
+	</div>
+</div><div class="content post__content clearfix">
+			<h1 id="introduction">Introduction</h1>
+<p>This is a quick cheat sheet from <a href="https://raw.githubusercontent.com/sematext/cheatsheets/master/solr-metrics-api-cheatsheet.md"> Sematext&rsquo;s SOLR Metric&rsquo;s Cheatsheet</a></p>
+<h2 id="solr-metrics-api">Solr Metrics API</h2>
+<p><strong><em>Retrieving all Metrics</em></strong></p>
+<p>Get all metrics:</p>
+<p><a href="http://localhost:8983/solr/admin/metrics">localhost:8983/solr/admin/metrics</a></p>
+<p><strong><em>Retrieving Metrics for Specific Group</em></strong></p>
+<p>Metrics for a group (groups: <em>solr.jvm</em>, <em>solr.node</em>, <em>solr.jetty</em>, <em>solr.core.&lt;collection_name&gt;</em>):</p>
+<p><a href="http://localhost:8983/solr/admin/metrics?group=solr.jvm">localhost:8983/solr/admin/metrics?group=solr.jvm</a></p>
+<p><strong><em>Retrieving Metrics in JSON</em></strong></p>
+<p>Default is XML. For JSON:</p>
+<p><a href="http://localhost:8983/solr/admin/metrics?wt=json">localhost:8983/solr/admin/metrics?wt=json</a></p>
+<p><a href="http://localhost:8983/solr/admin/metrics?wt=json&amp;indent=true">localhost:8983/solr/admin/metrics?wt=json&amp;indent=true</a></p>
+<h2 id="jetty-metrics">Jetty Metrics</h2>
+<p><strong><em>Number <em><strong><strong><em>of</em></strong></strong></em> Requests <em><strong><strong><em>with</em></strong></strong></em> Given Response Status</em></strong></p>
+<p>Check the number of requests with the given HTTP status, useful when checking for number of errors and successful requests:</p>
+<p><a href="http://localhost:8983/solr/admin/metrics?prefix=org.eclipse.jetty.server.handler.DefaultHandler.1xx">localhost:8983/solr/admin/metrics?prefix=org.eclipse.jetty.server.handler.DefaultHandler.1xx</a></p>
+<p><a href="http://localhost:8983/solr/admin/metrics?prefix=org.eclipse.jetty.server.handler.DefaultHandler.2xx">localhost:8983/solr/admin/metrics?prefix=org.eclipse.jetty.server.handler.DefaultHandler.2xx</a></p>
+<p><a href="http://localhost:8983/solr/admin/metrics?prefix=org.eclipse.jetty.server.handler.DefaultHandler.3xx">localhost:8983/solr/admin/metrics?prefix=org.eclipse.jetty.server.handler.DefaultHandler.3xx</a></p>
+<p><a href="http://localhost:8983/solr/admin/metrics?prefix=org.eclipse.jetty.server.handler.DefaultHandler.4xx">localhost:8983/solr/admin/metrics?prefix=org.eclipse.jetty.server.handler.DefaultHandler.4xx</a></p>
+<p><a href="http://localhost:8983/solr/admin/metrics?prefix=org.eclipse.jetty.server.handler.DefaultHandler.5xx">localhost:8983/solr/admin/metrics?prefix=org.eclipse.jetty.server.handler.DefaultHandler.5xx</a></p>
+<p><strong><em>Aggregated Error Percentage</em></strong></p>
+<p>Retrieve aggregated error percentage for 1, 5 and 15 minutes periods:</p>
+<p><a href="http://localhost:8983/solr/admin/metrics?prefix=org.eclipse.jetty.server.handler.DefaultHandler.percent-4xx-1m">localhost:8983/solr/admin/metrics?prefix=org.eclipse.jetty.server.handler.DefaultHandler.percent-4xx-1m</a></p>
+<p><a href="http://localhost:8983/solr/admin/metrics?prefix=org.eclipse.jetty.server.handler.DefaultHandler.percent-4xx-5m">localhost:8983/solr/admin/metrics?prefix=org.eclipse.jetty.server.handler.DefaultHandler.percent-4xx-5m</a></p>
+<p><a href="http://localhost:8983/solr/admin/metrics?prefix=org.eclipse.jetty.server.handler.DefaultHandler.percent-4xx-15m">localhost:8983/solr/admin/metrics?prefix=org.eclipse.jetty.server.handler.DefaultHandler.percent-4xx-15m</a></p>
+<p><a href="http://">localhost:8983/solr/admin/metrics?prefix=org.eclipse.jetty.server.handler.DefaultHandler.percent-5xx-1m</a></p>
+<p><a href="http://localhost:8983/solr/admin/metrics?prefix=org.eclipse.jetty.server.handler.DefaultHandler.percent-5xx-1m">localhost:8983/solr/admin/metrics?prefix=org.eclipse.jetty.server.handler.DefaultHandler.percent-5xx-5m</a></p>
+<p><a href="http://localhost:8983/solr/admin/metrics?prefix=org.eclipse.jetty.server.handler.DefaultHandler.percent-5xx-15m">localhost:8983/solr/admin/metrics?prefix=org.eclipse.jetty.server.handler.DefaultHandler.percent-5xx-15m</a></p>
+<p><strong><em>HTTP Requests Related Statistics</em></strong></p>
+<p>Statistics for all requests sent to Solr:</p>
+<p><a href="http://localhost:8983/solr/admin/metrics?prefix=org.eclipse.jetty.server.handler.DefaultHandler.requests">localhost:8983/solr/admin/metrics?prefix=org.eclipse.jetty.server.handler.DefaultHandler.requests</a></p>
+<p><strong><em>HTTP Method Divided Statistics</em></strong></p>
+<p>Statistics for a given HTTP method:</p>
+<p><a href="http://localhost:8983/solr/admin/metrics?prefix=org.eclipse.jetty.server.handler.DefaultHandler.post-requests">localhost:8983/solr/admin/metrics?prefix=org.eclipse.jetty.server.handler.DefaultHandler.post-requests</a></p>
+<p><a href="http://localhost:8983/solr/admin/metrics?prefix=org.eclipse.jetty.server.handler.DefaultHandler.put-requests">localhost:8983/solr/admin/metrics?prefix=org.eclipse.jetty.server.handler.DefaultHandler.put-requests</a></p>
+<p><a href="http://localhost:8983/solr/admin/metrics?prefix=org.eclipse.jetty.server.handler.DefaultHandler.get-requests">localhost:8983/solr/admin/metrics?prefix=org.eclipse.jetty.server.handler.DefaultHandler.get-requests</a></p>
+<p><strong><em>Active Requests Statistics</em></strong></p>
+<p>Information on current requests:</p>
+<p><a href="http://localhost:8983/solr/admin/metrics?prefix=org.eclipse.jetty.server.handler.DefaultHandler.active">localhost:8983/solr/admin/metrics?prefix=org.eclipse.jetty.server.handler.DefaultHandler.active</a></p>
+<p><strong><em>Asynchronous Requests Statistics</em></strong></p>
+<p>Asynchronous request being processed:</p>
+<p><a href="http://localhost:8983/solr/admin/metrics?prefix=org.eclipse.jetty.server.handler.DefaultHandler.async">localhost:8983/solr/admin/metrics?prefix=org.eclipse.jetty.server.handler.DefaultHandler.async</a></p>
+<p><strong><em>Thread Pools Utilization</em></strong></p>
+<p>Jetty thread pools utilization, useful for finding thread settings issues:</p>
+<p><a href="http://localhost:8983/solr/admin/metrics?prefix=org.eclipse.jetty.util.thread.QueuedThreadPool">localhost:8983/solr/admin/metrics?prefix=org.eclipse.jetty.util.thread.QueuedThreadPool</a></p>
+<h2 id="jvm-metrics">JVM Metrics</h2>
+<p><strong><em>Direct Buffers Information</em></strong></p>
+<p>Direct buffer used by Solr that are mapped via heap memory:</p>
+<p><a href="http://localhost:8983/solr/admin/metrics?group=solr.jvm&amp;prefix=buffers.direct">localhost:8983/solr/admin/metrics?group=solr.jvm&amp;prefix=buffers.direct</a></p>
+<p><strong><em>Mapped Buffers Information</em></strong></p>
+<p>Memory mapped buffers used by Solr and shared with operating system cache:</p>
+<p><a href="http://localhost:8983/solr/admin/metrics?group=solr.jvm&amp;prefix=buffers.mapped">localhost:8983/solr/admin/metrics?group=solr.jvm&amp;prefix=buffers.mapped</a></p>
+<p><strong><em>Garbage Collection Information</em></strong></p>
+<p>Garbage collection information:</p>
+<p><a href="http://localhost:8983/solr/admin/metrics?group=solr.jvm&amp;prefix=gc">localhost:8983/solr/admin/metrics?group=solr.jvm&amp;prefix=gc</a></p>
+<p><strong><em>JVM Heap Statistics</em></strong></p>
+<p>Heap usage information:</p>
+<p><a href="http://localhost:8983/solr/admin/metrics?group=solr.jvm&amp;prefix=memory.heap">localhost:8983/solr/admin/metrics?group=solr.jvm&amp;prefix=memory.heap</a></p>
+<p><strong><em>Out Of Heap Memory Usage</em></strong></p>
+<p>Out of heap memory usage by Solr:</p>
+<p><a href="http://localhost:8983/solr/admin/metrics?group=solr.jvm&amp;prefix=memory.non-heap">localhost:8983/solr/admin/metrics?group=solr.jvm&amp;prefix=memory.non-heap</a></p>
+<p><strong><em>Memory Pools Information</em></strong></p>
+<p>Memory pools utilization:</p>
+<p><a href="http://localhost:8983/solr/admin/metrics?group=solr.jvm&amp;prefix=memory.pools">localhost:8983/solr/admin/metrics?group=solr.jvm&amp;prefix=memory.pools</a></p>
+<p><strong><em>Total Memory Used</em></strong></p>
+<p>Total memory usage of the system running Solr:</p>
+<p><a href="http://localhost:8983/solr/admin/metrics?group=solr.jvm&amp;prefix=memory.total">localhost:8983/solr/admin/metrics?group=solr.jvm&amp;prefix=memory.total</a></p>
+<p><strong><em>Operating System Information</em></strong></p>
+<p>Operating system information (CPU count, file descriptors, swap, memory usage, load):</p>
+<p><a href="http://localhost:8983/solr/admin/metrics?group=solr.jvm&amp;prefix=os">localhost:8983/solr/admin/metrics?group=solr.jvm&amp;prefix=os</a></p>
+<p><strong><em>Threads Related Statistics</em></strong></p>
+<p>Threads information to help checking blocked ones:</p>
+<p><a href="http://localhost:8983/solr/admin/metrics?group=solr.jvm&amp;prefix=threads">localhost:8983/solr/admin/metrics?group=solr.jvm&amp;prefix=threads</a></p>
+<h2 id="solr-node-metrics">Solr Node Metrics</h2>
+<p><strong><em>Authorization Errors</em></strong></p>
+<p>Authorization errors:</p>
+<p><a href="http://localhost:8983/solr/admin/metrics?group=solr.node&amp;prefix=ADMIN./admin/authorization.errors">localhost:8983/solr/admin/metrics?group=solr.node&amp;prefix=ADMIN./admin/authorization.errors</a></p>
+<p><strong><em>Collections API Usage Statistics</em></strong></p>
+<p>Collections API usage statistics:</p>
+<p><a href="http://localhost:8983/solr/admin/metrics?group=solr.node&amp;prefix=ADMIN./admin/collections">localhost:8983/solr/admin/metrics?group=solr.node&amp;prefix=ADMIN./admin/collections</a></p>
+<p><strong><em>ZooKeeper Communication Statistics</em></strong></p>
+<p>ZooKeeper communication statistics useful in diagnosing problems with connectivity:</p>
+<p><a href="http://localhost:8983/solr/admin/metrics?group=solr.node&amp;prefix=ADMIN./admin/zookeeper">localhost:8983/solr/admin/metrics?group=solr.node&amp;prefix=ADMIN./admin/zookeeper</a></p>
+<p><strong><em>Loaded, Unloaded &amp; Lazy Loaded Cores</em></strong></p>
+<p>Information on deployed cores, working ones and lazily loaded ones:</p>
+<p><a href="http://localhost:8983/solr/admin/metrics?group=solr.node&amp;prefix=CONTAINER.cores">localhost:8983/solr/admin/metrics?group=solr.node&amp;prefix=CONTAINER.cores</a></p>
+<p><strong><em>Shard Handler Statistics</em></strong></p>
+<p>Information about shard handler, useful in diagnosing between shards communication problems:</p>
+<p><a href="http://localhost:8983/solr/admin/metrics?group=solr.node&amp;prefix=QUERY.httpShardHandler">localhost:8983/solr/admin/metrics?group=solr.node&amp;prefix=QUERY.httpShardHandler</a></p>
+<p><strong><em>Update Shard Handler Information</em></strong></p>
+<p>Update shard handler statistics to diagnose update messages transferred between shards:</p>
+<p><a href="http://localhost:8983/solr/admin/metrics?group=solr.node&amp;prefix=UPDATE.updateShardHandler">localhost:8983/solr/admin/metrics?group=solr.node&amp;prefix=UPDATE.updateShardHandler</a></p>
+<h2 id="core-or-collection-metrics">Core Or Collection Metrics</h2>
+<p><strong><em>Update Handler Related Metrics</em></strong></p>
+<p>Indexing related performance information:</p>
+<p><a href="http://localhost:8983/solr/admin/metrics?prefix=UPDATE./update">localhost:8983/solr/admin/metrics?prefix=UPDATE./update</a></p>
+<p><strong><em>Transaction Log Metrics</em></strong></p>
+<p>Transaction log can be a source of problems if it too large, check it with:</p>
+<p><a href="http://localhost:8983/solr/admin/metrics?prefix=TLOG">localhost:8983/solr/admin/metrics?prefix=TLOG</a></p>
+<p><strong><em>Replication Statistics</em></strong></p>
+<p><a href="http://localhost:8983/solr/admin/metrics?prefix=REPLICATION">localhost:8983/solr/admin/metrics?prefix=REPLICATION</a></p>
+<p><strong><em>Searcher Warmup And Creation Time Information</em></strong></p>
+<p><a href="http://localhost:8983/solr/admin/metrics?prefix=SEARCHER">localhost:8983/solr/admin/metrics?prefix=SEARCHER</a></p>
+<p><strong><em>Default /select Handler Query Related Statistics</em></strong></p>
+<p>We can retrieve statistics about any handler, just like the default <em>/select</em> handler:</p>
+<p><a href="http://localhost:8983/solr/admin/metrics?prefix=QUERY./select">localhost:8983/solr/admin/metrics?prefix=QUERY./select</a></p>
+<p><strong><em>Merges Related Information</em></strong></p>
+<p>Merging can be expensive or slow, check its performance with:</p>
+<p><a href="http://localhost:8983/solr/admin/metrics?prefix=INDEX.merge">localhost:8983/solr/admin/metrics?prefix=INDEX.merge</a></p>
+<p><strong><em>General Reads And Writes Information</em></strong></p>
+<p>All I/O operations in Solr are done via the <em>Directory</em> interface, check its usage with:</p>
+<p><a href="http://localhost:8983/solr/admin/metrics?prefix=DIRECTORY">localhost:8983/solr/admin/metrics?prefix=DIRECTORY</a></p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p><strong><em>Checking Solr memory usage</em></strong></p>
+<p><a href="http://localhost:8983/solr/admin/metrics?prefix=memory.&amp;wt=json&amp;indent=true">localhost:8983/solr/admin/metrics?prefix=memory.&amp;wt=json&amp;indent=true</a></p>
+<p><strong><em>Garbage collection issues</em></strong></p>
+<p><a href="http://localhost:8983/solr/admin/metrics?prefix=gc.&amp;wt=json&amp;indent=true">localhost:8983/solr/admin/metrics?prefix=gc.&amp;wt=json&amp;indent=true</a></p>
+<p><a href="http://localhost:8983/solr/admin/metrics?prefix=memory.pools.&amp;wt=json&amp;indent=true">localhost:8983/solr/admin/metrics?prefix=memory.pools.&amp;wt=json&amp;indent=true</a></p>
+<p><strong>_I/O issues _</strong></p>
+<p><a href="http://localhost:8983/solr/admin/metrics?prefix=DIRECTORY.&amp;wt=json&amp;indent=true">localhost:8983/solr/admin/metrics?prefix=DIRECTORY.&amp;wt=json&amp;indent=true</a></p>
+<p><a href="http://localhost:8983/solr/admin/metrics?prefix=INDEX.merge.&amp;wt=json&amp;indent=true">localhost:8983/solr/admin/metrics?prefix=INDEX.merge.&amp;wt=json&amp;indent=true</a></p>
+<p><a href="http://localhost:8983/solr/admin/metrics?prefix=INDEX.&amp;wt=json&amp;indent=true">localhost:8983/solr/admin/metrics?prefix=INDEX.&amp;wt=json&amp;indent=true</a></p>
+<p><strong>_Retrieving transaction log information _</strong></p>
+<p><a href="http://localhost:8983/solr/admin/metrics?prefix=TLOG.&amp;wt=json&amp;indent=true">localhost:8983/solr/admin/metrics?prefix=TLOG.&amp;wt=json&amp;indent=true</a></p>
+<p><strong><em>Checking direct and mapped memory size</em></strong></p>
+<p><a href="http://localhost:8983/solr/admin/metrics?prefix=buffers.&amp;wt=json&amp;indent=true">localhost:8983/solr/admin/metrics?prefix=buffers.&amp;wt=json&amp;indent=true</a></p>
+<p><strong><em>Checking number of errors</em></strong></p>
+<p><a href="http://localhost:8983/solr/admin/metrics?prefix=org.eclipse.jetty.server.handler.DefaultHandler.4xx-responses&amp;wt=json&amp;indent=true">localhost:8983/solr/admin/metrics?prefix=org.eclipse.jetty.server.handler.DefaultHandler.4xx-responses&amp;wt=json&amp;indent=true</a></p>
+<p><a href="http://localhost:8983/solr/admin/metrics?prefix=org.eclipse.jetty.server.handler.DefaultHandler.5xx-responses&amp;wt=json&amp;indent=true">localhost:8983/solr/admin/metrics?prefix=org.eclipse.jetty.server.handler.DefaultHandler.5xx-responses&amp;wt=json&amp;indent=true</a></p>
+<p><strong><em>Checking replication metrics</em></strong></p>
+<p><a href="http://localhost:8983/solr/admin/metrics?prefix=REPLICATION.&amp;wt=json&amp;indent=true">localhost:8983/solr/admin/metrics?prefix=REPLICATION.&amp;wt=json&amp;indent=true</a></p>
+<p><strong><em>Retrieving searchers warm-up times</em></strong></p>
+<p><a href="http://localhost:8983/solr/admin/metrics?prefix=SEARCHER.&amp;wt=json&amp;indent=true">localhost:8983/solr/admin/metrics?prefix=SEARCHER.&amp;wt=json&amp;indent=true</a></p>
+<p><strong><em>Threads related statistics</em></strong></p>
+<p><a href="http://localhost:8983/solr/admin/metrics?prefix=threads.&amp;wt=json&amp;indent=true">localhost:8983/solr/admin/metrics?prefix=threads.&amp;wt=json&amp;indent=true</a></p>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/solr/" rel="tag">SOLR</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/metrics/" rel="tag">METRICS</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<figure class="authorbox__avatar">
+		<img alt="Nathan Obert avatar" src="/img/nathan.jpg" class="avatar" height="90" width="90">
+	</figure>
+	<div class="authorbox__header">
+		<span class="authorbox__name">About Nathan Obert</span>
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/posts/cheetsheet-kubernetes/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">Kubernetes Cheatsheet</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/posts/cheatsheet-elastic-devops/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">Elastic Devops Cheatsheet</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2023 Nathan Obert.
+
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/js/menu.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+</body>
+</html>

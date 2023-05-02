@@ -13,10 +13,10 @@
     
     <item>
       <title>Docker Cheatsheet</title>
-      <link>https://www.nathanobert.com/posts/cheetsheet-docker/</link>
+      <link>https://www.nathanobert.com/posts/cheatsheet-docker/</link>
       <pubDate>Mon, 01 May 2023 09:45:00 -0700</pubDate>
       
-      <guid>https://www.nathanobert.com/posts/cheetsheet-docker/</guid>
+      <guid>https://www.nathanobert.com/posts/cheatsheet-docker/</guid>
       <description>Introduction This is a quick cheat sheet from Sematext&amp;rsquo;s Docker Cheatsheet
 Docker Cheatsheet Tutorial series Get started with Docker: https://docs.docker.com/engine/getstarted/
 Installation Linux Install script provided by Docker:

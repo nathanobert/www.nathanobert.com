@@ -3,12 +3,52 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.nathanobert.com/categories/blog/</loc>
-    <lastmod>2023-05-01T14:28:10-07:00</lastmod>
+    <loc>https://www.nathanobert.com/categories/</loc>
+    <lastmod>2023-05-02T05:00:00-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.nathanobert.com/categories/</loc>
+    <loc>https://www.nathanobert.com/categories/cheatsheets/</loc>
+    <lastmod>2023-05-02T05:00:00-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nathanobert.com/tags/development/</loc>
+    <lastmod>2023-05-02T05:00:00-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nathanobert.com/tags/devops/</loc>
+    <lastmod>2023-05-02T05:00:00-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nathanobert.com/tags/git/</loc>
+    <lastmod>2023-05-02T05:00:00-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nathanobert.com/posts/cheatsheet-git/</loc>
+    <lastmod>2023-05-02T05:00:00-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nathanobert.com/</loc>
+    <lastmod>2023-05-02T05:00:00-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nathanobert.com/posts/</loc>
+    <lastmod>2023-05-02T05:00:00-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nathanobert.com/tags/</loc>
+    <lastmod>2023-05-02T05:00:00-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.nathanobert.com/categories/blog/</loc>
     <lastmod>2023-05-01T14:28:10-07:00</lastmod>
   </url>
   
@@ -18,22 +58,7 @@
   </url>
   
   <url>
-    <loc>https://www.nathanobert.com/</loc>
-    <lastmod>2023-05-01T14:28:10-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.nathanobert.com/posts/</loc>
-    <lastmod>2023-05-01T14:28:10-07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.nathanobert.com/tags/rhel-9/</loc>
-    <lastmod>2023-05-01T14:28:10-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.nathanobert.com/tags/</loc>
     <lastmod>2023-05-01T14:28:10-07:00</lastmod>
   </url>
   
@@ -48,11 +73,6 @@
   </url>
   
   <url>
-    <loc>https://www.nathanobert.com/tags/devops/</loc>
-    <lastmod>2023-05-01T12:28:10-07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.nathanobert.com/tags/python/</loc>
     <lastmod>2023-05-01T12:28:10-07:00</lastmod>
   </url>
@@ -63,22 +83,12 @@
   </url>
   
   <url>
-    <loc>https://www.nathanobert.com/categories/cheatsheets/</loc>
-    <lastmod>2023-05-01T09:45:00-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.nathanobert.com/tags/development/</loc>
-    <lastmod>2023-05-01T09:45:00-07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.nathanobert.com/tags/docker/</loc>
     <lastmod>2023-05-01T09:45:00-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.nathanobert.com/posts/cheetsheet-docker/</loc>
+    <loc>https://www.nathanobert.com/posts/cheatsheet-docker/</loc>
     <lastmod>2023-05-01T09:45:00-07:00</lastmod>
   </url>
   
@@ -88,12 +98,12 @@
   </url>
   
   <url>
-    <loc>https://www.nathanobert.com/posts/cheetsheet-elastic-dev/</loc>
+    <loc>https://www.nathanobert.com/posts/cheatsheet-elastic-dev/</loc>
     <lastmod>2023-05-01T09:45:00-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.nathanobert.com/posts/cheetsheet-elastic-devops/</loc>
+    <loc>https://www.nathanobert.com/posts/cheatsheet-elastic-devops/</loc>
     <lastmod>2023-05-01T09:45:00-07:00</lastmod>
   </url>
   
@@ -108,7 +118,7 @@
   </url>
   
   <url>
-    <loc>https://www.nathanobert.com/posts/cheetsheet-solr-metrics/</loc>
+    <loc>https://www.nathanobert.com/posts/cheatsheet-solr-metrics/</loc>
     <lastmod>2023-05-01T09:45:00-07:00</lastmod>
   </url>
   
@@ -123,7 +133,7 @@
   </url>
   
   <url>
-    <loc>https://www.nathanobert.com/posts/cheetsheet-openssl/</loc>
+    <loc>https://www.nathanobert.com/posts/cheatsheet-openssl/</loc>
     <lastmod>2023-05-01T08:00:00-07:00</lastmod>
   </url>
   
@@ -138,7 +148,7 @@
   </url>
   
   <url>
-    <loc>https://www.nathanobert.com/posts/cheetsheet-markdown/</loc>
+    <loc>https://www.nathanobert.com/posts/cheatsheet-markdown/</loc>
     <lastmod>2023-05-01T05:49:00-07:00</lastmod>
   </url>
   

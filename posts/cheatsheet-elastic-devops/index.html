@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Elastic Devops Cheatsheet - Nathan Obert</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Docker Cheatsheet">
+		<meta property="og:title" content="Elastic Devops Cheatsheet" />
+<meta property="og:description" content="Docker Cheatsheet" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.nathanobert.com/posts/cheatsheet-elastic-devops/" />
+<meta property="article:published_time" content="2023-05-01T09:45:00-07:00" />
+<meta property="article:modified_time" content="2023-05-01T09:45:00-07:00" />
+
+		<meta itemprop="name" content="Elastic Devops Cheatsheet">
+<meta itemprop="description" content="Docker Cheatsheet">
+<meta itemprop="datePublished" content="2023-05-01T09:45:00-07:00" />
+<meta itemprop="dateModified" content="2023-05-01T09:45:00-07:00" />
+<meta itemprop="wordCount" content="1396">
+
+
+
+<meta itemprop="keywords" content="ELASTIC,DEVOPS," />
+		<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Elastic Devops Cheatsheet"/>
+<meta name="twitter:description" content="Docker Cheatsheet"/>
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo logo--mixed">
+		<a class="logo__link" href="/" title="Nathan Obert" rel="home">
+			<div class="logo__item logo__imagebox">
+					<img class="logo__img" src="/img/nathan.jpg">
+				</div><div class="logo__item logo__text">
+					<div class="logo__title">Nathan Obert</div>
+					
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/blog/">
+				
+				<span class="menu__text">Blog</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/cheatsheets/">
+				
+				<span class="menu__text">Cheatsheets</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/tags/">
+				
+				<span class="menu__text">Tags</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/posts/about/">
+				
+				<span class="menu__text">About</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Elastic Devops Cheatsheet</h1>
+			<p class="post__lead">Cheatsheet for Elastic Devops</p>
+			<div class="post__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Nathan Obert</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-05-01T09:45:00-07:00">2023-05-01</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/cheatsheets/" rel="category">Cheatsheets</a>
+	</span>
+</div></div>
+		</header>
+		
+	<figure class="post__thumbnail thumbnail">
+		
+		<img class="thumbnail__image" src="/img/elastic.png" alt="Elastic Devops Cheatsheet">
+		
+	</figure>
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#allocation-awareness">Allocation awareness</a></li>
+    <li><a href="#allocation-filtering">Allocation filtering</a></li>
+    <li><a href="#delayed-allocation">Delayed allocation</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#query-cache">Query cache</a></li>
+    <li><a href="#request-cache">Request cache</a></li>
+    <li><a href="#indexing-buffer">Indexing buffer</a></li>
+    <li><a href="#page-recycler">Page recycler</a></li>
+    <li><a href="#field-data">Field data</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#force-merge">Force merge</a></li>
+    <li><a href="#thread-pools">Thread pools</a></li>
+    <li><a href="#merge-policy">Merge policy</a></li>
+    <li><a href="#shrink-index">Shrink index</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#cat-health">Cat health</a></li>
+    <li><a href="#cat-nodes">Cat nodes</a></li>
+    <li><a href="#_catallocation">_cat/allocation</a></li>
+    <li><a href="#_catindices">_cat/indices</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#_catsegments">_cat/segments</a></li>
+    <li><a href="#_catpending_tasks">_cat/pending_tasks</a></li>
+    <li><a href="#_catfielddata">_cat/fielddata</a></li>
+    <li><a href="#nodes-stats">Nodes stats</a></li>
+    <li><a href="#nodes-hot-threads">Nodes hot threads</a></li>
+    <li><a href="#os-stats">OS stats</a></li>
+    <li><a href="#cluster-allocation-explain">Cluster allocation explain</a></li>
+    <li><a href="#indices-shard-stores">Indices shard stores</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#total-shards-per-node">Total shards per node</a></li>
+    <li><a href="#disk-allocation-thresholds">Disk allocation thresholds</a></li>
+    <li><a href="#shard-reroute-allocate-move-and-cancel">Shard reroute (allocate, move and cancel)</a></li>
+    <li><a href="#concurrent-replications-relocations-and-bandwidth">Concurrent replications, relocations and bandwidth</a></li>
+    <li><a href="#transaction-log-settings">Transaction log settings</a></li>
+    <li><a href="#gc-tuning">GC tuning</a></li>
+    <li><a href="#clear-caches">Clear caches</a></li>
+  </ul>
+</nav>
+	</div>
+</div><div class="content post__content clearfix">
+			<h1 id="introduction">Introduction</h1>
+<p>This is a quick cheat sheet from <a href="https://raw.githubusercontent.com/sematext/cheatsheets/master/elasticsearch-devops-cheatsheet.md"> Sematext&rsquo;s Elastic Devops Cheatsheet</a></p>
+<h1 id="devops-cheatsheet">DevOps cheatsheet</h1>
+<h1 id="allocation">Allocation</h1>
+<h2 id="allocation-awareness">Allocation awareness</h2>
+<p>Avoids putting two copies of the same shard on nodes with the same attribute (e.g. rack, availability zone). For example:</p>
+<pre><code>node.attr.availability_zone: us-east1  # in elasticsearch.yml
+</code></pre>
+<p>Awareness is enabled at the cluster level:</p>
+<pre><code>curl -XPUT localhost:9200/_cluster/settings?pretty -d '{
+  &quot;persistent&quot; : {
+    &quot;cluster.routing.allocation.awareness.attributes&quot; : &quot;availability_zone&quot;
+  }
+}'
+</code></pre>
+<h2 id="allocation-filtering">Allocation filtering</h2>
+<p>Shards of an index can prefer/avoid nodes with certain attributes. Good for having hot/cold tiers:
+node.attr.temperature: hot  # in elasticsearch.yml</p>
+<p>At index creation, you can assign shards to the hot nodes:</p>
+<pre><code>curl -XPUT localhost:9200/logs01 -d '{
+  &quot;settings&quot;: {
+    &quot;index.routing.allocation.include.tag&quot;: &quot;hot&quot;
+  }
+}'
+</code></pre>
+<p>Later on, you can change this value to <strong>cold</strong> move the shards to nodes having <strong>temperature</strong> set to <strong>cold</strong>.</p>
+<h2 id="delayed-allocation">Delayed allocation</h2>
+<p>Avoids the domino effect of relocation when a node is restarted or temporarily unavailable:</p>
+<pre><code>curl -XPUT localhost:9200/$INDEX/_settings -d '{
+  &quot;settings&quot;: {
+    &quot;index.unassigned.node_left.delayed_timeout&quot;: &quot;5m&quot;
+  }
+}'
+</code></pre>
+<h1 id="caches">Caches</h1>
+<h2 id="query-cache">Query cache</h2>
+<p>Defaults to 10% of heap:</p>
+<pre><code>indices.queries.cache.size: 7%  # in elasticsearch.yml
+</code></pre>
+<p>By default, queries running in the <strong>filter</strong> context will be cached if they run repeatedly, and only on larger segments. You can override this and cache everything in <strong>elasticsearch.yml</strong>:</p>
+<pre><code>index.queries.cache.everything: true
+</code></pre>
+<h2 id="request-cache">Request cache</h2>
+<p>Caches results of aggregations on indices that haven’t changed. Defaults to 1% of heap:</p>
+<pre><code>indices.requests.cache.size: 2%
+</code></pre>
+<h2 id="indexing-buffer">Indexing buffer</h2>
+<p>A node-level buffer for indexing, before a flush will commit to disk. Defaults to 10% of heap:</p>
+<pre><code>indices.memory.index_buffer_size: 5%
+</code></pre>
+<h2 id="page-recycler">Page recycler</h2>
+<p>Big arrays used by aggregations are put here so they can be reused. Defaults to 10% of heap:</p>
+<pre><code>cache.recycler.page.limit.heap: 5%
+</code></pre>
+<h2 id="field-data">Field data</h2>
+<p>The only way to do sorting/aggregations on text fields. Avoid it if possible. If not, limit it through per-request circuit breakers:</p>
+<pre><code>indices.breaker.fielddata.limit: 10%
+</code></pre>
+<p>And by limiting the overall size:</p>
+<pre><code>indices.fielddata.cache.size: 20%
+</code></pre>
+<h1 id="merges">Merges</h1>
+<h2 id="force-merge">Force merge</h2>
+<p>Might be worth merging indices that don’t change into a handful of big segments:</p>
+<pre><code>curl -XPOST localhost:9200/$INDEX/_forcemerge?max_num_segments=5
+</code></pre>
+<p>Segments need to be merged in order to change the compression level, so you can do that before force merging:</p>
+<pre><code>curl -XPUT localhost:9200/$INDEX/_settings -d '{
+  &quot;index.codec&quot;: &quot;best_compression&quot;
+}'
+</code></pre>
+<h2 id="thread-pools">Thread pools</h2>
+<p><strong>size</strong> = number of parallel requests, and <strong>queue_size</strong> = number of waiting requests:</p>
+<pre><code>threadpool.search.size: 8
+threadpool.search.queue_size: 5000
+threadpool.bulk.size: 12
+threadpool.bulk.queue_size: 500
+</code></pre>
+<h2 id="merge-policy">Merge policy</h2>
+<p>There are multiple knobs here. Most importantly:
+Segments per tier. Defaults to 10. Higher values allow for more segments, giving better indexing throughput at the expense of search latency, disk space, memory and open file handles
+Max merge at once. Defaults to 10. Lower values lower the impact of merging, but will make the process slower (which can potentially throttle indexing)
+Max merged segment. Defaults to 5GB. Lower values result in less merges of large segments, but require more merges of small segments, trading spikes for overall load.</p>
+<pre><code>curl -XPUT localhost:9200/$INDEX/_settings -d '{
+  &quot;index.merge.policy&quot;: {
+    &quot;segments_per_tier&quot;: 50,
+    &quot;max_merge_at_once&quot;: 50,
+    &quot;max_merged_segment&quot;: &quot;1gb&quot;
+  }
+}'
+</code></pre>
+<h2 id="shrink-index">Shrink index</h2>
+<p>Shrink an index into a new one with less shards (factor of the current number of shards):</p>
+<pre><code>curl -XPOST localhost:9200/logs01/_shrink/logs01_shrinked  -d '{
+  &quot;settings&quot;: {
+    &quot;index.number_of_shards&quot;: 1
+  }
+}'
+</code></pre>
+<h1 id="troubleshooting-get-info">Troubleshooting: get info</h1>
+<h2 id="cat-health">Cat health</h2>
+<pre><code>curl localhost:9200/_cat/health?v
+</code></pre>
+<p><strong>v is for “verbose”</strong>, shows column headers. Gives number of nodes, shards (started, initializing, relocating) and cluster color:</p>
+<ul>
+<li>All primaries and replicas are up</li>
+<li>All primaries are up, but not all replicas</li>
+<li>Not all primaries are up</li>
+</ul>
+<h2 id="cat-nodes">Cat nodes</h2>
+<pre><code>curl localhost:9200/_cat/nodes?v
+</code></pre>
+<p>Shows figures like load and heap usage of nodes. You can select columns via the help parameter to get other metrics.</p>
+<h2 id="_catallocation">_cat/allocation</h2>
+<p>How many shards are on each node and how much disk space they take (vs free space).</p>
+<h2 id="_catindices">_cat/indices</h2>
+<p>How big is each index; how many shards and replicas it has.</p>
+<h1 id="_catshards">_cat/shards</h1>
+<p>How big is each shard and on which node it is. Shows whether a shard is STARTED, UNASSIGNED, INITIALIZING or RELOCATING. You can easily <strong>grep</strong> though those values when you have many shards</p>
+<h2 id="_catsegments">_cat/segments</h2>
+<p>How big each segment in each shard is (including memory usage). You can filter by index, for example:</p>
+<pre><code>curl localhost:9200/_cat/segments/$INDEX?v
+</code></pre>
+<p>If you look at the files, you’ll see different extensions. Most importantly (in terms of memory and storage):</p>
+<ul>
+<li>.cfs, .cfe: These are <strong>compound segments</strong></li>
+<li>.fdt: <strong>Stored fields (like _source)</strong></li>
+<li>.tim: <strong>Term dictionary</strong>, used when searching in indexed fields</li>
+<li>.doc: <strong>Frequency</strong> of each term in each document (for scoring)</li>
+<li>.pos: <strong>Positional</strong> information (for phrase searches)</li>
+<li>.pay: <strong>Payloads</strong>, most notably character offsets (for the
+Postings-based highlighters)</li>
+<li>.nvd, .nvm: Field lengths (a.k.a. <strong>norms</strong> - also used for storing)</li>
+<li>.dvd, .dvm: <strong>Doc values</strong> (used for sorting and aggregations)</li>
+<li>.tv?: <strong>Term vectors</strong> (used for the term-vector-based highlighters)</li>
+<li>.dii, .dim: <strong>Point values</strong> (for geo fields as well as numerics)</li>
+</ul>
+<p>More information can be found here (for Elasticsearch 5.x, which uses Lucene 6.x, you may need to change the version):
+<a href="https://lucene.apache.org/core/6_0_0/core/org/apache/lucene/codecs/lucene60/package-summary.html">https://lucene.apache.org/core/6_0_0/core/org/apache/lucene/codecs/lucene60/package-summary.html</a></p>
+<h2 id="_catpending_tasks">_cat/pending_tasks</h2>
+<p>In-progress operations in your cluster. You’d typically catch long-running ones (e.g. snapshot, force merge) or the ones that get queued up when the cluster is in trouble and the master gets overloaded (e.g. lots of mapping/cluster state updates).
+_cat/thread_pool
+How many threads are active (working on) searches, bulk indexing and so on. You can also see how many are enqueued (queue) compared to the queue.size and how many were rejected (usually because the queue was full).</p>
+<h2 id="_catfielddata">_cat/fielddata</h2>
+<p>How much heap field data (the in memory equivalent of doc values) takes. Per field, per node.</p>
+<h2 id="nodes-stats">Nodes stats</h2>
+<pre><code>curl localhost:9200/_nodes/stats?pretty
+</code></pre>
+<p>Gives back statistics of all nodes in the cluster. You can filter nodes, too, like <strong>_nodes/_local/stats</strong> just for the current node. Relevant metrics include:</p>
+<ul>
+<li>How much time was spent in queries, fetches, indexing, merging, etc</li>
+<li>How much memory current segments take, broken by type (e.g. term
+dictionary, doc values) which is a good indicator of the live set</li>
+<li>Current and maximum amount of heap usage per pool. Good indicator of</li>
+</ul>
+<h2 id="nodes-hot-threads">Nodes hot threads</h2>
+<pre><code>curl localhost:9200/_nodes/hot_threads
+</code></pre>
+<p>Tells you what’s keeping Elasticsearch busy. Add <strong>type=wait</strong> or <strong>type=block</strong> to see what’s keeping it from being busy. You can also filter nodes like <strong>_nodes/_local/hot_threads</strong></p>
+<h2 id="os-stats">OS stats</h2>
+<p><strong>top, iotop, dstat, iostat</strong> help figure out what the bottleneck is. Usually:</p>
+<ul>
+<li>Aggregations are CPU-intensive and memory-intensive. The last part
+may translate into high GC (check the logs for longer GC events)</li>
+<li>Full-text search (without aggregations) is IO latency sensitive</li>
+<li>Indexing (especially merging) is CPU intensive and IO throughput
+intensive</li>
+<li>Snapshots, replication and replication are network and disk intensive</li>
+</ul>
+<h2 id="cluster-allocation-explain">Cluster allocation explain</h2>
+<p>Shows all the decisions that make a particular shard not to be allocated on different nodes:</p>
+<pre><code>curl localhost:9200/_cluster/allocation/explain?pretty -d'{
+  &quot;index&quot;: &quot;INDEX_NAME&quot;,
+  &quot;shard&quot;: 0,
+  &quot;primary&quot;: true
+}'
+</code></pre>
+<p>Also accepts the node name as a <strong>node</strong> value in the body to show the explanation only for it.</p>
+<h2 id="indices-shard-stores">Indices shard stores</h2>
+<pre><code>curl localhost:9200/$INDEX/_shard_stores?pretty
+</code></pre>
+<p>Returns the last exception that occurred while opening shards of this index.</p>
+<h1 id="troubleshooting-actions">Troubleshooting actions</h1>
+<h2 id="total-shards-per-node">Total shards per node</h2>
+<p>How many shards an index can have on each node (good for force-balancing the cluster):</p>
+<pre><code>curl -XPUT localhost:9200/$INDEX/_settings -d '{
+  &quot;index.routing.allocation.total_shards_per_node&quot;: 2
+}'
+</code></pre>
+<h2 id="disk-allocation-thresholds">Disk allocation thresholds</h2>
+<p>Prevents nodes from running out of disk.</p>
+<p>Low watermark: when to stop allocating new shards.
+High watermark: when to relocate existing shards.</p>
+<pre><code>curl -XPUT localhost:9200/_cluster/settings -d '{
+    &quot;persistent&quot; : {
+        &quot;cluster.routing.allocation.disk.watermark.low&quot; : &quot;70%&quot;,
+        &quot;cluster.routing.allocation.disk.watermark.high&quot; : &quot;85%&quot;
+    }
+}'
+</code></pre>
+<h2 id="shard-reroute-allocate-move-and-cancel">Shard reroute (allocate, move and cancel)</h2>
+<p>Allows you to try and allocate a shard manually, or cancel a replication/relocation, or to move a shard:</p>
+<pre><code>curl -XPOST localhost:9200/_cluster/reroute -d '{
+    &quot;commands&quot; : [ {
+        &quot;move&quot; :
+            {
+              &quot;index&quot; : &quot;INDEX_NAME&quot;, &quot;shard&quot; : SHARD_NUMBER,
+              &quot;from_node&quot; : &quot;SOURCE_NODE&quot;, &quot;to_node&quot; : &quot;DESTINATION_NODE&quot;
+            }
+        }
+    ]
+}'
+</code></pre>
+<h2 id="concurrent-replications-relocations-and-bandwidth">Concurrent replications, relocations and bandwidth</h2>
+<p>How many shards can be replicated from each node:</p>
+<pre><code>curl -XPUT localhost:9200/_cluster/settings?pretty -d '{
+  &quot;persistent&quot; : {
+    &quot;cluster.routing.allocation.node_concurrent_recoveries&quot;: 2
+  }
+}'
+</code></pre>
+<p>How many shards can move around, cluster-wide:</p>
+<pre><code>curl -XPUT localhost:9200/_cluster/settings?pretty -d '{
+  &quot;persistent&quot; : {
+    &quot;cluster.routing.allocation.cluster_concurrent_rebalance&quot;: 2
+  }
+}'
+</code></pre>
+<p>How much bandwidth can recovery/rebalancing take:</p>
+<pre><code>curl -XPUT localhost:9200/_cluster/settings?pretty -d '{
+  &quot;persistent&quot; : {
+    &quot;indices.recovery.max_bytes_per_sec&quot;: &quot;20mb&quot;
+  }
+}'
+</code></pre>
+<h2 id="transaction-log-settings">Transaction log settings</h2>
+<p>Trade durability for performance (less IOPS):</p>
+<pre><code>curl -XPUT localhost:9200/$INDEX/_settings -d '{
+  &quot;index.translog&quot;: {
+    &quot;index.translog.durability&quot;: &quot;async&quot;
+  }
+}'
+</code></pre>
+<h2 id="gc-tuning">GC tuning</h2>
+<p>If survivor space is mostly full, you can increase it by lowering -XX:SurvivorRatio in jvm.options (default is 8 on most platforms).</p>
+<p>If the whole young generation (survivor + eden) is mostly full, you can increase it via -XX:NewSize.</p>
+<p>On large heaps (&gt;30GB, usually you’d want to stay under 30GB to get compressed pointers, but 60-90GB may be needed on some big boxes), using G1 instead of CMS should help. To do that, replace:</p>
+<pre><code>-XX:+UseConcMarkSweepGC
+-XX:CMSInitiatingOccupancyFraction=75
+-XX:+UseCMSInitiatingOccupancyOnly
+</code></pre>
+<p>With:</p>
+<pre><code>-XX:+UseG1GC
+</code></pre>
+<h2 id="clear-caches">Clear caches</h2>
+<p>Quick way to free some heap:</p>
+<pre><code>curl -XPOST localhost:9200/_cache/clear
+</code></pre>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/elastic/" rel="tag">ELASTIC</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/devops/" rel="tag">DEVOPS</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<figure class="authorbox__avatar">
+		<img alt="Nathan Obert avatar" src="/img/nathan.jpg" class="avatar" height="90" width="90">
+	</figure>
+	<div class="authorbox__header">
+		<span class="authorbox__name">About Nathan Obert</span>
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/posts/cheatsheet-solr-metrics/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">SOLR Metrics Cheatsheet</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/posts/cheatsheet-elastic-dev/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">Elastic Developer Cheatsheet</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2023 Nathan Obert.
+
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/js/menu.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+</body>
+</html>
