@@ -137,8 +137,7 @@ Kubectl autocomplete BASH source &amp;lt;(kubectl completion bash) # set up auto
       <description>Introduction We will install a Kubernetes on RHEL 9 with CRI-O, and Podman. We are using an r5.large on Amazon EC2 using Amazon&amp;rsquo;s provided Red Hat Enterprise Linux.
 Installation Install the updates on your fresh server from Amazon.
 sudo dnf update -y Setup DNS or atleast Hostname entries in your /etc/hosts file
-echo 172.31.64.121 ${HOSTNAME} | sudo tee -a /etc/hosts Set selinux to permissive
-sudo setenforce 0 sudo sed -i &amp;#39;s/^SELINUX=enforcing$/SELINUX=permissive/&amp;#39; /etc/selinux/config sestatus Disable swap</description>
+echo `/sbin/ifconfig eth0 | grep &amp;#39;inet &amp;#39; | awk {&amp;#39;print $2&amp;#39;}` ${HOSTNAME} | sudo tee -a /etc/hosts Set selinux to permissive</description>
     </item>
     
   </channel>

@@ -18,7 +18,7 @@
 <meta itemprop="description" content="Kubernetes on Redhat Enterprise Linux 9">
 <meta itemprop="datePublished" content="2023-04-29T08:28:10-07:00" />
 <meta itemprop="dateModified" content="2023-04-29T08:28:10-07:00" />
-<meta itemprop="wordCount" content="537">
+<meta itemprop="wordCount" content="546">
 
 
 
@@ -128,7 +128,7 @@
 <p>Install the updates on your fresh server from Amazon.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo dnf update -y
 </code></pre></div><p>Setup DNS or atleast Hostname entries in your /etc/hosts file</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo 172.31.64.121 <span style="color:#e6db74">${</span>HOSTNAME<span style="color:#e6db74">}</span> | sudo tee -a /etc/hosts
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">`</span>/sbin/ifconfig eth0 | grep <span style="color:#e6db74">&#39;inet &#39;</span> | awk <span style="color:#f92672">{</span><span style="color:#e6db74">&#39;print $2&#39;</span><span style="color:#f92672">}</span><span style="color:#e6db74">`</span> <span style="color:#e6db74">${</span>HOSTNAME<span style="color:#e6db74">}</span> | sudo tee -a /etc/hosts
 </code></pre></div><p>Set selinux to permissive</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo setenforce <span style="color:#ae81ff">0</span>
 sudo sed -i <span style="color:#e6db74">&#39;s/^SELINUX=enforcing$/SELINUX=permissive/&#39;</span> /etc/selinux/config
