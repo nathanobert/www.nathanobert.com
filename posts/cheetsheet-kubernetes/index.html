@@ -18,7 +18,7 @@
 <meta itemprop="description" content="Kubernetes Cheatsheet">
 <meta itemprop="datePublished" content="2023-05-01T09:30:00-07:00" />
 <meta itemprop="dateModified" content="2023-05-01T09:30:00-07:00" />
-<meta itemprop="wordCount" content="2857">
+<meta itemprop="wordCount" content="2870">
 
 
 
@@ -135,6 +135,7 @@
       </ul>
     </li>
     <li><a href="#kubectl-context-and-configuration">Kubectl context and configuration</a></li>
+    <li><a href="#creating-image-pull-secret">Creating image pull secret</a></li>
     <li><a href="#kubectl-apply">Kubectl apply</a></li>
     <li><a href="#creating-objects">Creating objects</a></li>
     <li><a href="#viewing-and-finding-resources">Viewing and finding resources</a></li>
@@ -215,6 +216,8 @@ kubectl config unset users.foo                       <span style="color:#75715e"
 <span style="color:#75715e"># short alias to set/show context/namespace (only works for bash and bash-compatible shells, current context to be set before using kn to set namespace)</span> 
 alias kx<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;f() { [ &#34;$1&#34; ] &amp;&amp; kubectl config use-context $1 || kubectl config current-context ; } ; f&#39;</span>
 alias kn<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;f() { [ &#34;$1&#34; ] &amp;&amp; kubectl config set-context --current --namespace $1 || kubectl config view --minify | grep namespace | cut -d&#34; &#34; -f6 ; } ; f&#39;</span>
+</code></pre></div><h2 id="creating-image-pull-secret">Creating image pull secret</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl create secret docker-registry pullsecretsname --docker-username<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>USERNAME<span style="color:#e6db74">}</span> --docker-password<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>PASSWORD<span style="color:#e6db74">}</span> --docker-email<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>EMAIL<span style="color:#e6db74">}</span> --docker-server<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>SERVER<span style="color:#e6db74">}</span>
 </code></pre></div><h2 id="kubectl-apply">Kubectl apply</h2>
 <p><code>apply</code> manages applications through files defining Kubernetes resources. It creates and updates resources in a cluster through running <code>kubectl apply</code>. This is the recommended way of managing Kubernetes applications on production. See <a href="https://kubectl.docs.kubernetes.io">Kubectl Book</a>.</p>
 <h2 id="creating-objects">Creating objects</h2>
