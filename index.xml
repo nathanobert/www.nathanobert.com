@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nathan Obert</title>
+    <link>/</link>
+    <description>Recent content on Nathan Obert</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 May 2023 14:28:10 -0700</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>XRP to remote Gnome on Redhat Enterprise Linux 9</title>
+      <link>/posts/blog-xrdp-gnome-on-rhel9/</link>
+      <pubDate>Mon, 01 May 2023 14:28:10 -0700</pubDate>
+      
+      <guid>/posts/blog-xrdp-gnome-on-rhel9/</guid>
+      <description>Introduction We will be turning a Command Line Interface (CLI) Redhat 9 server hosted at Amazon on EC2 into a full Xwindows based workstation that you can use Remote Desktop Protocal (RDP) to using xRDP.
+Installation Install the updates on your fresh server from Amazon.
+sudo dnf update -y Install &amp;ldquo;Extra Packages for Enterprise Linux&amp;rdquo; (EPEL).
+sudo dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm sudo dnf repolist sudo dnf makecache Install &amp;ldquo;Workstation&amp;rdquo; or &amp;ldquo;Server with GUI&amp;rdquo; (not both)</description>
+    </item>
+    
+    <item>
+      <title>Python HTTP Server</title>
+      <link>/posts/blog-python-http-server/</link>
+      <pubDate>Mon, 01 May 2023 12:28:10 -0700</pubDate>
+      
+      <guid>/posts/blog-python-http-server/</guid>
+      <description>python http server If you need a quick and easy webserver to copy files between servers, or from your server to your workstation all you need is Python, which is part of YUM and is on almost every redhat based linux server. Simple goto the directory you want to share, and a single command in the shell will start up a webserver that you can use to get your files copied over.</description>
+    </item>
+    
+    <item>
+      <title>Docker Cheatsheet</title>
+      <link>/posts/cheetsheet-docker/</link>
+      <pubDate>Mon, 01 May 2023 09:45:00 -0700</pubDate>
+      
+      <guid>/posts/cheetsheet-docker/</guid>
+      <description>Introduction This is a quick cheat sheet from Sematext&amp;rsquo;s Docker Cheatsheet
+Docker Cheatsheet Tutorial series Get started with Docker: https://docs.docker.com/engine/getstarted/
+Installation Linux Install script provided by Docker:
+curl -sSL https://get.docker.com/ | sh Or see Installation instructions for your Linux distribution.
+Mac OS X Download and install Docker For Mac
+Create Docker VM with Docker Machine You can use Docker Machine to:
+ Install and run Docker on Mac or Windows Provision and manage multiple remote Docker hosts Provision Swarm clusters  A simple example to create a local Docker VM with VirtualBox:</description>
+    </item>
+    
+    <item>
+      <title>Elastic Developer Cheatsheet</title>
+      <link>/posts/cheetsheet-elastic-dev/</link>
+      <pubDate>Mon, 01 May 2023 09:45:00 -0700</pubDate>
+      
+      <guid>/posts/cheetsheet-elastic-dev/</guid>
+      <description>Introduction This is a quick cheat sheet from Sematext&amp;rsquo;s Elastic Developer Cheatsheet
+Data Manipulation Put/Get/Delete index curl -XPUT localhost:9200/index-name -d &#39;{&amp;quot;settings&amp;quot;: { &amp;quot;number_of_shards&amp;quot;: 1}}&#39; curl -XGET localhost:9200/index-name?pretty curl -XDELETE localhost:9200/index-name  Put/Get/Delete template curl -XPUT localhost:9200/_template/template-name -d &#39;{ &amp;quot;template&amp;quot;: &amp;quot;logs*&amp;quot;, &amp;quot;mappings&amp;quot;: { &amp;quot;foo-type&amp;quot;: { &amp;quot;properties&amp;quot;: { &amp;quot;foo-field&amp;quot;: { &amp;quot;type&amp;quot;: &amp;quot;text&amp;quot; } } } }, &amp;quot;settings&amp;quot;: { &amp;quot;number_of_shards&amp;quot;: 1 } }&#39; curl -XGET localhost:9200/_template/template-name?pretty curl -XDELETE localhost:9200/_template/template-name  Bulk API echo &#39;{&amp;quot;index&amp;quot;: { &amp;quot;_index&amp;quot;: &amp;quot;logs01&amp;quot;, &amp;quot;_type&amp;quot;: &amp;quot;logs&amp;quot;}} {&amp;quot;title&amp;quot;: &amp;quot;this is an error&amp;quot;} {&amp;quot;index&amp;quot;: { &amp;quot;_index&amp;quot;: &amp;quot;logs02&amp;quot;, &amp;quot;_type&amp;quot;: &amp;quot;logs&amp;quot;}} {&amp;quot;title&amp;quot;: &amp;quot;this is a warning&amp;quot;} {&amp;quot;delete&amp;quot;: { &amp;quot;_index&amp;quot;: &amp;quot;logs03&amp;quot;, &amp;quot;_type&amp;quot;: &amp;quot;logs&amp;quot;, &amp;quot;_id&amp;quot;: &amp;quot;abc123&amp;quot;}} &#39; &amp;gt; /tmp/bulk curl localhost:9200/_bulk?</description>
+    </item>
+    
+    <item>
+      <title>Elastic Devops Cheatsheet</title>
+      <link>/posts/cheetsheet-elastic-devops/</link>
+      <pubDate>Mon, 01 May 2023 09:45:00 -0700</pubDate>
+      
+      <guid>/posts/cheetsheet-elastic-devops/</guid>
+      <description>Introduction This is a quick cheat sheet from Sematext&amp;rsquo;s Elastic Devops Cheatsheet
+DevOps cheatsheet Allocation Allocation awareness Avoids putting two copies of the same shard on nodes with the same attribute (e.g. rack, availability zone). For example:
+node.attr.availability_zone: us-east1 # in elasticsearch.yml  Awareness is enabled at the cluster level:
+curl -XPUT localhost:9200/_cluster/settings?pretty -d &#39;{ &amp;quot;persistent&amp;quot; : { &amp;quot;cluster.routing.allocation.awareness.attributes&amp;quot; : &amp;quot;availability_zone&amp;quot; } }&#39;  Allocation filtering Shards of an index can prefer/avoid nodes with certain attributes.</description>
+    </item>
+    
+    <item>
+      <title>SOLR Metrics Cheatsheet</title>
+      <link>/posts/cheetsheet-solr-metrics/</link>
+      <pubDate>Mon, 01 May 2023 09:45:00 -0700</pubDate>
+      
+      <guid>/posts/cheetsheet-solr-metrics/</guid>
+      <description>Introduction This is a quick cheat sheet from Sematext&amp;rsquo;s SOLR Metric&amp;rsquo;s Cheatsheet
+Solr Metrics API Retrieving all Metrics
+Get all metrics:
+localhost:8983/solr/admin/metrics
+Retrieving Metrics for Specific Group
+Metrics for a group (groups: solr.jvm, solr.node, solr.jetty, solr.core.&amp;lt;collection_name&amp;gt;):
+localhost:8983/solr/admin/metrics?group=solr.jvm
+Retrieving Metrics in JSON
+Default is XML. For JSON:
+localhost:8983/solr/admin/metrics?wt=json
+localhost:8983/solr/admin/metrics?wt=json&amp;amp;indent=true
+Jetty Metrics Number of Requests with Given Response Status
+Check the number of requests with the given HTTP status, useful when checking for number of errors and successful requests:</description>
+    </item>
+    
+    <item>
+      <title>Kubernetes Cheatsheet</title>
+      <link>/posts/cheetsheet-kubernetes/</link>
+      <pubDate>Mon, 01 May 2023 09:30:00 -0700</pubDate>
+      
+      <guid>/posts/cheetsheet-kubernetes/</guid>
+      <description>Introduction This is a quick cheat sheet from Kubernetes Website&amp;rsquo;s Cheatsheet.
+This page contains a list of commonly used kubectl commands and flags.
+Kubectl autocomplete BASH source &amp;lt;(kubectl completion bash) # set up autocomplete in bash into the current shell, bash-completion package should be installed first. echo &amp;#34;source &amp;lt;(kubectl completion bash)&amp;#34; &amp;gt;&amp;gt; ~/.bashrc # add autocomplete permanently to your bash shell. You can also use a shorthand alias for kubectl that also works with completion:</description>
+    </item>
+    
+    <item>
+      <title>OpenSSL Cheatsheet</title>
+      <link>/posts/cheetsheet-openssl/</link>
+      <pubDate>Mon, 01 May 2023 08:00:00 -0700</pubDate>
+      
+      <guid>/posts/cheetsheet-openssl/</guid>
+      <description>Introduction This cheat sheet from Dave Wongillies&amp;rsquo;s Cheatsheet. OpenSSL is a very strong tool when working with certificates. OpenSSL can be used to for a wide variaty of taks involving SSL/TLS. For instance you can use it to convert certificates from format to another, use it as a debugging tool, use it to generate certificates, use it to download certificates from hosts, and even use it as a connectivity tool if telnet is not available.</description>
+    </item>
+    
+    <item>
+      <title>Markdown Cheatsheet</title>
+      <link>/posts/cheetsheet-markdown/</link>
+      <pubDate>Mon, 01 May 2023 05:49:00 -0700</pubDate>
+      
+      <guid>/posts/cheetsheet-markdown/</guid>
+      <description>Introduction This is a quick cheat sheet from Adam Pritchard&amp;rsquo;s Cheatsheet that is useful when writing markup to make sure the syntax is correct. Markdown is a syntax used to format text. It essentially is a short form version of Hypertext Mark Up Language (HTML). You can achieve similar formatting with far less effort and by writing in Markdown instead of HTML. There is a Live Demo of Markdown available. This is especially useful if you would like to see what the rendered interactively.</description>
+    </item>
+    
+    <item>
+      <title>About Nathan Obert</title>
+      <link>/posts/about/</link>
+      <pubDate>Sun, 30 Apr 2023 20:28:10 -0700</pubDate>
+      
+      <guid>/posts/about/</guid>
+      <description>Professional I started writing code in 1980 when I was 5 years old. Atari Line Basic! I&amp;rsquo;ve have been doing Development and IT work since then. Most likely you have used, or your information is in one of the many systems i&amp;rsquo;ve worked on. I&amp;rsquo;m happily employeed at Armedia. My Resume is on Linked In if you would like to look it over. I graduated from George Mason University. I have a Master&amp;rsquo;s, Bachelor&amp;rsquo;s, and Associate&amp;rsquo;s in Computer Science, as well as a second Associate&amp;rsquo;s in Mathematics.</description>
+    </item>
+    
+    <item>
+      <title>Kubernetes on Redhat Enterprise Linux 9</title>
+      <link>/posts/blog-kubernetes-on-rhel9/</link>
+      <pubDate>Sat, 29 Apr 2023 08:28:10 -0700</pubDate>
+      
+      <guid>/posts/blog-kubernetes-on-rhel9/</guid>
+      <description>Introduction We will install a Kubernetes on RHEL 9 with CRI-O, and Podman. We are using an r5.large on Amazon EC2 using Amazon&amp;rsquo;s provided Red Hat Enterprise Linux.
+Installation Install the updates on your fresh server from Amazon.
+sudo dnf update -y Setup DNS or atleast Hostname entries in your /etc/hosts file
+echo 172.31.64.121 ${HOSTNAME} | sudo tee -a /etc/hosts Set selinux to permissive
+sudo setenforce 0 sudo sed -i &amp;#39;s/^SELINUX=enforcing$/SELINUX=permissive/&amp;#39; /etc/selinux/config sestatus Disable swap</description>
+    </item>
+    
+  </channel>
+</rss>

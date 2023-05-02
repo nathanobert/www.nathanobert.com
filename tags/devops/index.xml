@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DEVOPS on Nathan Obert</title>
+    <link>/tags/devops/</link>
+    <description>Recent content in DEVOPS on Nathan Obert</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 May 2023 12:28:10 -0700</lastBuildDate>
+    
+	<atom:link href="/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python HTTP Server</title>
+      <link>/posts/blog-python-http-server/</link>
+      <pubDate>Mon, 01 May 2023 12:28:10 -0700</pubDate>
+      
+      <guid>/posts/blog-python-http-server/</guid>
+      <description>python http server If you need a quick and easy webserver to copy files between servers, or from your server to your workstation all you need is Python, which is part of YUM and is on almost every redhat based linux server. Simple goto the directory you want to share, and a single command in the shell will start up a webserver that you can use to get your files copied over.</description>
+    </item>
+    
+    <item>
+      <title>Docker Cheatsheet</title>
+      <link>/posts/cheetsheet-docker/</link>
+      <pubDate>Mon, 01 May 2023 09:45:00 -0700</pubDate>
+      
+      <guid>/posts/cheetsheet-docker/</guid>
+      <description>Introduction This is a quick cheat sheet from Sematext&amp;rsquo;s Docker Cheatsheet
+Docker Cheatsheet Tutorial series Get started with Docker: https://docs.docker.com/engine/getstarted/
+Installation Linux Install script provided by Docker:
+curl -sSL https://get.docker.com/ | sh Or see Installation instructions for your Linux distribution.
+Mac OS X Download and install Docker For Mac
+Create Docker VM with Docker Machine You can use Docker Machine to:
+ Install and run Docker on Mac or Windows Provision and manage multiple remote Docker hosts Provision Swarm clusters  A simple example to create a local Docker VM with VirtualBox:</description>
+    </item>
+    
+    <item>
+      <title>Elastic Devops Cheatsheet</title>
+      <link>/posts/cheetsheet-elastic-devops/</link>
+      <pubDate>Mon, 01 May 2023 09:45:00 -0700</pubDate>
+      
+      <guid>/posts/cheetsheet-elastic-devops/</guid>
+      <description>Introduction This is a quick cheat sheet from Sematext&amp;rsquo;s Elastic Devops Cheatsheet
+DevOps cheatsheet Allocation Allocation awareness Avoids putting two copies of the same shard on nodes with the same attribute (e.g. rack, availability zone). For example:
+node.attr.availability_zone: us-east1 # in elasticsearch.yml  Awareness is enabled at the cluster level:
+curl -XPUT localhost:9200/_cluster/settings?pretty -d &#39;{ &amp;quot;persistent&amp;quot; : { &amp;quot;cluster.routing.allocation.awareness.attributes&amp;quot; : &amp;quot;availability_zone&amp;quot; } }&#39;  Allocation filtering Shards of an index can prefer/avoid nodes with certain attributes.</description>
+    </item>
+    
+    <item>
+      <title>Kubernetes Cheatsheet</title>
+      <link>/posts/cheetsheet-kubernetes/</link>
+      <pubDate>Mon, 01 May 2023 09:30:00 -0700</pubDate>
+      
+      <guid>/posts/cheetsheet-kubernetes/</guid>
+      <description>Introduction This is a quick cheat sheet from Kubernetes Website&amp;rsquo;s Cheatsheet.
+This page contains a list of commonly used kubectl commands and flags.
+Kubectl autocomplete BASH source &amp;lt;(kubectl completion bash) # set up autocomplete in bash into the current shell, bash-completion package should be installed first. echo &amp;#34;source &amp;lt;(kubectl completion bash)&amp;#34; &amp;gt;&amp;gt; ~/.bashrc # add autocomplete permanently to your bash shell. You can also use a shorthand alias for kubectl that also works with completion:</description>
+    </item>
+    
+    <item>
+      <title>OpenSSL Cheatsheet</title>
+      <link>/posts/cheetsheet-openssl/</link>
+      <pubDate>Mon, 01 May 2023 08:00:00 -0700</pubDate>
+      
+      <guid>/posts/cheetsheet-openssl/</guid>
+      <description>Introduction This cheat sheet from Dave Wongillies&amp;rsquo;s Cheatsheet. OpenSSL is a very strong tool when working with certificates. OpenSSL can be used to for a wide variaty of taks involving SSL/TLS. For instance you can use it to convert certificates from format to another, use it as a debugging tool, use it to generate certificates, use it to download certificates from hosts, and even use it as a connectivity tool if telnet is not available.</description>
+    </item>
+    
+    <item>
+      <title>Kubernetes on Redhat Enterprise Linux 9</title>
+      <link>/posts/blog-kubernetes-on-rhel9/</link>
+      <pubDate>Sat, 29 Apr 2023 08:28:10 -0700</pubDate>
+      
+      <guid>/posts/blog-kubernetes-on-rhel9/</guid>
+      <description>Introduction We will install a Kubernetes on RHEL 9 with CRI-O, and Podman. We are using an r5.large on Amazon EC2 using Amazon&amp;rsquo;s provided Red Hat Enterprise Linux.
+Installation Install the updates on your fresh server from Amazon.
+sudo dnf update -y Setup DNS or atleast Hostname entries in your /etc/hosts file
+echo 172.31.64.121 ${HOSTNAME} | sudo tee -a /etc/hosts Set selinux to permissive
+sudo setenforce 0 sudo sed -i &amp;#39;s/^SELINUX=enforcing$/SELINUX=permissive/&amp;#39; /etc/selinux/config sestatus Disable swap</description>
+    </item>
+    
+  </channel>
+</rss>
