@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SOLR on Nathan Obert</title>
-    <link>/tags/solr/</link>
+    <link>https://www.nathanobert.com/tags/solr/</link>
     <description>Recent content in SOLR on Nathan Obert</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 01 May 2023 09:45:00 -0700</lastBuildDate>
     
-	<atom:link href="/tags/solr/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.nathanobert.com/tags/solr/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>SOLR Metrics Cheatsheet</title>
-      <link>/posts/cheetsheet-solr-metrics/</link>
+      <link>https://www.nathanobert.com/posts/cheetsheet-solr-metrics/</link>
       <pubDate>Mon, 01 May 2023 09:45:00 -0700</pubDate>
       
-      <guid>/posts/cheetsheet-solr-metrics/</guid>
+      <guid>https://www.nathanobert.com/posts/cheetsheet-solr-metrics/</guid>
       <description>Introduction This is a quick cheat sheet from Sematext&amp;rsquo;s SOLR Metric&amp;rsquo;s Cheatsheet
 Solr Metrics API Retrieving all Metrics
 Get all metrics:

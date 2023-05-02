@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>MARKDOWN on Nathan Obert</title>
-    <link>/tags/markdown/</link>
+    <link>https://www.nathanobert.com/tags/markdown/</link>
     <description>Recent content in MARKDOWN on Nathan Obert</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 01 May 2023 05:49:00 -0700</lastBuildDate>
     
-	<atom:link href="/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.nathanobert.com/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Markdown Cheatsheet</title>
-      <link>/posts/cheetsheet-markdown/</link>
+      <link>https://www.nathanobert.com/posts/cheetsheet-markdown/</link>
       <pubDate>Mon, 01 May 2023 05:49:00 -0700</pubDate>
       
-      <guid>/posts/cheetsheet-markdown/</guid>
+      <guid>https://www.nathanobert.com/posts/cheetsheet-markdown/</guid>
       <description>Introduction This is a quick cheat sheet from Adam Pritchard&amp;rsquo;s Cheatsheet that is useful when writing markup to make sure the syntax is correct. Markdown is a syntax used to format text. It essentially is a short form version of Hypertext Mark Up Language (HTML). You can achieve similar formatting with far less effort and by writing in Markdown instead of HTML. There is a Live Demo of Markdown available. This is especially useful if you would like to see what the rendered interactively.</description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blog on Nathan Obert</title>
-    <link>/categories/blog/</link>
+    <link>https://www.nathanobert.com/categories/blog/</link>
     <description>Recent content in Blog on Nathan Obert</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 01 May 2023 14:28:10 -0700</lastBuildDate>
     
-	<atom:link href="/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.nathanobert.com/categories/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>XRP to remote Gnome on Redhat Enterprise Linux 9</title>
-      <link>/posts/blog-xrdp-gnome-on-rhel9/</link>
+      <link>https://www.nathanobert.com/posts/blog-xrdp-gnome-on-rhel9/</link>
       <pubDate>Mon, 01 May 2023 14:28:10 -0700</pubDate>
       
-      <guid>/posts/blog-xrdp-gnome-on-rhel9/</guid>
+      <guid>https://www.nathanobert.com/posts/blog-xrdp-gnome-on-rhel9/</guid>
       <description>Introduction We will be turning a Command Line Interface (CLI) Redhat 9 server hosted at Amazon on EC2 into a full Xwindows based workstation that you can use Remote Desktop Protocal (RDP) to using xRDP.
 Installation Install the updates on your fresh server from Amazon.
 sudo dnf update -y Install &amp;ldquo;Extra Packages for Enterprise Linux&amp;rdquo; (EPEL).
@@ -25,19 +25,19 @@ sudo dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.
     
     <item>
       <title>Python HTTP Server</title>
-      <link>/posts/blog-python-http-server/</link>
+      <link>https://www.nathanobert.com/posts/blog-python-http-server/</link>
       <pubDate>Mon, 01 May 2023 12:28:10 -0700</pubDate>
       
-      <guid>/posts/blog-python-http-server/</guid>
+      <guid>https://www.nathanobert.com/posts/blog-python-http-server/</guid>
       <description>python http server If you need a quick and easy webserver to copy files between servers, or from your server to your workstation all you need is Python, which is part of YUM and is on almost every redhat based linux server. Simple goto the directory you want to share, and a single command in the shell will start up a webserver that you can use to get your files copied over.</description>
     </item>
     
     <item>
       <title>Kubernetes on Redhat Enterprise Linux 9</title>
-      <link>/posts/blog-kubernetes-on-rhel9/</link>
+      <link>https://www.nathanobert.com/posts/blog-kubernetes-on-rhel9/</link>
       <pubDate>Sat, 29 Apr 2023 08:28:10 -0700</pubDate>
       
-      <guid>/posts/blog-kubernetes-on-rhel9/</guid>
+      <guid>https://www.nathanobert.com/posts/blog-kubernetes-on-rhel9/</guid>
       <description>Introduction We will install a Kubernetes on RHEL 9 with CRI-O, and Podman. We are using an r5.large on Amazon EC2 using Amazon&amp;rsquo;s provided Red Hat Enterprise Linux.
 Installation Install the updates on your fresh server from Amazon.
 sudo dnf update -y Setup DNS or atleast Hostname entries in your /etc/hosts file

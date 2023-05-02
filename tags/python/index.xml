@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>PYTHON on Nathan Obert</title>
-    <link>/tags/python/</link>
+    <link>https://www.nathanobert.com/tags/python/</link>
     <description>Recent content in PYTHON on Nathan Obert</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 01 May 2023 12:28:10 -0700</lastBuildDate>
     
-	<atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.nathanobert.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Python HTTP Server</title>
-      <link>/posts/blog-python-http-server/</link>
+      <link>https://www.nathanobert.com/posts/blog-python-http-server/</link>
       <pubDate>Mon, 01 May 2023 12:28:10 -0700</pubDate>
       
-      <guid>/posts/blog-python-http-server/</guid>
+      <guid>https://www.nathanobert.com/posts/blog-python-http-server/</guid>
       <description>python http server If you need a quick and easy webserver to copy files between servers, or from your server to your workstation all you need is Python, which is part of YUM and is on almost every redhat based linux server. Simple goto the directory you want to share, and a single command in the shell will start up a webserver that you can use to get your files copied over.</description>
     </item>
     

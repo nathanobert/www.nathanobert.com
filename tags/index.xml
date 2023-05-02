@@ -2,147 +2,147 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Nathan Obert</title>
-    <link>/tags/</link>
+    <link>https://www.nathanobert.com/tags/</link>
     <description>Recent content in Tags on Nathan Obert</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 01 May 2023 14:28:10 -0700</lastBuildDate>
     
-	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.nathanobert.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>GNOME</title>
-      <link>/tags/gnome/</link>
+      <link>https://www.nathanobert.com/tags/gnome/</link>
       <pubDate>Mon, 01 May 2023 14:28:10 -0700</pubDate>
       
-      <guid>/tags/gnome/</guid>
+      <guid>https://www.nathanobert.com/tags/gnome/</guid>
       <description></description>
     </item>
     
     <item>
       <title>RHEL 9</title>
-      <link>/tags/rhel-9/</link>
+      <link>https://www.nathanobert.com/tags/rhel-9/</link>
       <pubDate>Mon, 01 May 2023 14:28:10 -0700</pubDate>
       
-      <guid>/tags/rhel-9/</guid>
+      <guid>https://www.nathanobert.com/tags/rhel-9/</guid>
       <description></description>
     </item>
     
     <item>
       <title>XRDP</title>
-      <link>/tags/xrdp/</link>
+      <link>https://www.nathanobert.com/tags/xrdp/</link>
       <pubDate>Mon, 01 May 2023 14:28:10 -0700</pubDate>
       
-      <guid>/tags/xrdp/</guid>
+      <guid>https://www.nathanobert.com/tags/xrdp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>DEVOPS</title>
-      <link>/tags/devops/</link>
+      <link>https://www.nathanobert.com/tags/devops/</link>
       <pubDate>Mon, 01 May 2023 12:28:10 -0700</pubDate>
       
-      <guid>/tags/devops/</guid>
+      <guid>https://www.nathanobert.com/tags/devops/</guid>
       <description></description>
     </item>
     
     <item>
       <title>PYTHON</title>
-      <link>/tags/python/</link>
+      <link>https://www.nathanobert.com/tags/python/</link>
       <pubDate>Mon, 01 May 2023 12:28:10 -0700</pubDate>
       
-      <guid>/tags/python/</guid>
+      <guid>https://www.nathanobert.com/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>DEVELOPMENT</title>
-      <link>/tags/development/</link>
+      <link>https://www.nathanobert.com/tags/development/</link>
       <pubDate>Mon, 01 May 2023 09:45:00 -0700</pubDate>
       
-      <guid>/tags/development/</guid>
+      <guid>https://www.nathanobert.com/tags/development/</guid>
       <description></description>
     </item>
     
     <item>
       <title>DOCKER</title>
-      <link>/tags/docker/</link>
+      <link>https://www.nathanobert.com/tags/docker/</link>
       <pubDate>Mon, 01 May 2023 09:45:00 -0700</pubDate>
       
-      <guid>/tags/docker/</guid>
+      <guid>https://www.nathanobert.com/tags/docker/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ELASTIC</title>
-      <link>/tags/elastic/</link>
+      <link>https://www.nathanobert.com/tags/elastic/</link>
       <pubDate>Mon, 01 May 2023 09:45:00 -0700</pubDate>
       
-      <guid>/tags/elastic/</guid>
+      <guid>https://www.nathanobert.com/tags/elastic/</guid>
       <description></description>
     </item>
     
     <item>
       <title>METRICS</title>
-      <link>/tags/metrics/</link>
+      <link>https://www.nathanobert.com/tags/metrics/</link>
       <pubDate>Mon, 01 May 2023 09:45:00 -0700</pubDate>
       
-      <guid>/tags/metrics/</guid>
+      <guid>https://www.nathanobert.com/tags/metrics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SOLR</title>
-      <link>/tags/solr/</link>
+      <link>https://www.nathanobert.com/tags/solr/</link>
       <pubDate>Mon, 01 May 2023 09:45:00 -0700</pubDate>
       
-      <guid>/tags/solr/</guid>
+      <guid>https://www.nathanobert.com/tags/solr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>KUBERNETES</title>
-      <link>/tags/kubernetes/</link>
+      <link>https://www.nathanobert.com/tags/kubernetes/</link>
       <pubDate>Mon, 01 May 2023 09:30:00 -0700</pubDate>
       
-      <guid>/tags/kubernetes/</guid>
+      <guid>https://www.nathanobert.com/tags/kubernetes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>HUGO</title>
-      <link>/tags/hugo/</link>
+      <link>https://www.nathanobert.com/tags/hugo/</link>
       <pubDate>Mon, 01 May 2023 05:49:00 -0700</pubDate>
       
-      <guid>/tags/hugo/</guid>
+      <guid>https://www.nathanobert.com/tags/hugo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>MARKDOWN</title>
-      <link>/tags/markdown/</link>
+      <link>https://www.nathanobert.com/tags/markdown/</link>
       <pubDate>Mon, 01 May 2023 05:49:00 -0700</pubDate>
       
-      <guid>/tags/markdown/</guid>
+      <guid>https://www.nathanobert.com/tags/markdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CRI-O</title>
-      <link>/tags/cri-o/</link>
+      <link>https://www.nathanobert.com/tags/cri-o/</link>
       <pubDate>Sat, 29 Apr 2023 08:28:10 -0700</pubDate>
       
-      <guid>/tags/cri-o/</guid>
+      <guid>https://www.nathanobert.com/tags/cri-o/</guid>
       <description></description>
     </item>
     
     <item>
       <title>PODMAN</title>
-      <link>/tags/podman/</link>
+      <link>https://www.nathanobert.com/tags/podman/</link>
       <pubDate>Sat, 29 Apr 2023 08:28:10 -0700</pubDate>
       
-      <guid>/tags/podman/</guid>
+      <guid>https://www.nathanobert.com/tags/podman/</guid>
       <description></description>
     </item>
     
