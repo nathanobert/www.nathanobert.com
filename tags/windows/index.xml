@@ -6,10 +6,19 @@
     <description>Recent content in WINDOWS on Nathan Obert</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 02 May 2023 14:28:10 -0700</lastBuildDate>
+    <lastBuildDate>Wed, 03 May 2023 05:03:00 -0700</lastBuildDate>
     
 	<atom:link href="https://www.nathanobert.com/tags/windows/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Amazon Web Services (AWS) Command Line Interface (CLI) on Windows 11</title>
+      <link>https://www.nathanobert.com/posts/blog-aws-cli/</link>
+      <pubDate>Wed, 03 May 2023 05:03:00 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/posts/blog-aws-cli/</guid>
+      <description>Introduction I will be installing and doing basic configuration of Amazon Web Services (AWS)&amp;lsquo;s Command Line Interface (CLI) on Windows 11. AWS CLI is a shell based means to work with AWS. The CLI provides the ability to list out resources at Amazon like which EC2 instances are running, poke around S3 buckets, inspect pretty much anything at Amazon. It also provides advanced features like copying information to and from S3.</description>
+    </item>
     
     <item>
       <title>Rancher Desktop for Kubernetes and Docker on Windows 11</title>
