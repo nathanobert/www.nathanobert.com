@@ -18,7 +18,7 @@
 <meta itemprop="description" content="AWS CLI Cheatsheet">
 <meta itemprop="datePublished" content="2023-05-03T04:03:00-07:00" />
 <meta itemprop="dateModified" content="2023-05-03T04:03:00-07:00" />
-<meta itemprop="wordCount" content="1401">
+<meta itemprop="wordCount" content="1421">
 
 
 
@@ -175,6 +175,7 @@
       </ul>
     </li>
     <li><a href="#cloudwatch---monitoring">Cloudwatch - Monitoring</a></li>
+    <li><a href="#docker-login-to-ecr-with-aws-cli">Docker Login to ECR with AWS CLI</a></li>
   </ul>
 </nav>
 	</div>
@@ -580,6 +581,8 @@ aws logs delete-log-stream <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>	--log-stream-name <span style="color:#e6db74">&#34;Default Stream&#34;</span>
 </code></pre></div><h2 id="cloudwatch---monitoring">Cloudwatch - Monitoring</h2>
 <p><a href="http://docs.aws.amazon.com/cli/latest/reference/cloudwatch/index.html">http://docs.aws.amazon.com/cli/latest/reference/cloudwatch/index.html</a></p>
+<h2 id="docker-login-to-ecr-with-aws-cli">Docker Login to ECR with AWS CLI</h2>
+<p>aws &ndash;profile=NAME_OF_YOUR_PROFILE ecr get-login-password &ndash;region us-east-1 | docker login &ndash;username AWS &ndash;password-stdin YOUR_ECR_REGISTRY_URL.amazonaws.com</p>
 
 		</div>
 		<footer class="post__footer">
