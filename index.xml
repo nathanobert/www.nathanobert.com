@@ -6,10 +6,19 @@
     <description>Recent content on Nathan Obert</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 02 May 2023 05:00:00 -0700</lastBuildDate>
+    <lastBuildDate>Tue, 02 May 2023 14:28:10 -0700</lastBuildDate>
     
 	<atom:link href="https://www.nathanobert.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Rancher Desktop for Kubernetes and Docker on Windows 11</title>
+      <link>https://www.nathanobert.com/posts/blog-rancher-desktop-windows/</link>
+      <pubDate>Tue, 02 May 2023 14:28:10 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/posts/blog-rancher-desktop-windows/</guid>
+      <description>Introduction Rancher Desktop is a Kubernetes and Docker platform that is a replacement for Docker Desktop. I&amp;rsquo;ll be installing and configuring it using the installation guide provided in Rancher&amp;rsquo;s Documentation Rancher is a replacement for Docker Desktop. Rancher provies you helm, kubernetes, docker, the CRI runtimes of dockerd or containerd kubernetes. It integrates in nicely with WSL if you wish to use Linux instead of Windows. Additionally it lets you choose which version of Kubernetes you want to run.</description>
+    </item>
     
     <item>
       <title>Git Cheatsheet</title>
@@ -101,10 +110,10 @@ Check the number of requests with the given HTTP status, useful when checking fo
     
     <item>
       <title>Kubernetes Cheatsheet</title>
-      <link>https://www.nathanobert.com/posts/cheetsheet-kubernetes/</link>
+      <link>https://www.nathanobert.com/posts/cheatsheet-kubernetes/</link>
       <pubDate>Mon, 01 May 2023 09:30:00 -0700</pubDate>
       
-      <guid>https://www.nathanobert.com/posts/cheetsheet-kubernetes/</guid>
+      <guid>https://www.nathanobert.com/posts/cheatsheet-kubernetes/</guid>
       <description>Introduction This is a quick cheat sheet from Kubernetes Website&amp;rsquo;s Cheatsheet.
 This page contains a list of commonly used kubectl commands and flags.
 Kubectl autocomplete BASH source &amp;lt;(kubectl completion bash) # set up autocomplete in bash into the current shell, bash-completion package should be installed first. echo &amp;#34;source &amp;lt;(kubectl completion bash)&amp;#34; &amp;gt;&amp;gt; ~/.bashrc # add autocomplete permanently to your bash shell. You can also use a shorthand alias for kubectl that also works with completion:</description>

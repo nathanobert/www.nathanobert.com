@@ -80,10 +80,10 @@ Check the number of requests with the given HTTP status, useful when checking fo
     
     <item>
       <title>Kubernetes Cheatsheet</title>
-      <link>https://www.nathanobert.com/posts/cheetsheet-kubernetes/</link>
+      <link>https://www.nathanobert.com/posts/cheatsheet-kubernetes/</link>
       <pubDate>Mon, 01 May 2023 09:30:00 -0700</pubDate>
       
-      <guid>https://www.nathanobert.com/posts/cheetsheet-kubernetes/</guid>
+      <guid>https://www.nathanobert.com/posts/cheatsheet-kubernetes/</guid>
       <description>Introduction This is a quick cheat sheet from Kubernetes Website&amp;rsquo;s Cheatsheet.
 This page contains a list of commonly used kubectl commands and flags.
 Kubectl autocomplete BASH source &amp;lt;(kubectl completion bash) # set up autocomplete in bash into the current shell, bash-completion package should be installed first. echo &amp;#34;source &amp;lt;(kubectl completion bash)&amp;#34; &amp;gt;&amp;gt; ~/.bashrc # add autocomplete permanently to your bash shell. You can also use a shorthand alias for kubectl that also works with completion:</description>

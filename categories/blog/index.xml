@@ -6,10 +6,19 @@
     <description>Recent content in Blog on Nathan Obert</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 May 2023 14:28:10 -0700</lastBuildDate>
+    <lastBuildDate>Tue, 02 May 2023 14:28:10 -0700</lastBuildDate>
     
 	<atom:link href="https://www.nathanobert.com/categories/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Rancher Desktop for Kubernetes and Docker on Windows 11</title>
+      <link>https://www.nathanobert.com/posts/blog-rancher-desktop-windows/</link>
+      <pubDate>Tue, 02 May 2023 14:28:10 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/posts/blog-rancher-desktop-windows/</guid>
+      <description>Introduction Rancher Desktop is a Kubernetes and Docker platform that is a replacement for Docker Desktop. I&amp;rsquo;ll be installing and configuring it using the installation guide provided in Rancher&amp;rsquo;s Documentation Rancher is a replacement for Docker Desktop. Rancher provies you helm, kubernetes, docker, the CRI runtimes of dockerd or containerd kubernetes. It integrates in nicely with WSL if you wish to use Linux instead of Windows. Additionally it lets you choose which version of Kubernetes you want to run.</description>
+    </item>
     
     <item>
       <title>XRP to remote Gnome on Redhat Enterprise Linux 9</title>
