@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Nathan Obert</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 02 May 2023 14:28:10 -0700</lastBuildDate>
+    <lastBuildDate>Tue, 02 May 2023 20:00:00 -0700</lastBuildDate>
     
 	<atom:link href="https://www.nathanobert.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>HELM Cheatsheet</title>
+      <link>https://www.nathanobert.com/posts/cheatsheet-helm/</link>
+      <pubDate>Tue, 02 May 2023 20:00:00 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/posts/cheatsheet-helm/</guid>
+      <description>Introduction &amp;ldquo;Helm is the best way to find, share, and use software built for Kubernetes.&amp;rdquo; Kubernetes is a great container orchistration tool, however managing all the yaml files associated with it become a huge undertaking. Helm is a tool that allows you to create templates for Kubernetes yaml files. Then you only have to manage a set a value pairs that are passed to your templates. This allows you to easily share packages of templates, and other people can easily bring your containers online only having to modify the values to match their needs to customize or configure.</description>
+    </item>
     
     <item>
       <title>Rancher Desktop for Kubernetes and Docker on Windows 11</title>

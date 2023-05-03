@@ -11,7 +11,7 @@
 <meta property="og:description" content="Nathan Obert&#39;s Personal blog about everything" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.nathanobert.com/posts/" />
-<meta property="og:updated_time" content="2023-05-02T14:28:10-07:00" />
+<meta property="og:updated_time" content="2023-05-02T20:00:00-07:00" />
 
 		<meta itemprop="name" content="Posts">
 <meta itemprop="description" content="Nathan Obert&#39;s Personal blog about everything">
@@ -100,6 +100,46 @@
 	<header class="main__header">
 		<h1 class="main__title">Posts</h1>
 	</header><article class="list__item post">
+	
+	<figure class="list__thumbnail thumbnail">
+		<a class="thumbnail__link" href="/posts/cheatsheet-helm/">
+		<img class="thumbnail__image" src="/img/helm.png" alt="HELM Cheatsheet">
+		</a>
+	</figure>
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/posts/cheatsheet-helm/" rel="bookmark">
+			HELM Cheatsheet
+			</a>
+		</h2>
+		<p class="list__lead post__lead">Cheatsheet for HELM</p>
+		<div class="list__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Nathan Obert</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-05-02T20:00:00-07:00">2023-05-02</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/cheatsheets/" rel="category">Cheatsheets</a>
+	</span>
+</div>
+<div class="post__tags tags clearfix">
+        <svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+        <ul class="tags__list">
+                <li class="tags__item">
+                        <a class="tags__link btn" href="/tags/kubernetes/" rel="tag">KUBERNETES</a>
+                </li>
+                <li class="tags__item">
+                        <a class="tags__link btn" href="/tags/helm/" rel="tag">HELM</a>
+                </li>
+                <li class="tags__item">
+                        <a class="tags__link btn" href="/tags/devops/" rel="tag">DEVOPS</a>
+                </li>
+        </ul>
+</div>
+</div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		Introduction &ldquo;Helm is the best way to find, share, and use software built for Kubernetes.&rdquo; Kubernetes is a great container orchistration tool, however managing all the yaml files associated with it become a huge undertaking. Helm is a tool that allows you to create templates for Kubernetes yaml files. Then you only have to manage a set a value pairs that are passed to your templates. This allows you to easily share packages of templates, and other people can easily bring your containers online only having to modify the values to match their needs to customize or configure.
+	</div>
+</article><article class="list__item post">
 	
 	<figure class="list__thumbnail thumbnail">
 		<a class="thumbnail__link" href="/posts/blog-rancher-desktop-windows/">
@@ -477,40 +517,6 @@ Check the number of requests with the given HTTP status, useful when checking fo
 This page contains a list of commonly used kubectl commands and flags.
 Kubectl autocomplete BASH source &lt;(kubectl completion bash) # set up autocomplete in bash into the current shell, bash-completion package should be installed first. echo &#34;source &lt;(kubectl completion bash)&#34; &gt;&gt; ~/.bashrc # add autocomplete permanently to your bash shell. You can also use a shorthand alias for kubectl that also works with completion:
 	</div>
-</article><article class="list__item post">
-	
-	<figure class="list__thumbnail thumbnail">
-		<a class="thumbnail__link" href="/posts/cheatsheet-openssl/">
-		<img class="thumbnail__image" src="/img/openssl.png" alt="OpenSSL Cheatsheet">
-		</a>
-	</figure>
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/posts/cheatsheet-openssl/" rel="bookmark">
-			OpenSSL Cheatsheet
-			</a>
-		</h2>
-		<p class="list__lead post__lead">Cheatsheet for OpenSSL</p>
-		<div class="list__meta meta"><div class="meta__item-author meta__item">
-	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Nathan Obert</span>
-</div>
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-05-01T08:00:00-07:00">2023-05-01</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/cheatsheets/" rel="category">Cheatsheets</a>
-	</span>
-</div>
-<div class="post__tags tags clearfix">
-        <svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
-        <ul class="tags__list">
-                <li class="tags__item">
-                        <a class="tags__link btn" href="/tags/devops/" rel="tag">DEVOPS</a>
-                </li>
-        </ul>
-</div>
-</div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		Introduction This cheat sheet from Dave Wongillies&rsquo;s Cheatsheet. OpenSSL is a very strong tool when working with certificates. OpenSSL can be used to for a wide variaty of taks involving SSL/TLS. For instance you can use it to convert certificates from format to another, use it as a debugging tool, use it to generate certificates, use it to download certificates from hosts, and even use it as a connectivity tool if telnet is not available.
-	</div>
 </article>
 </main>
 
@@ -534,11 +540,11 @@ Kubectl autocomplete BASH source &lt;(kubectl completion bash) # set up autocomp
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/posts/cheatsheet-helm/">HELM Cheatsheet</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/blog-rancher-desktop-windows/">Rancher Desktop for Kubernetes and Docker on Windows 11</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/cheatsheet-git/">Git Cheatsheet</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/blog-xrdp-gnome-on-rhel9/">XRP to remote Gnome on Redhat Enterprise Linux 9</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/blog-python-http-server/">Python HTTP Server</a></li>
-			<li class="widget__item"><a class="widget__link" href="/posts/cheatsheet-docker/">Docker Cheatsheet</a></li>
 		</ul>
 	</div>
 </div>
@@ -564,6 +570,7 @@ Kubectl autocomplete BASH source &lt;(kubectl completion bash) # set up autocomp
 		<a class="widget-taglist__link widget__link btn" href="/tags/elastic/" title="ELASTIC">ELASTIC</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/git/" title="GIT">GIT</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/gnome/" title="GNOME">GNOME</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/helm/" title="HELM">HELM</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="HUGO">HUGO</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kubernetes/" title="KUBERNETES">KUBERNETES</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/markdown/" title="MARKDOWN">MARKDOWN</a>
