@@ -18,7 +18,7 @@
 <meta itemprop="description" content="Git Cheatsheet">
 <meta itemprop="datePublished" content="2023-05-02T05:00:00-07:00" />
 <meta itemprop="dateModified" content="2023-05-02T05:00:00-07:00" />
-<meta itemprop="wordCount" content="1238">
+<meta itemprop="wordCount" content="1280">
 
 
 
@@ -161,6 +161,7 @@
         <li><a href="#viewing-history">Viewing History</a></li>
         <li><a href="#mergediff-tools">Merge/Diff Tools</a></li>
         <li><a href="#rebasing-to-avoiding-merge">Rebasing to avoiding merge</a></li>
+        <li><a href="#how-to-undo-a-file-you-mistakenly-added-to-a-commit">How to undo a file you mistakenly added to a commit</a></li>
       </ul>
     </li>
   </ul>
@@ -389,6 +390,10 @@ git add .
 git rebase --continue
 <span style="color:#75715e"># If at any point, you want to abort the rebasing, you can run.</span>
 git rebase --abort
+</code></pre></div><h3 id="how-to-undo-a-file-you-mistakenly-added-to-a-commit">How to undo a file you mistakenly added to a commit</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git add *         <span style="color:#75715e"># oops</span>
+git rm --cached   <span style="color:#75715e"># selectivaly remove files from the commit but leave them on filesystem</span>
+git status        <span style="color:#75715e"># verify which files are within the given commit</span>
 </code></pre></div>
 		</div>
 		<footer class="post__footer">
