@@ -11,7 +11,6 @@
 <meta property="og:description" content="Nathan Obert&#39;s Personal blog about everything" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.nathanobert.com/tags/development/" />
-<meta property="og:updated_time" content="2023-05-02T05:00:00-07:00" />
 
 		<meta itemprop="name" content="DEVELOPMENT">
 <meta itemprop="description" content="Nathan Obert&#39;s Personal blog about everything">
@@ -175,7 +174,7 @@
 	</header>
 	<div class="content list__excerpt post__content clearfix">
 		Introduction This is a quick cheat sheet from Sematext&rsquo;s Elastic Developer Cheatsheet
-Data Manipulation Put/Get/Delete index curl -XPUT localhost:9200/index-name -d '{&quot;settings&quot;: { &quot;number_of_shards&quot;: 1}}' curl -XGET localhost:9200/index-name?pretty curl -XDELETE localhost:9200/index-name  Put/Get/Delete template curl -XPUT localhost:9200/_template/template-name -d '{ &quot;template&quot;: &quot;logs*&quot;, &quot;mappings&quot;: { &quot;foo-type&quot;: { &quot;properties&quot;: { &quot;foo-field&quot;: { &quot;type&quot;: &quot;text&quot; } } } }, &quot;settings&quot;: { &quot;number_of_shards&quot;: 1 } }' curl -XGET localhost:9200/_template/template-name?pretty curl -XDELETE localhost:9200/_template/template-name  Bulk API echo '{&quot;index&quot;: { &quot;_index&quot;: &quot;logs01&quot;, &quot;_type&quot;: &quot;logs&quot;}} {&quot;title&quot;: &quot;this is an error&quot;} {&quot;index&quot;: { &quot;_index&quot;: &quot;logs02&quot;, &quot;_type&quot;: &quot;logs&quot;}} {&quot;title&quot;: &quot;this is a warning&quot;} {&quot;delete&quot;: { &quot;_index&quot;: &quot;logs03&quot;, &quot;_type&quot;: &quot;logs&quot;, &quot;_id&quot;: &quot;abc123&quot;}} ' &gt; /tmp/bulk curl localhost:9200/_bulk?
+Data Manipulation Put/Get/Delete index curl -XPUT localhost:9200/index-name -d '{&quot;settings&quot;: { &quot;number_of_shards&quot;: 1}}' curl -XGET localhost:9200/index-name?pretty curl -XDELETE localhost:9200/index-name Put/Get/Delete template curl -XPUT localhost:9200/_template/template-name -d '{ &quot;template&quot;: &quot;logs*&quot;, &quot;mappings&quot;: { &quot;foo-type&quot;: { &quot;properties&quot;: { &quot;foo-field&quot;: { &quot;type&quot;: &quot;text&quot; } } } }, &quot;settings&quot;: { &quot;number_of_shards&quot;: 1 } }' curl -XGET localhost:9200/_template/template-name?pretty curl -XDELETE localhost:9200/_template/template-name Bulk API echo '{&quot;index&quot;: { &quot;_index&quot;: &quot;logs01&quot;, &quot;_type&quot;: &quot;logs&quot;}} {&quot;title&quot;: &quot;this is an error&quot;} {&quot;index&quot;: { &quot;_index&quot;: &quot;logs02&quot;, &quot;_type&quot;: &quot;logs&quot;}} {&quot;title&quot;: &quot;this is a warning&quot;} {&quot;delete&quot;: { &quot;_index&quot;: &quot;logs03&quot;, &quot;_type&quot;: &quot;logs&quot;, &quot;_id&quot;: &quot;abc123&quot;}} ' &gt; /tmp/bulk curl localhost:9200/_bulk?
 	</div>
 </article><article class="list__item post">
 	

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
-	<meta name="generator" content="Hugo 0.68.3" />
+	<meta name="generator" content="Hugo 0.111.3">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +12,6 @@
 <meta property="og:description" content="Nathan Obert&#39;s Personal blog about everything" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.nathanobert.com/" />
-<meta property="og:updated_time" content="2023-05-03T05:03:00-07:00" />
 
 		<meta itemprop="name" content="Nathan Obert">
 <meta itemprop="description" content="Nathan Obert&#39;s Personal blog about everything">
@@ -53,7 +52,7 @@
 		<span class="menu__btn-title" tabindex="-1">Menu</span>
 	</button>
 	<ul class="menu__list">
-		<li class="menu__item menu__item--active">
+		<li class="menu__item">
 			<a class="menu__link" href="/">
 				
 				<span class="menu__text">Home</span>
@@ -136,7 +135,7 @@
 </div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		Introduction I will be installing and doing basic configuration of Amazon Web Services (AWS)&lsquo;s Command Line Interface (CLI) on Windows 11. AWS CLI is a shell based means to work with AWS. The CLI provides the ability to list out resources at Amazon like which EC2 instances are running, poke around S3 buckets, inspect pretty much anything at Amazon. It also provides advanced features like copying information to and from S3.
+		Introduction I will be installing and doing basic configuration of Amazon Web Services (AWS)&rsquo;s Command Line Interface (CLI) on Windows 11. AWS CLI is a shell based means to work with AWS. The CLI provides the ability to list out resources at Amazon like which EC2 instances are running, poke around S3 buckets, inspect pretty much anything at Amazon. It also provides advanced features like copying information to and from S3.
 	</div>
 </article><article class="list__item post">
 	
@@ -176,7 +175,7 @@
 </div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		Introduction This cheat sheet from Applo Clark&rsquo;s Cheatsheet. Amazon&rsquo;s Official CLI Documentation. Amazon Web Services (AWS)&lsquo;s Command Line Interface (CLI) is a shell based means to work with AWS. The CLI provides the ability to list out resources at Amazon like which EC2 instances are running, poke around S3 buckets, inspect pretty much anything at Amazon. It also provides advanced features like copying information to and from S3. Below is a cheat sheet I will be updating over time with frequently used commands.
+		Introduction This cheat sheet from Applo Clark&rsquo;s Cheatsheet. Amazon&rsquo;s Official CLI Documentation. Amazon Web Services (AWS)&rsquo;s Command Line Interface (CLI) is a shell based means to work with AWS. The CLI provides the ability to list out resources at Amazon like which EC2 instances are running, poke around S3 buckets, inspect pretty much anything at Amazon. It also provides advanced features like copying information to and from S3. Below is a cheat sheet I will be updating over time with frequently used commands.
 	</div>
 </article><article class="list__item post">
 	
@@ -428,7 +427,7 @@ Installation Linux Install script provided by Docker:
 curl -sSL https://get.docker.com/ | sh Or see Installation instructions for your Linux distribution.
 Mac OS X Download and install Docker For Mac
 Create Docker VM with Docker Machine You can use Docker Machine to:
- Install and run Docker on Mac or Windows Provision and manage multiple remote Docker hosts Provision Swarm clusters  A simple example to create a local Docker VM with VirtualBox:
+Install and run Docker on Mac or Windows Provision and manage multiple remote Docker hosts Provision Swarm clusters A simple example to create a local Docker VM with VirtualBox:
 	</div>
 </article><article class="list__item post">
 	
@@ -466,7 +465,7 @@ Create Docker VM with Docker Machine You can use Docker Machine to:
 	</header>
 	<div class="content list__excerpt post__content clearfix">
 		Introduction This is a quick cheat sheet from Sematext&rsquo;s Elastic Developer Cheatsheet
-Data Manipulation Put/Get/Delete index curl -XPUT localhost:9200/index-name -d '{&quot;settings&quot;: { &quot;number_of_shards&quot;: 1}}' curl -XGET localhost:9200/index-name?pretty curl -XDELETE localhost:9200/index-name  Put/Get/Delete template curl -XPUT localhost:9200/_template/template-name -d '{ &quot;template&quot;: &quot;logs*&quot;, &quot;mappings&quot;: { &quot;foo-type&quot;: { &quot;properties&quot;: { &quot;foo-field&quot;: { &quot;type&quot;: &quot;text&quot; } } } }, &quot;settings&quot;: { &quot;number_of_shards&quot;: 1 } }' curl -XGET localhost:9200/_template/template-name?pretty curl -XDELETE localhost:9200/_template/template-name  Bulk API echo '{&quot;index&quot;: { &quot;_index&quot;: &quot;logs01&quot;, &quot;_type&quot;: &quot;logs&quot;}} {&quot;title&quot;: &quot;this is an error&quot;} {&quot;index&quot;: { &quot;_index&quot;: &quot;logs02&quot;, &quot;_type&quot;: &quot;logs&quot;}} {&quot;title&quot;: &quot;this is a warning&quot;} {&quot;delete&quot;: { &quot;_index&quot;: &quot;logs03&quot;, &quot;_type&quot;: &quot;logs&quot;, &quot;_id&quot;: &quot;abc123&quot;}} ' &gt; /tmp/bulk curl localhost:9200/_bulk?
+Data Manipulation Put/Get/Delete index curl -XPUT localhost:9200/index-name -d '{&quot;settings&quot;: { &quot;number_of_shards&quot;: 1}}' curl -XGET localhost:9200/index-name?pretty curl -XDELETE localhost:9200/index-name Put/Get/Delete template curl -XPUT localhost:9200/_template/template-name -d '{ &quot;template&quot;: &quot;logs*&quot;, &quot;mappings&quot;: { &quot;foo-type&quot;: { &quot;properties&quot;: { &quot;foo-field&quot;: { &quot;type&quot;: &quot;text&quot; } } } }, &quot;settings&quot;: { &quot;number_of_shards&quot;: 1 } }' curl -XGET localhost:9200/_template/template-name?pretty curl -XDELETE localhost:9200/_template/template-name Bulk API echo '{&quot;index&quot;: { &quot;_index&quot;: &quot;logs01&quot;, &quot;_type&quot;: &quot;logs&quot;}} {&quot;title&quot;: &quot;this is an error&quot;} {&quot;index&quot;: { &quot;_index&quot;: &quot;logs02&quot;, &quot;_type&quot;: &quot;logs&quot;}} {&quot;title&quot;: &quot;this is a warning&quot;} {&quot;delete&quot;: { &quot;_index&quot;: &quot;logs03&quot;, &quot;_type&quot;: &quot;logs&quot;, &quot;_id&quot;: &quot;abc123&quot;}} ' &gt; /tmp/bulk curl localhost:9200/_bulk?
 	</div>
 </article><article class="list__item post">
 	
@@ -505,8 +504,8 @@ Data Manipulation Put/Get/Delete index curl -XPUT localhost:9200/index-name -d '
 	<div class="content list__excerpt post__content clearfix">
 		Introduction This is a quick cheat sheet from Sematext&rsquo;s Elastic Devops Cheatsheet
 DevOps cheatsheet Allocation Allocation awareness Avoids putting two copies of the same shard on nodes with the same attribute (e.g. rack, availability zone). For example:
-node.attr.availability_zone: us-east1 # in elasticsearch.yml  Awareness is enabled at the cluster level:
-curl -XPUT localhost:9200/_cluster/settings?pretty -d '{ &quot;persistent&quot; : { &quot;cluster.routing.allocation.awareness.attributes&quot; : &quot;availability_zone&quot; } }'  Allocation filtering Shards of an index can prefer/avoid nodes with certain attributes.
+node.attr.availability_zone: us-east1 # in elasticsearch.yml Awareness is enabled at the cluster level:
+curl -XPUT localhost:9200/_cluster/settings?pretty -d '{ &quot;persistent&quot; : { &quot;cluster.routing.allocation.awareness.attributes&quot; : &quot;availability_zone&quot; } }' Allocation filtering Shards of an index can prefer/avoid nodes with certain attributes.
 	</div>
 </article><article class="list__item post">
 	

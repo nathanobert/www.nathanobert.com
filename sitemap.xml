@@ -1,230 +1,140 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://www.nathanobert.com/posts/blog-aws-cli/</loc>
     <lastmod>2023-05-03T05:03:00-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.nathanobert.com/tags/aws/</loc>
     <lastmod>2023-05-03T05:03:00-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.nathanobert.com/categories/blog/</loc>
     <lastmod>2023-05-03T05:03:00-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.nathanobert.com/categories/</loc>
     <lastmod>2023-05-03T05:03:00-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.nathanobert.com/tags/cli/</loc>
     <lastmod>2023-05-03T05:03:00-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.nathanobert.com/</loc>
     <lastmod>2023-05-03T05:03:00-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.nathanobert.com/posts/</loc>
     <lastmod>2023-05-03T05:03:00-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.nathanobert.com/tags/</loc>
     <lastmod>2023-05-03T05:03:00-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.nathanobert.com/tags/windows/</loc>
     <lastmod>2023-05-03T05:03:00-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.nathanobert.com/posts/cheatsheet-aws-cli/</loc>
     <lastmod>2023-05-03T04:03:00-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.nathanobert.com/categories/cheatsheets/</loc>
     <lastmod>2023-05-03T04:03:00-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.nathanobert.com/tags/devops/</loc>
     <lastmod>2023-05-03T04:03:00-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.nathanobert.com/tags/helm/</loc>
     <lastmod>2023-05-02T20:00:00-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.nathanobert.com/posts/cheatsheet-helm/</loc>
     <lastmod>2023-05-02T20:00:00-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.nathanobert.com/tags/kubernetes/</loc>
     <lastmod>2023-05-02T20:00:00-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.nathanobert.com/tags/containerd/</loc>
     <lastmod>2023-05-02T14:28:10-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.nathanobert.com/tags/docker/</loc>
     <lastmod>2023-05-02T14:28:10-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.nathanobert.com/tags/moby/</loc>
     <lastmod>2023-05-02T14:28:10-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.nathanobert.com/tags/rancher/</loc>
     <lastmod>2023-05-02T14:28:10-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.nathanobert.com/posts/blog-rancher-desktop-windows/</loc>
     <lastmod>2023-05-02T14:28:10-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.nathanobert.com/tags/development/</loc>
     <lastmod>2023-05-02T05:00:00-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.nathanobert.com/tags/git/</loc>
     <lastmod>2023-05-02T05:00:00-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.nathanobert.com/posts/cheatsheet-git/</loc>
     <lastmod>2023-05-02T05:00:00-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.nathanobert.com/tags/gnome/</loc>
     <lastmod>2023-05-01T14:28:10-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.nathanobert.com/tags/rhel-9/</loc>
     <lastmod>2023-05-01T14:28:10-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.nathanobert.com/tags/xrdp/</loc>
     <lastmod>2023-05-01T14:28:10-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.nathanobert.com/posts/blog-xrdp-gnome-on-rhel9/</loc>
     <lastmod>2023-05-01T14:28:10-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.nathanobert.com/tags/python/</loc>
     <lastmod>2023-05-01T12:28:10-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.nathanobert.com/posts/blog-python-http-server/</loc>
     <lastmod>2023-05-01T12:28:10-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.nathanobert.com/posts/cheatsheet-docker/</loc>
     <lastmod>2023-05-01T09:45:00-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.nathanobert.com/tags/elastic/</loc>
     <lastmod>2023-05-01T09:45:00-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.nathanobert.com/posts/cheatsheet-elastic-dev/</loc>
     <lastmod>2023-05-01T09:45:00-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.nathanobert.com/posts/cheatsheet-elastic-devops/</loc>
     <lastmod>2023-05-01T09:45:00-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.nathanobert.com/tags/metrics/</loc>
     <lastmod>2023-05-01T09:45:00-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.nathanobert.com/tags/solr/</loc>
     <lastmod>2023-05-01T09:45:00-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.nathanobert.com/posts/cheatsheet-solr-metrics/</loc>
     <lastmod>2023-05-01T09:45:00-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.nathanobert.com/posts/cheatsheet-kubernetes/</loc>
     <lastmod>2023-05-01T09:30:00-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.nathanobert.com/posts/cheatsheet-openssl/</loc>
     <lastmod>2023-05-01T08:00:00-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.nathanobert.com/tags/hugo/</loc>
     <lastmod>2023-05-01T05:49:00-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.nathanobert.com/tags/markdown/</loc>
     <lastmod>2023-05-01T05:49:00-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.nathanobert.com/posts/cheatsheet-markdown/</loc>
     <lastmod>2023-05-01T05:49:00-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.nathanobert.com/posts/about/</loc>
     <lastmod>2023-04-30T20:28:10-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.nathanobert.com/tags/cri-o/</loc>
     <lastmod>2023-04-29T08:28:10-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.nathanobert.com/posts/blog-kubernetes-on-rhel9/</loc>
     <lastmod>2023-04-29T08:28:10-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.nathanobert.com/tags/podman/</loc>
     <lastmod>2023-04-29T08:28:10-07:00</lastmod>
   </url>
-  
 </urlset>

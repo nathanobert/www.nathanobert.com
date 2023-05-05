@@ -6,11 +6,7 @@
     <description>Recent content in PODMAN on Nathan Obert</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 29 Apr 2023 08:28:10 -0700</lastBuildDate>
-    
-	<atom:link href="https://www.nathanobert.com/tags/podman/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 29 Apr 2023 08:28:10 -0700</lastBuildDate><atom:link href="https://www.nathanobert.com/tags/podman/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Kubernetes on Redhat Enterprise Linux 9</title>
       <link>https://www.nathanobert.com/posts/blog-kubernetes-on-rhel9/</link>

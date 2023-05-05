@@ -6,11 +6,7 @@
     <description>Recent content in DOCKER on Nathan Obert</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 02 May 2023 14:28:10 -0700</lastBuildDate>
-    
-	<atom:link href="https://www.nathanobert.com/tags/docker/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 02 May 2023 14:28:10 -0700</lastBuildDate><atom:link href="https://www.nathanobert.com/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Rancher Desktop for Kubernetes and Docker on Windows 11</title>
       <link>https://www.nathanobert.com/posts/blog-rancher-desktop-windows/</link>
@@ -32,7 +28,7 @@ Installation Linux Install script provided by Docker:
 curl -sSL https://get.docker.com/ | sh Or see Installation instructions for your Linux distribution.
 Mac OS X Download and install Docker For Mac
 Create Docker VM with Docker Machine You can use Docker Machine to:
- Install and run Docker on Mac or Windows Provision and manage multiple remote Docker hosts Provision Swarm clusters  A simple example to create a local Docker VM with VirtualBox:</description>
+Install and run Docker on Mac or Windows Provision and manage multiple remote Docker hosts Provision Swarm clusters A simple example to create a local Docker VM with VirtualBox:</description>
     </item>
     
   </channel>

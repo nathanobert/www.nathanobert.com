@@ -6,11 +6,7 @@
     <description>Recent content in SOLR on Nathan Obert</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 May 2023 09:45:00 -0700</lastBuildDate>
-    
-	<atom:link href="https://www.nathanobert.com/tags/solr/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 01 May 2023 09:45:00 -0700</lastBuildDate><atom:link href="https://www.nathanobert.com/tags/solr/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SOLR Metrics Cheatsheet</title>
       <link>https://www.nathanobert.com/posts/cheatsheet-solr-metrics/</link>

@@ -6,18 +6,14 @@
     <description>Recent content on Nathan Obert</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 03 May 2023 05:03:00 -0700</lastBuildDate>
-    
-	<atom:link href="https://www.nathanobert.com/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 03 May 2023 05:03:00 -0700</lastBuildDate><atom:link href="https://www.nathanobert.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Amazon Web Services (AWS) Command Line Interface (CLI) on Windows 11</title>
       <link>https://www.nathanobert.com/posts/blog-aws-cli/</link>
       <pubDate>Wed, 03 May 2023 05:03:00 -0700</pubDate>
       
       <guid>https://www.nathanobert.com/posts/blog-aws-cli/</guid>
-      <description>Introduction I will be installing and doing basic configuration of Amazon Web Services (AWS)&amp;lsquo;s Command Line Interface (CLI) on Windows 11. AWS CLI is a shell based means to work with AWS. The CLI provides the ability to list out resources at Amazon like which EC2 instances are running, poke around S3 buckets, inspect pretty much anything at Amazon. It also provides advanced features like copying information to and from S3.</description>
+      <description>Introduction I will be installing and doing basic configuration of Amazon Web Services (AWS)&amp;rsquo;s Command Line Interface (CLI) on Windows 11. AWS CLI is a shell based means to work with AWS. The CLI provides the ability to list out resources at Amazon like which EC2 instances are running, poke around S3 buckets, inspect pretty much anything at Amazon. It also provides advanced features like copying information to and from S3.</description>
     </item>
     
     <item>
@@ -26,7 +22,7 @@
       <pubDate>Wed, 03 May 2023 04:03:00 -0700</pubDate>
       
       <guid>https://www.nathanobert.com/posts/cheatsheet-aws-cli/</guid>
-      <description>Introduction This cheat sheet from Applo Clark&amp;rsquo;s Cheatsheet. Amazon&amp;rsquo;s Official CLI Documentation. Amazon Web Services (AWS)&amp;lsquo;s Command Line Interface (CLI) is a shell based means to work with AWS. The CLI provides the ability to list out resources at Amazon like which EC2 instances are running, poke around S3 buckets, inspect pretty much anything at Amazon. It also provides advanced features like copying information to and from S3. Below is a cheat sheet I will be updating over time with frequently used commands.</description>
+      <description>Introduction This cheat sheet from Applo Clark&amp;rsquo;s Cheatsheet. Amazon&amp;rsquo;s Official CLI Documentation. Amazon Web Services (AWS)&amp;rsquo;s Command Line Interface (CLI) is a shell based means to work with AWS. The CLI provides the ability to list out resources at Amazon like which EC2 instances are running, poke around S3 buckets, inspect pretty much anything at Amazon. It also provides advanced features like copying information to and from S3. Below is a cheat sheet I will be updating over time with frequently used commands.</description>
     </item>
     
     <item>
@@ -89,7 +85,7 @@ Installation Linux Install script provided by Docker:
 curl -sSL https://get.docker.com/ | sh Or see Installation instructions for your Linux distribution.
 Mac OS X Download and install Docker For Mac
 Create Docker VM with Docker Machine You can use Docker Machine to:
- Install and run Docker on Mac or Windows Provision and manage multiple remote Docker hosts Provision Swarm clusters  A simple example to create a local Docker VM with VirtualBox:</description>
+Install and run Docker on Mac or Windows Provision and manage multiple remote Docker hosts Provision Swarm clusters A simple example to create a local Docker VM with VirtualBox:</description>
     </item>
     
     <item>
@@ -99,7 +95,7 @@ Create Docker VM with Docker Machine You can use Docker Machine to:
       
       <guid>https://www.nathanobert.com/posts/cheatsheet-elastic-dev/</guid>
       <description>Introduction This is a quick cheat sheet from Sematext&amp;rsquo;s Elastic Developer Cheatsheet
-Data Manipulation Put/Get/Delete index curl -XPUT localhost:9200/index-name -d &#39;{&amp;quot;settings&amp;quot;: { &amp;quot;number_of_shards&amp;quot;: 1}}&#39; curl -XGET localhost:9200/index-name?pretty curl -XDELETE localhost:9200/index-name  Put/Get/Delete template curl -XPUT localhost:9200/_template/template-name -d &#39;{ &amp;quot;template&amp;quot;: &amp;quot;logs*&amp;quot;, &amp;quot;mappings&amp;quot;: { &amp;quot;foo-type&amp;quot;: { &amp;quot;properties&amp;quot;: { &amp;quot;foo-field&amp;quot;: { &amp;quot;type&amp;quot;: &amp;quot;text&amp;quot; } } } }, &amp;quot;settings&amp;quot;: { &amp;quot;number_of_shards&amp;quot;: 1 } }&#39; curl -XGET localhost:9200/_template/template-name?pretty curl -XDELETE localhost:9200/_template/template-name  Bulk API echo &#39;{&amp;quot;index&amp;quot;: { &amp;quot;_index&amp;quot;: &amp;quot;logs01&amp;quot;, &amp;quot;_type&amp;quot;: &amp;quot;logs&amp;quot;}} {&amp;quot;title&amp;quot;: &amp;quot;this is an error&amp;quot;} {&amp;quot;index&amp;quot;: { &amp;quot;_index&amp;quot;: &amp;quot;logs02&amp;quot;, &amp;quot;_type&amp;quot;: &amp;quot;logs&amp;quot;}} {&amp;quot;title&amp;quot;: &amp;quot;this is a warning&amp;quot;} {&amp;quot;delete&amp;quot;: { &amp;quot;_index&amp;quot;: &amp;quot;logs03&amp;quot;, &amp;quot;_type&amp;quot;: &amp;quot;logs&amp;quot;, &amp;quot;_id&amp;quot;: &amp;quot;abc123&amp;quot;}} &#39; &amp;gt; /tmp/bulk curl localhost:9200/_bulk?</description>
+Data Manipulation Put/Get/Delete index curl -XPUT localhost:9200/index-name -d &#39;{&amp;quot;settings&amp;quot;: { &amp;quot;number_of_shards&amp;quot;: 1}}&#39; curl -XGET localhost:9200/index-name?pretty curl -XDELETE localhost:9200/index-name Put/Get/Delete template curl -XPUT localhost:9200/_template/template-name -d &#39;{ &amp;quot;template&amp;quot;: &amp;quot;logs*&amp;quot;, &amp;quot;mappings&amp;quot;: { &amp;quot;foo-type&amp;quot;: { &amp;quot;properties&amp;quot;: { &amp;quot;foo-field&amp;quot;: { &amp;quot;type&amp;quot;: &amp;quot;text&amp;quot; } } } }, &amp;quot;settings&amp;quot;: { &amp;quot;number_of_shards&amp;quot;: 1 } }&#39; curl -XGET localhost:9200/_template/template-name?pretty curl -XDELETE localhost:9200/_template/template-name Bulk API echo &#39;{&amp;quot;index&amp;quot;: { &amp;quot;_index&amp;quot;: &amp;quot;logs01&amp;quot;, &amp;quot;_type&amp;quot;: &amp;quot;logs&amp;quot;}} {&amp;quot;title&amp;quot;: &amp;quot;this is an error&amp;quot;} {&amp;quot;index&amp;quot;: { &amp;quot;_index&amp;quot;: &amp;quot;logs02&amp;quot;, &amp;quot;_type&amp;quot;: &amp;quot;logs&amp;quot;}} {&amp;quot;title&amp;quot;: &amp;quot;this is a warning&amp;quot;} {&amp;quot;delete&amp;quot;: { &amp;quot;_index&amp;quot;: &amp;quot;logs03&amp;quot;, &amp;quot;_type&amp;quot;: &amp;quot;logs&amp;quot;, &amp;quot;_id&amp;quot;: &amp;quot;abc123&amp;quot;}} &#39; &amp;gt; /tmp/bulk curl localhost:9200/_bulk?</description>
     </item>
     
     <item>
@@ -110,8 +106,8 @@ Data Manipulation Put/Get/Delete index curl -XPUT localhost:9200/index-name -d &
       <guid>https://www.nathanobert.com/posts/cheatsheet-elastic-devops/</guid>
       <description>Introduction This is a quick cheat sheet from Sematext&amp;rsquo;s Elastic Devops Cheatsheet
 DevOps cheatsheet Allocation Allocation awareness Avoids putting two copies of the same shard on nodes with the same attribute (e.g. rack, availability zone). For example:
-node.attr.availability_zone: us-east1 # in elasticsearch.yml  Awareness is enabled at the cluster level:
-curl -XPUT localhost:9200/_cluster/settings?pretty -d &#39;{ &amp;quot;persistent&amp;quot; : { &amp;quot;cluster.routing.allocation.awareness.attributes&amp;quot; : &amp;quot;availability_zone&amp;quot; } }&#39;  Allocation filtering Shards of an index can prefer/avoid nodes with certain attributes.</description>
+node.attr.availability_zone: us-east1 # in elasticsearch.yml Awareness is enabled at the cluster level:
+curl -XPUT localhost:9200/_cluster/settings?pretty -d &#39;{ &amp;quot;persistent&amp;quot; : { &amp;quot;cluster.routing.allocation.awareness.attributes&amp;quot; : &amp;quot;availability_zone&amp;quot; } }&#39; Allocation filtering Shards of an index can prefer/avoid nodes with certain attributes.</description>
     </item>
     
     <item>

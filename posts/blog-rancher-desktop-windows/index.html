@@ -10,18 +10,14 @@
 		<meta property="og:title" content="Rancher Desktop for Kubernetes and Docker on Windows 11" />
 <meta property="og:description" content="Rancher Desktop on Windows 11" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.nathanobert.com/posts/blog-rancher-desktop-windows/" />
+<meta property="og:url" content="https://www.nathanobert.com/posts/blog-rancher-desktop-windows/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-05-02T14:28:10-07:00" />
 <meta property="article:modified_time" content="2023-05-02T14:28:10-07:00" />
 
 		<meta itemprop="name" content="Rancher Desktop for Kubernetes and Docker on Windows 11">
-<meta itemprop="description" content="Rancher Desktop on Windows 11">
-<meta itemprop="datePublished" content="2023-05-02T14:28:10-07:00" />
+<meta itemprop="description" content="Rancher Desktop on Windows 11"><meta itemprop="datePublished" content="2023-05-02T14:28:10-07:00" />
 <meta itemprop="dateModified" content="2023-05-02T14:28:10-07:00" />
 <meta itemprop="wordCount" content="297">
-
-
-
 <meta itemprop="keywords" content="RANCHER,WINDOWS,KUBERNETES,DOCKER,CONTAINERD,MOBY," />
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Rancher Desktop for Kubernetes and Docker on Windows 11"/>
@@ -165,13 +161,13 @@
 <p><a href="https://rancherdesktop.io/">Rancher Desktop</a> is a Kubernetes and Docker platform that is a replacement for Docker Desktop.  I&rsquo;ll be installing and configuring it using the installation guide provided in <a href="https://docs.rancherdesktop.io/getting-started/installation">Rancher&rsquo;s Documentation</a> Rancher is a replacement for Docker Desktop. Rancher provies you helm, kubernetes, docker, the CRI runtimes of dockerd or containerd kubernetes.  It integrates in nicely with WSL if you wish to use Linux instead of Windows.  Additionally it lets you choose which version of Kubernetes you want to run.</p>
 <h1 id="installation">Installation</h1>
 <h2 id="verify-minimum-requirements-with-administrative-powershell">Verify minimum requirements with administrative powershell</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#75715e"># Administrative Powershell</span>
-systeminfo | findstr /B <span style="color:#e6db74">&#34;OS&#34;</span>                            <span style="color:#75715e"># Windows 10 build 1909 or higher.</span>
-bcdedit /enum | findstr -i hypervisorlaunchtype         <span style="color:#75715e"># hypervisorlaunchtype    Auto</span>
-systeminfo | findstr /B <span style="color:#e6db74">&#34;Total&#34;</span>                         <span style="color:#75715e"># Rancher recommends atleast 8 GB Ram</span>
-wmic cpu get NumberOfCores,NumberOfLogicalProcessors	<span style="color:#75715e"># Rancher recommends atleast 4 CPU Cores</span>
-wsl -v | findstr /b <span style="color:#e6db74">&#34;^W&#34;</span>                                <span style="color:#75715e"># WSL is required</span>
-</code></pre></div><p>Example output of verification steps:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e"># Administrative Powershell</span>
+</span></span><span style="display:flex;"><span>systeminfo | findstr /B <span style="color:#e6db74">&#34;OS&#34;</span>                            <span style="color:#75715e"># Windows 10 build 1909 or higher.</span>
+</span></span><span style="display:flex;"><span>bcdedit /enum | findstr -i hypervisorlaunchtype         <span style="color:#75715e"># hypervisorlaunchtype    Auto</span>
+</span></span><span style="display:flex;"><span>systeminfo | findstr /B <span style="color:#e6db74">&#34;Total&#34;</span>                         <span style="color:#75715e"># Rancher recommends atleast 8 GB Ram</span>
+</span></span><span style="display:flex;"><span>wmic cpu get NumberOfCores,NumberOfLogicalProcessors	<span style="color:#75715e"># Rancher recommends atleast 4 CPU Cores</span>
+</span></span><span style="display:flex;"><span>wsl -v | findstr /b <span style="color:#e6db74">&#34;^W&#34;</span>                                <span style="color:#75715e"># WSL is required</span>
+</span></span></code></pre></div><p>Example output of verification steps:</p>
 <p><img src="/img/rancher_win_1.jpg" alt="Rancher Windows"></p>
 <h2 id="download-rancher-desktop">Download Rancher Desktop</h2>
 <p>We are installing <a href="https://github.com/rancher-sandbox/rancher-desktop/releases/download/v1.8.1/Rancher.Desktop.Setup.1.8.1.msi">Rancher Desktop 1.8.1</a>

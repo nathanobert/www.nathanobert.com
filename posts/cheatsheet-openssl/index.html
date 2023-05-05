@@ -10,18 +10,14 @@
 		<meta property="og:title" content="OpenSSL Cheatsheet" />
 <meta property="og:description" content="OpenSSL Cheatsheet" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.nathanobert.com/posts/cheatsheet-openssl/" />
+<meta property="og:url" content="https://www.nathanobert.com/posts/cheatsheet-openssl/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-05-01T08:00:00-07:00" />
 <meta property="article:modified_time" content="2023-05-01T08:00:00-07:00" />
 
 		<meta itemprop="name" content="OpenSSL Cheatsheet">
-<meta itemprop="description" content="OpenSSL Cheatsheet">
-<meta itemprop="datePublished" content="2023-05-01T08:00:00-07:00" />
+<meta itemprop="description" content="OpenSSL Cheatsheet"><meta itemprop="datePublished" content="2023-05-01T08:00:00-07:00" />
 <meta itemprop="dateModified" content="2023-05-01T08:00:00-07:00" />
 <meta itemprop="wordCount" content="553">
-
-
-
 <meta itemprop="keywords" content="DEVOPS," />
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="OpenSSL Cheatsheet"/>
@@ -182,36 +178,36 @@ that a certificate that you installed to a site is not trusted, try one of these
 commands. If you are trying to verify that an SSL certificate is installed
 correctly, be sure to check out the SSL Checker.</p>
 <h3 id="check-an-ssl-connection-all-the-certificates-including-intermediates-should-be-displayed">Check an SSL connection. All the certificates (including Intermediates) should be displayed</h3>
-<pre><code>openssl s_client -connect www.paypal.com:443
+<pre tabindex="0"><code>openssl s_client -connect www.paypal.com:443
 </code></pre><h3 id="check-an-md5-hash-of-the-public-key-to-ensure-that-it-matches-with-what-is-in-a-csr-or-private-key">Check an MD5 hash of the public key to ensure that it matches with what is in a CSR or private key</h3>
-<pre><code>openssl x509 -noout -modulus -in certificate.crt | openssl md5
+<pre tabindex="0"><code>openssl x509 -noout -modulus -in certificate.crt | openssl md5
 openssl rsa -noout -modulus -in privateKey.key | openssl md5
 openssl req -noout -modulus -in CSR.csr | openssl md5
 </code></pre><h2 id="general-openssl-commands">General OpenSSL Commands</h2>
 <p>These commands allow you to generate CSRs, Certificates, Private Keys and do
 other miscellaneous tasks.</p>
 <h3 id="generate-a-new-private-key-and-certificate-signing-request">Generate a new private key and Certificate Signing Request</h3>
-<pre><code>openssl req -out CSR.csr -new -newkey rsa:2048 -nodes -keyout privateKey.key
+<pre tabindex="0"><code>openssl req -out CSR.csr -new -newkey rsa:2048 -nodes -keyout privateKey.key
 </code></pre><h3 id="generate-a-self-signed-certificate-see-how-to-create-and-install-an-apache-self-signed-certificate-for-more-info">Generate a self-signed certificate (see How to Create and Install an Apache Self Signed Certificate for more info)</h3>
-<pre><code>openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout privateKey.key -out certificate.crt
+<pre tabindex="0"><code>openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout privateKey.key -out certificate.crt
 </code></pre><h3 id="generate-a-certificate-signing-request-csr-for-an-existing-private-key">Generate a certificate signing request (CSR) for an existing private key</h3>
-<pre><code>openssl req -out CSR.csr -key privateKey.key -new
+<pre tabindex="0"><code>openssl req -out CSR.csr -key privateKey.key -new
 </code></pre><h3 id="generate-a-certificate-signing-request-based-on-an-existing-certificate">Generate a certificate signing request based on an existing certificate</h3>
-<pre><code>openssl x509 -x509toreq -in certificate.crt -out CSR.csr -signkey privateKey.key
+<pre tabindex="0"><code>openssl x509 -x509toreq -in certificate.crt -out CSR.csr -signkey privateKey.key
 </code></pre><h3 id="remove-a-passphrase-from-a-private-key">Remove a passphrase from a private key</h3>
-<pre><code>openssl rsa -in privateKey.pem -out newPrivateKey.pem
+<pre tabindex="0"><code>openssl rsa -in privateKey.pem -out newPrivateKey.pem
 </code></pre><h2 id="checking-using-openssl">Checking Using OpenSSL</h2>
 <p>If you need to check the information within a Certificate, CSR or Private Key,
 use these commands. You can also check CSRs and check certificates using our
 online tools.</p>
 <h3 id="check-a-certificate-signing-request-csr">Check a Certificate Signing Request (CSR)</h3>
-<pre><code>openssl req -text -noout -verify -in CSR.csr
+<pre tabindex="0"><code>openssl req -text -noout -verify -in CSR.csr
 </code></pre><h3 id="check-a-private-key">Check a private key</h3>
-<pre><code>openssl rsa -in privateKey.key -check
+<pre tabindex="0"><code>openssl rsa -in privateKey.key -check
 </code></pre><h3 id="check-a-certificate">Check a certificate</h3>
-<pre><code>openssl x509 -in certificate.crt -text -noout
+<pre tabindex="0"><code>openssl x509 -in certificate.crt -text -noout
 </code></pre><h3 id="check-a-pkcs12-file-pfx-or-p12">Check a PKCS#12 file (.pfx or .p12)</h3>
-<pre><code>openssl pkcs12 -info -in keyStore.p12
+<pre tabindex="0"><code>openssl pkcs12 -info -in keyStore.p12
 </code></pre><h2 id="converting-using-openssl">Converting Using OpenSSL</h2>
 <p>These commands allow you to convert certificates and keys to different formats
 to make them compatible with specific types of servers or software. For example,
@@ -219,15 +215,15 @@ you can convert a normal PEM file that would work with Apache to a PFX (PKCS#12)
 file and use it with Tomcat or IIS. Use our SSL Converter to convert certificates
 without messing with OpenSSL.</p>
 <h3 id="convert-a-der-file-crt-cer-der-to-pem">Convert a DER file (.crt .cer .der) to PEM</h3>
-<pre><code>openssl x509 -inform der -in certificate.cer -out certificate.pem
+<pre tabindex="0"><code>openssl x509 -inform der -in certificate.cer -out certificate.pem
 </code></pre><h3 id="convert-a-pem-file-to-der">Convert a PEM file to DER</h3>
-<pre><code>openssl x509 -outform der -in certificate.pem -out certificate.der
+<pre tabindex="0"><code>openssl x509 -outform der -in certificate.pem -out certificate.der
 </code></pre><h3 id="convert-a-pkcs12-file-pfx-p12-containing-a-private-key-and-certificates-to-pem">Convert a PKCS#12 file (.pfx .p12) containing a private key and certificates to PEM</h3>
-<pre><code>openssl pkcs12 -in keyStore.pfx -out keyStore.pem -nodes
+<pre tabindex="0"><code>openssl pkcs12 -in keyStore.pfx -out keyStore.pem -nodes
 </code></pre><p>You can add <code>-nocerts</code> to only output the private key or add <code>-nokeys</code> to only
 output the certificates.</p>
 <h3 id="convert-a-pem-certificate-file-and-a-private-key-to-pkcs12-pfx-p12">Convert a PEM certificate file and a private key to PKCS#12 (.pfx .p12)</h3>
-<pre><code>openssl pkcs12 -export -out certificate.pfx -inkey privateKey.key -in certificate.crt -certfile CACert.crt
+<pre tabindex="0"><code>openssl pkcs12 -export -out certificate.pfx -inkey privateKey.key -in certificate.crt -certfile CACert.crt
 </code></pre>
 		</div>
 		<footer class="post__footer">
