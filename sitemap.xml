@@ -2,28 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://www.nathanobert.com/categories/blog/</loc>
+    <lastmod>2023-05-05T05:30:00-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nathanobert.com/categories/</loc>
+    <lastmod>2023-05-05T05:30:00-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nathanobert.com/tags/hugo/</loc>
+    <lastmod>2023-05-05T05:30:00-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nathanobert.com/posts/blog-hugo-rhel9/</loc>
+    <lastmod>2023-05-05T05:30:00-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nathanobert.com/</loc>
+    <lastmod>2023-05-05T05:30:00-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nathanobert.com/posts/</loc>
+    <lastmod>2023-05-05T05:30:00-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nathanobert.com/tags/rhel-9/</loc>
+    <lastmod>2023-05-05T05:30:00-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nathanobert.com/tags/</loc>
+    <lastmod>2023-05-05T05:30:00-07:00</lastmod>
+  </url><url>
     <loc>https://www.nathanobert.com/posts/blog-aws-cli/</loc>
     <lastmod>2023-05-03T05:03:00-07:00</lastmod>
   </url><url>
     <loc>https://www.nathanobert.com/tags/aws/</loc>
     <lastmod>2023-05-03T05:03:00-07:00</lastmod>
   </url><url>
-    <loc>https://www.nathanobert.com/categories/blog/</loc>
-    <lastmod>2023-05-03T05:03:00-07:00</lastmod>
-  </url><url>
-    <loc>https://www.nathanobert.com/categories/</loc>
-    <lastmod>2023-05-03T05:03:00-07:00</lastmod>
-  </url><url>
     <loc>https://www.nathanobert.com/tags/cli/</loc>
-    <lastmod>2023-05-03T05:03:00-07:00</lastmod>
-  </url><url>
-    <loc>https://www.nathanobert.com/</loc>
-    <lastmod>2023-05-03T05:03:00-07:00</lastmod>
-  </url><url>
-    <loc>https://www.nathanobert.com/posts/</loc>
-    <lastmod>2023-05-03T05:03:00-07:00</lastmod>
-  </url><url>
-    <loc>https://www.nathanobert.com/tags/</loc>
     <lastmod>2023-05-03T05:03:00-07:00</lastmod>
   </url><url>
     <loc>https://www.nathanobert.com/tags/windows/</loc>
@@ -74,9 +83,6 @@
     <loc>https://www.nathanobert.com/tags/gnome/</loc>
     <lastmod>2023-05-01T14:28:10-07:00</lastmod>
   </url><url>
-    <loc>https://www.nathanobert.com/tags/rhel-9/</loc>
-    <lastmod>2023-05-01T14:28:10-07:00</lastmod>
-  </url><url>
     <loc>https://www.nathanobert.com/tags/xrdp/</loc>
     <lastmod>2023-05-01T14:28:10-07:00</lastmod>
   </url><url>
@@ -115,9 +121,6 @@
   </url><url>
     <loc>https://www.nathanobert.com/posts/cheatsheet-openssl/</loc>
     <lastmod>2023-05-01T08:00:00-07:00</lastmod>
-  </url><url>
-    <loc>https://www.nathanobert.com/tags/hugo/</loc>
-    <lastmod>2023-05-01T05:49:00-07:00</lastmod>
   </url><url>
     <loc>https://www.nathanobert.com/tags/markdown/</loc>
     <lastmod>2023-05-01T05:49:00-07:00</lastmod>

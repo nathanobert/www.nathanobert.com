@@ -6,7 +6,16 @@
     <description>Recent content in RHEL 9 on Nathan Obert</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 May 2023 14:28:10 -0700</lastBuildDate><atom:link href="https://www.nathanobert.com/tags/rhel-9/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 May 2023 05:30:00 -0700</lastBuildDate><atom:link href="https://www.nathanobert.com/tags/rhel-9/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo install on Redhat Enterprise Linux 9</title>
+      <link>https://www.nathanobert.com/posts/blog-hugo-rhel9/</link>
+      <pubDate>Fri, 05 May 2023 05:30:00 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/posts/blog-hugo-rhel9/</guid>
+      <description>Introduction HUGO is a static website rendering engine. Essentially you write a collection of Mark Down to files with headers, and HUGO can very rapidily theme an entire website. This website for instance is on the HUGO platform. Other very large sites like most likely the Kubernetes Documentation is also on HUGO. You end up with a &amp;ldquo;wordpress&amp;rdquo; like feel for the end user, however its actually static HTML that can be served up on git pages or any http server.</description>
+    </item>
+    
     <item>
       <title>XRP to remote Gnome on Redhat Enterprise Linux 9</title>
       <link>https://www.nathanobert.com/posts/blog-xrdp-gnome-on-rhel9/</link>
