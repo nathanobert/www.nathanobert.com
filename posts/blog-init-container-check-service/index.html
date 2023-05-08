@@ -17,7 +17,7 @@
 		<meta itemprop="name" content="Kubernetes init container to verify dependent service(s) are online.">
 <meta itemprop="description" content="Kubernetes init container to verify dependent service(s) are online."><meta itemprop="datePublished" content="2023-05-08T14:30:00-07:00" />
 <meta itemprop="dateModified" content="2023-05-08T14:30:00-07:00" />
-<meta itemprop="wordCount" content="261">
+<meta itemprop="wordCount" content="296">
 <meta itemprop="keywords" content="KUBERNETES,BUSYBOX,BASH,DEVOPS,NETCAT,HELM," />
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Kubernetes init container to verify dependent service(s) are online."/>
@@ -188,7 +188,13 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            check_service &#34;google.com 80&#34; &#34;15&#34;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            check_service &#34;oracle.oracle121.svc.cluster.local. 1521&#34; &#34;15&#34;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            check_service &#34;oracle.oracle121.svc.cluster.local. 8080&#34; &#34;15&#34;</span>           
-</span></span></code></pre></div>
+</span></span></code></pre></div><p>The paramaters on check_server are the following:</p>
+<ol>
+<li>Hostname and port number for service</li>
+<li>sleep delay between each attempt</li>
+</ol>
+<p>The script will check the services in the order of the script, google -&gt; oracle:1521 -&gt; oracle:8080</p>
+
 		</div>
 		<footer class="post__footer">
 			
