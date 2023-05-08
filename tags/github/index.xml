@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>GIT on Nathan Obert</title>
-    <link>https://www.nathanobert.com/tags/git/</link>
-    <description>Recent content in GIT on Nathan Obert</description>
+    <title>GITHUB on Nathan Obert</title>
+    <link>https://www.nathanobert.com/tags/github/</link>
+    <description>Recent content in GITHUB on Nathan Obert</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 08 May 2023 10:30:00 -0700</lastBuildDate><atom:link href="https://www.nathanobert.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 08 May 2023 10:30:00 -0700</lastBuildDate><atom:link href="https://www.nathanobert.com/tags/github/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GitHub Actions copy one git repository to another git repository</title>
       <link>https://www.nathanobert.com/posts/blog-github-actions-copy-repo/</link>
@@ -14,15 +14,6 @@
       
       <guid>https://www.nathanobert.com/posts/blog-github-actions-copy-repo/</guid>
       <description>Introduction GitHub provies &amp;ldquo;Actions&amp;rdquo; which are automatic actions that are ran on gitHub for you. This can be used to compile your code, compile your docker image, or do any arbitrary set of commands. This typically is done in software development to automatically push software between development and test. This is typically done to insure all the necessary code, configurations, etc necessary are checked into the source repository. Additionally this insures all the neccessary steps are done uniformly no matter which developer checks in the code.</description>
-    </item>
-    
-    <item>
-      <title>Git Cheatsheet</title>
-      <link>https://www.nathanobert.com/posts/cheatsheet-git/</link>
-      <pubDate>Tue, 02 May 2023 05:00:00 -0700</pubDate>
-      
-      <guid>https://www.nathanobert.com/posts/cheatsheet-git/</guid>
-      <description>Introduction This cheat sheet from Alex arak14&amp;rsquo;s Cheatsheet. Git is a version constrol system often used by developers, and devops to store insource code and configurations. It has even been adapted to store websites that are rended to the internet (like this one!) using Hugo. Git repositories are distributed in that each developers has a local copy of the repository and a series of pushs, pulls, merges, forks occur for the repositories to synchronize with one another.</description>
     </item>
     
   </channel>
