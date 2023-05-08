@@ -17,6 +17,9 @@
     <loc>https://www.nathanobert.com/tags/devops/</loc>
     <lastmod>2023-05-08T14:30:00-07:00</lastmod>
   </url><url>
+    <loc>https://www.nathanobert.com/tags/helm/</loc>
+    <lastmod>2023-05-08T14:30:00-07:00</lastmod>
+  </url><url>
     <loc>https://www.nathanobert.com/tags/kubernetes/</loc>
     <lastmod>2023-05-08T14:30:00-07:00</lastmod>
   </url><url>
@@ -76,9 +79,6 @@
   </url><url>
     <loc>https://www.nathanobert.com/categories/cheatsheets/</loc>
     <lastmod>2023-05-03T04:03:00-07:00</lastmod>
-  </url><url>
-    <loc>https://www.nathanobert.com/tags/helm/</loc>
-    <lastmod>2023-05-02T20:00:00-07:00</lastmod>
   </url><url>
     <loc>https://www.nathanobert.com/posts/cheatsheet-helm/</loc>
     <lastmod>2023-05-02T20:00:00-07:00</lastmod>
