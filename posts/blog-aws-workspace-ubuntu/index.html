@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Amazon Workspace with Ubuntu 22.04 - Nathan Obert</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Amazon Workspace with Ubuntu 22.04">
+		<meta property="og:title" content="Amazon Workspace with Ubuntu 22.04" />
+<meta property="og:description" content="Amazon Workspace with Ubuntu 22.04" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.nathanobert.com/posts/blog-aws-workspace-ubuntu/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-05-09T08:28:10-07:00" />
+<meta property="article:modified_time" content="2023-05-09T08:28:10-07:00" />
+
+		<meta itemprop="name" content="Amazon Workspace with Ubuntu 22.04">
+<meta itemprop="description" content="Amazon Workspace with Ubuntu 22.04"><meta itemprop="datePublished" content="2023-05-09T08:28:10-07:00" />
+<meta itemprop="dateModified" content="2023-05-09T08:28:10-07:00" />
+<meta itemprop="wordCount" content="489">
+<meta itemprop="keywords" content="UBUNTU,AWS,AWS WORKSPACE," />
+		<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Amazon Workspace with Ubuntu 22.04"/>
+<meta name="twitter:description" content="Amazon Workspace with Ubuntu 22.04"/>
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo logo--mixed">
+		<a class="logo__link" href="/" title="Nathan Obert" rel="home">
+			<div class="logo__item logo__imagebox">
+					<img class="logo__img" src="/img/nathan.jpg">
+				</div><div class="logo__item logo__text">
+					<div class="logo__title">Nathan Obert</div>
+					
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/blog/">
+				
+				<span class="menu__text">Blog</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/cheatsheets/">
+				
+				<span class="menu__text">Cheatsheets</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/tags/">
+				
+				<span class="menu__text">Tags</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/posts/about/">
+				
+				<span class="menu__text">About</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Amazon Workspace with Ubuntu 22.04</h1>
+			<p class="post__lead">Installation of Amazon Workspace</p>
+			<div class="post__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Nathan Obert</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-05-09T08:28:10-07:00">2023-05-09</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/blog/" rel="category">Blog</a>
+	</span>
+</div>
+<div class="post__tags tags clearfix">
+        <svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+        <ul class="tags__list">
+                <li class="tags__item">
+                        <a class="tags__link btn" href="/tags/ubuntu/" rel="tag">UBUNTU</a>
+                </li>
+                <li class="tags__item">
+                        <a class="tags__link btn" href="/tags/aws/" rel="tag">AWS</a>
+                </li>
+                <li class="tags__item">
+                        <a class="tags__link btn" href="/tags/aws-workspace/" rel="tag">AWS WORKSPACE</a>
+                </li>
+        </ul>
+</div>
+</div>
+		</header>
+		
+	<figure class="post__thumbnail thumbnail">
+		
+		<img class="thumbnail__image" src="/img/aws_workspace_0.png" alt="Amazon Workspace with Ubuntu 22.04">
+		
+	</figure>
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#directory-installation">Directory Installation</a></li>
+    <li><a href="#workspace-installation">Workspace Installation</a></li>
+    <li><a href="#workspace-client">Workspace Client</a></li>
+  </ul>
+</nav>
+	</div>
+</div><div class="content post__content clearfix">
+			<h1 id="introduction">Introduction</h1>
+<p>Amazon Workspace is a hosted Virtual Desktop Infrastructure (VDI).  Amazon hosts your workstations in the cloud.  Users can connect to their provisioned workstations through a client software provided by Amazon for many different platforms, including mobile.  The key difference comparing this to EC2 instances, is the client software.  With EC2 typically you use Remote Desktop Protocal (RDP) or Secure Shell (SSH).  With Amazon Workspace utilize PCoIP or WSP.  Both protocals work far superior for end user experience for responsivness, espically on lower speed networks.  You can even bring your own dimages.  The images provided by Amazon vary, but its basically Windows 10 with or without office products (no WSL2), Ubuntu 22.04 LTS, or Amazon Linux (custom Centos 7).</p>
+<h2 id="directory-installation">Directory Installation</h2>
+<p>Workspaces are designed for a group of end users, so a Directory is required to provide authentication for those users.  We choose &ldquo;Simple AD&rdquo;, however choose what is appropriate for how many users will be using the system.</p>
+<p><img src="/img/aws_workspace_1.jpg" alt="image" title="image"></p>
+<p>The directory information can be completely fictious, these names and values are inside of Amazon only.</p>
+<p><img src="/img/aws_workspace_2.jpg" alt="image" title="image"></p>
+<p>At first glance the VPC setup might appear to be trivial, however it can be critically important depending on the software being used.  For example Docker and Kubernetes utilizes ip ranges, and if you overlap the ip ranges you can really complicate the installation.</p>
+<p><img src="/img/aws_workspace_3.jpg" alt="image" title="image"></p>
+<p><img src="/img/aws_workspace_4.jpg" alt="image" title="image"></p>
+<p>The registry takes around 5 minutes to install and become &ldquo;Active&rdquo; at that point you need to register it.  Once again be very careful with selecting the VPC IP range.</p>
+<p><img src="/img/aws_workspace_5.jpg" alt="image" title="image"></p>
+<p><img src="/img/aws_workspace_6.jpg" alt="image" title="image"></p>
+<h2 id="workspace-installation">Workspace Installation</h2>
+<p><img src="/img/aws_workspace_7.jpg" alt="image" title="image"></p>
+<p><img src="/img/aws_workspace_8.jpg" alt="image" title="image"></p>
+<p>Depending on your directory, if you are connecting to an internal Active Directory the users might already exist, so this step is optional.</p>
+<p><img src="/img/aws_workspace_9.jpg" alt="image" title="image"></p>
+<p><img src="/img/aws_workspace_10.jpg" alt="image" title="image"></p>
+<p>Amazon provides a wide array of combinations.  &ldquo;PowerPro&rdquo; appears to be the price cliff.  Essentially the pricing model appears to go up gradually to &ldquo;PowerPro&rdquo; and once you move to a higher Bundle the price sky rockets.</p>
+<p><img src="/img/aws_workspace_11.jpg" alt="image" title="image"></p>
+<p>Workspace has two pricing models.  Hourly (which can be quite expensive), and Monthly (heafty discount if heavily used).   If your experimenting with this we recommend hourly till you know if this is something you will use alot.</p>
+<p><img src="/img/aws_workspace_12.jpg" alt="image" title="image"></p>
+<p>The disk space can quickly increase the hourly/monthly pricing of the workspace.  Be careful with how much you allocate.</p>
+<p><img src="/img/aws_workspace_13.jpg" alt="image" title="image"></p>
+<p><img src="/img/aws_workspace_14.jpg" alt="image" title="image"></p>
+<p>The initial workspace startup and provisining can take 45 minutes.  They will send the user(s) selected an email that most likely will most likely be flagged as spam/junk with the login information when its ready.   It will also display its status on the workspace page.</p>
+<h2 id="workspace-client">Workspace Client</h2>
+<p>This is the email they send the client.</p>
+<p><img src="/img/aws_workspace_15.jpg" alt="image" title="image"></p>
+<p>Step 1 in the email leads the user to setting a password.</p>
+<p><img src="/img/aws_workspace_16.jpg" alt="image" title="image"></p>
+<p>This is the download page you are redirected to with all the different clients.</p>
+<p><img src="/img/aws_workspace_17.jpg" alt="image" title="image"></p>
+<p>This is the Windows Amazon Workspace App, you first provide the registration code from the Email.</p>
+<p><img src="/img/aws_workspace_18.jpg" alt="image" title="image"></p>
+<p>Next you login with the login/password from the previous screens</p>
+<p><img src="/img/aws_workspace_19.jpg" alt="image" title="image"></p>
+<p>Ubuntu wants to to complete the installation with a few clicks you have Ubuntu operational.</p>
+<p><img src="/img/aws_workspace_20.jpg" alt="image" title="image"></p>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/ubuntu/" rel="tag">UBUNTU</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/aws/" rel="tag">AWS</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/aws-workspace/" rel="tag">AWS WORKSPACE</a>
+		</li>
+	</ul>
+</div>
+
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<figure class="authorbox__avatar">
+		<img alt="Nathan Obert avatar" src="/img/nathan.jpg" class="avatar" height="90" width="90">
+	</figure>
+	<div class="authorbox__header">
+		<span class="authorbox__name">About Nathan Obert</span>
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/posts/blog-xrdp-gnome-on-ubuntu/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">XRP to remote Gnome on Ubuntu 22.04</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2023 Nathan Obert.
+
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/js/menu.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+</body>
+</html>

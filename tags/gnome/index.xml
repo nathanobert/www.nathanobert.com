@@ -6,7 +6,17 @@
     <description>Recent content in GNOME on Nathan Obert</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 May 2023 14:28:10 -0700</lastBuildDate><atom:link href="https://www.nathanobert.com/tags/gnome/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 May 2023 06:00:00 -0700</lastBuildDate><atom:link href="https://www.nathanobert.com/tags/gnome/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>XRP to remote Gnome on Ubuntu 22.04</title>
+      <link>https://www.nathanobert.com/posts/blog-xrdp-gnome-on-ubuntu/</link>
+      <pubDate>Tue, 09 May 2023 06:00:00 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/posts/blog-xrdp-gnome-on-ubuntu/</guid>
+      <description>Introduction We will be turning a Command Line Interface (CLI) Redhat 9 server hosted at Amazon on EC2 into a full Xwindows based workstation that you can use Remote Desktop Protocal (RDP) to using xRDP.
+Installation Install the updates sudo apt update -y sudo apt upgrade -y # Kernel Updates wanted a reboot sudo init 6 Install ubuntu-desktop (Gnome, Xwindows, etc) sudo apt-get install ubuntu-desktop -y Install XRDP sudo apt install xrdp net-tools -y # insure xrpd on on ipv4 sudo sed -i &amp;#39;s/^port=3389/port=tcp:\/\/:3389/g&amp;#39; /etc/xrdp/xrdp.</description>
+    </item>
+    
     <item>
       <title>XRP to remote Gnome on Redhat Enterprise Linux 9</title>
       <link>https://www.nathanobert.com/posts/blog-xrdp-gnome-on-rhel9/</link>

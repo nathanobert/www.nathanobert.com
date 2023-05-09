@@ -6,7 +6,16 @@
     <description>Recent content in AWS on Nathan Obert</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 03 May 2023 05:03:00 -0700</lastBuildDate><atom:link href="https://www.nathanobert.com/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 May 2023 08:28:10 -0700</lastBuildDate><atom:link href="https://www.nathanobert.com/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Amazon Workspace with Ubuntu 22.04</title>
+      <link>https://www.nathanobert.com/posts/blog-aws-workspace-ubuntu/</link>
+      <pubDate>Tue, 09 May 2023 08:28:10 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/posts/blog-aws-workspace-ubuntu/</guid>
+      <description>Introduction Amazon Workspace is a hosted Virtual Desktop Infrastructure (VDI). Amazon hosts your workstations in the cloud. Users can connect to their provisioned workstations through a client software provided by Amazon for many different platforms, including mobile. The key difference comparing this to EC2 instances, is the client software. With EC2 typically you use Remote Desktop Protocal (RDP) or Secure Shell (SSH). With Amazon Workspace utilize PCoIP or WSP. Both protocals work far superior for end user experience for responsivness, espically on lower speed networks.</description>
+    </item>
+    
     <item>
       <title>Amazon Web Services (AWS) Command Line Interface (CLI) on Windows 11</title>
       <link>https://www.nathanobert.com/posts/blog-aws-cli/</link>

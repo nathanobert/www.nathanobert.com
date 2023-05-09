@@ -6,7 +6,97 @@
     <description>Recent content in Tags on Nathan Obert</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 08 May 2023 14:30:00 -0700</lastBuildDate><atom:link href="https://www.nathanobert.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 May 2023 08:28:10 -0700</lastBuildDate><atom:link href="https://www.nathanobert.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS</title>
+      <link>https://www.nathanobert.com/tags/aws/</link>
+      <pubDate>Tue, 09 May 2023 08:28:10 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/tags/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AWS WORKSPACE</title>
+      <link>https://www.nathanobert.com/tags/aws-workspace/</link>
+      <pubDate>Tue, 09 May 2023 08:28:10 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/tags/aws-workspace/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>UBUNTU</title>
+      <link>https://www.nathanobert.com/tags/ubuntu/</link>
+      <pubDate>Tue, 09 May 2023 08:28:10 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/tags/ubuntu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GNOME</title>
+      <link>https://www.nathanobert.com/tags/gnome/</link>
+      <pubDate>Tue, 09 May 2023 06:00:00 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/tags/gnome/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>XRDP</title>
+      <link>https://www.nathanobert.com/tags/xrdp/</link>
+      <pubDate>Tue, 09 May 2023 06:00:00 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/tags/xrdp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DEVOPS</title>
+      <link>https://www.nathanobert.com/tags/devops/</link>
+      <pubDate>Mon, 08 May 2023 19:30:00 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/tags/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DOCKER</title>
+      <link>https://www.nathanobert.com/tags/docker/</link>
+      <pubDate>Mon, 08 May 2023 19:30:00 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GITHUB</title>
+      <link>https://www.nathanobert.com/tags/github/</link>
+      <pubDate>Mon, 08 May 2023 19:30:00 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GITHUB ACTIONS</title>
+      <link>https://www.nathanobert.com/tags/github-actions/</link>
+      <pubDate>Mon, 08 May 2023 19:30:00 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/tags/github-actions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>KUBERNETES</title>
+      <link>https://www.nathanobert.com/tags/kubernetes/</link>
+      <pubDate>Mon, 08 May 2023 19:30:00 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>BASH</title>
       <link>https://www.nathanobert.com/tags/bash/</link>
@@ -26,29 +116,11 @@
     </item>
     
     <item>
-      <title>DEVOPS</title>
-      <link>https://www.nathanobert.com/tags/devops/</link>
-      <pubDate>Mon, 08 May 2023 14:30:00 -0700</pubDate>
-      
-      <guid>https://www.nathanobert.com/tags/devops/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>HELM</title>
       <link>https://www.nathanobert.com/tags/helm/</link>
       <pubDate>Mon, 08 May 2023 14:30:00 -0700</pubDate>
       
       <guid>https://www.nathanobert.com/tags/helm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>KUBERNETES</title>
-      <link>https://www.nathanobert.com/tags/kubernetes/</link>
-      <pubDate>Mon, 08 May 2023 14:30:00 -0700</pubDate>
-      
-      <guid>https://www.nathanobert.com/tags/kubernetes/</guid>
       <description></description>
     </item>
     
@@ -80,24 +152,6 @@
     </item>
     
     <item>
-      <title>GITHUB</title>
-      <link>https://www.nathanobert.com/tags/github/</link>
-      <pubDate>Mon, 08 May 2023 10:30:00 -0700</pubDate>
-      
-      <guid>https://www.nathanobert.com/tags/github/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>GITHUB ACTIONS</title>
-      <link>https://www.nathanobert.com/tags/github-actions/</link>
-      <pubDate>Mon, 08 May 2023 10:30:00 -0700</pubDate>
-      
-      <guid>https://www.nathanobert.com/tags/github-actions/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>HUGO</title>
       <link>https://www.nathanobert.com/tags/hugo/</link>
       <pubDate>Mon, 08 May 2023 10:30:00 -0700</pubDate>
@@ -112,15 +166,6 @@
       <pubDate>Fri, 05 May 2023 05:30:00 -0700</pubDate>
       
       <guid>https://www.nathanobert.com/tags/rhel-9/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>AWS</title>
-      <link>https://www.nathanobert.com/tags/aws/</link>
-      <pubDate>Wed, 03 May 2023 05:03:00 -0700</pubDate>
-      
-      <guid>https://www.nathanobert.com/tags/aws/</guid>
       <description></description>
     </item>
     
@@ -152,15 +197,6 @@
     </item>
     
     <item>
-      <title>DOCKER</title>
-      <link>https://www.nathanobert.com/tags/docker/</link>
-      <pubDate>Tue, 02 May 2023 14:28:10 -0700</pubDate>
-      
-      <guid>https://www.nathanobert.com/tags/docker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>MOBY</title>
       <link>https://www.nathanobert.com/tags/moby/</link>
       <pubDate>Tue, 02 May 2023 14:28:10 -0700</pubDate>
@@ -175,24 +211,6 @@
       <pubDate>Tue, 02 May 2023 14:28:10 -0700</pubDate>
       
       <guid>https://www.nathanobert.com/tags/rancher/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>GNOME</title>
-      <link>https://www.nathanobert.com/tags/gnome/</link>
-      <pubDate>Mon, 01 May 2023 14:28:10 -0700</pubDate>
-      
-      <guid>https://www.nathanobert.com/tags/gnome/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>XRDP</title>
-      <link>https://www.nathanobert.com/tags/xrdp/</link>
-      <pubDate>Mon, 01 May 2023 14:28:10 -0700</pubDate>
-      
-      <guid>https://www.nathanobert.com/tags/xrdp/</guid>
       <description></description>
     </item>
     
