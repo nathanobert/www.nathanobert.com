@@ -8,6 +8,15 @@
     <language>en-us</language>
     <lastBuildDate>Tue, 09 May 2023 12:28:10 -0700</lastBuildDate><atom:link href="https://www.nathanobert.com/categories/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Changing the colors in BASH</title>
+      <link>https://www.nathanobert.com/posts/blog-bash-colors/</link>
+      <pubDate>Tue, 09 May 2023 12:28:10 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/posts/blog-bash-colors/</guid>
+      <description>Changing colors in BASH So I find some color combations very hard to read. If you have a black background, the dark blue directory color is hard to read. If you have a white background the bright green executable color is hard to read. For whatever reason it was not thought very well through to have well contrasting colors for everything. I found this Ask Ubunutu on how to change the directory colors and decided to write a blog post to make sure I never lost the steps again.</description>
+    </item>
+    
+    <item>
       <title>Kubernetes on Ubuntu 22.4 with CRI-Docker</title>
       <link>https://www.nathanobert.com/posts/blog-kubernetes-on-ubuntu/</link>
       <pubDate>Tue, 09 May 2023 12:28:10 -0700</pubDate>

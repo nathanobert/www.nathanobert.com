@@ -14,11 +14,10 @@
 <meta property="article:published_time" content="2023-05-08T14:30:00-07:00" />
 <meta property="article:modified_time" content="2023-05-08T14:30:00-07:00" />
 
-
 		<meta itemprop="name" content="Kubernetes init container to verify dependent service(s) are online.">
 <meta itemprop="description" content="Kubernetes init container to verify dependent service(s) are online."><meta itemprop="datePublished" content="2023-05-08T14:30:00-07:00" />
 <meta itemprop="dateModified" content="2023-05-08T14:30:00-07:00" />
-<meta itemprop="wordCount" content="295">
+<meta itemprop="wordCount" content="296">
 <meta itemprop="keywords" content="KUBERNETES,BUSYBOX,BASH,DEVOPS,NETCAT,HELM," />
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Kubernetes init container to verify dependent service(s) are online."/>
@@ -164,32 +163,32 @@
 <p>This very small init container will simple loop endlessly with the specified sleep delay until the services it needs are responding using netcat.  There is no need to build another image, or even bother with a config map.  The scripting can simple be passed in as a command to busybox.   This small piece of yaml can be placed in your deployment and will be executed prior to the pod starting.</p>
 <p>If you are using HELM the next step will be to remove the hard coded values in the bottom of this example and replace them with values passed in through HELM.</p>
 <h2 id="init-container">Init Container</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">      <span style="color:#f92672">initContainers</span>:
-      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">init-check</span>
-        <span style="color:#f92672">image</span>: <span style="color:#ae81ff">docker.io/busybox:latest</span>
-        <span style="color:#f92672">command</span>:
-         - <span style="color:#ae81ff">sh</span>
-         - <span style="color:#e6db74">&#34;-c&#34;</span>
-         - |<span style="color:#e6db74">
-</span><span style="color:#e6db74">           check_service () {
-</span><span style="color:#e6db74">                   service=$1
-</span><span style="color:#e6db74">                   delay=$2
-</span><span style="color:#e6db74">                   echo &#34;*** verifying ${service} is available ***&#34;
-</span><span style="color:#e6db74">                   nc -z -v -w5 ${service}
-</span><span style="color:#e6db74">                   rc=$?
-</span><span style="color:#e6db74">                   while [ ${rc} -ne 0 ]
-</span><span style="color:#e6db74">                   do
-</span><span style="color:#e6db74">                       echo sleeping ${delay}
-</span><span style="color:#e6db74">                       sleep ${delay}
-</span><span style="color:#e6db74">                       nc -z -v -w5 ${service}
-</span><span style="color:#e6db74">                       rc=$?
-</span><span style="color:#e6db74">                   done
-</span><span style="color:#e6db74">                   echo &#34;*** service online: ${service} ***&#34;
-</span><span style="color:#e6db74">            }
-</span><span style="color:#e6db74">            check_service &#34;google.com 80&#34; &#34;15&#34;
-</span><span style="color:#e6db74">            check_service &#34;oracle.oracle121.svc.cluster.local. 1521&#34; &#34;15&#34;
-</span><span style="color:#e6db74">            check_service &#34;oracle.oracle121.svc.cluster.local. 8080&#34; &#34;15&#34;</span>           
-</code></pre></div><p>The paramaters on check_server are the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>      <span style="color:#f92672">initContainers</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">init-check</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">image</span>: <span style="color:#ae81ff">docker.io/busybox:latest</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">command</span>:
+</span></span><span style="display:flex;"><span>         - <span style="color:#ae81ff">sh</span>
+</span></span><span style="display:flex;"><span>         - <span style="color:#e6db74">&#34;-c&#34;</span>
+</span></span><span style="display:flex;"><span>         - |<span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">           check_service () {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                   service=$1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                   delay=$2
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                   echo &#34;*** verifying ${service} is available ***&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                   nc -z -v -w5 ${service}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                   rc=$?
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                   while [ ${rc} -ne 0 ]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                   do
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                       echo sleeping ${delay}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                       sleep ${delay}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                       nc -z -v -w5 ${service}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                       rc=$?
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                   done
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                   echo &#34;*** service online: ${service} ***&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            check_service &#34;google.com 80&#34; &#34;15&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            check_service &#34;oracle.oracle121.svc.cluster.local. 1521&#34; &#34;15&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            check_service &#34;oracle.oracle121.svc.cluster.local. 8080&#34; &#34;15&#34;</span>           
+</span></span></code></pre></div><p>The paramaters on check_server are the following:</p>
 <ol>
 <li>Hostname and port number for service</li>
 <li>sleep delay between each attempt</li>

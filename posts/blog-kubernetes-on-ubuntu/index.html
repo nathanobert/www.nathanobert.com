@@ -14,11 +14,10 @@
 <meta property="article:published_time" content="2023-05-09T12:28:10-07:00" />
 <meta property="article:modified_time" content="2023-05-09T12:28:10-07:00" />
 
-
 		<meta itemprop="name" content="Kubernetes on Ubuntu 22.4 with CRI-Docker">
 <meta itemprop="description" content="Kubernetes on Ubuntu 22.4 with CRI-Docker"><meta itemprop="datePublished" content="2023-05-09T12:28:10-07:00" />
 <meta itemprop="dateModified" content="2023-05-09T12:28:10-07:00" />
-<meta itemprop="wordCount" content="957">
+<meta itemprop="wordCount" content="958">
 <meta itemprop="keywords" content="KUBERNETES,UBUNTU,CRI-Docker,DEVOPS,DOCKER," />
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Kubernetes on Ubuntu 22.4 with CRI-Docker"/>
@@ -170,141 +169,141 @@
 <h1 id="installation">Installation</h1>
 <h2 id="update-ubuntu">Update Ubuntu</h2>
 <p>Install the updates on your fresh server from Amazon.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">## Update Ubunutu</span>
-sudo bash
-sudo apt update -y
-sudo apt upgrade -y
-sudo apt autoremove -y
-<span style="color:#75715e"># if you see kenerl updates you should reboot</span>
-<span style="color:#75715e"># init 6</span>
-</code></pre></div><h2 id="hostname">Hostname</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">## Update Ubunutu</span>
+</span></span><span style="display:flex;"><span>sudo bash
+</span></span><span style="display:flex;"><span>sudo apt update -y
+</span></span><span style="display:flex;"><span>sudo apt upgrade -y
+</span></span><span style="display:flex;"><span>sudo apt autoremove -y
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># if you see kenerl updates you should reboot</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># init 6</span>
+</span></span></code></pre></div><h2 id="hostname">Hostname</h2>
 <p>Your hostname should be in /etc/hosts.  If its not there, put it there.  If this is a fresh Amazon instance fix the hostname first.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo hostnamectl set-hostname k8
-echo <span style="color:#e6db74">&#34;172.31.74.59 k8.nathanobert.com k8&#34;</span> | sudo tee -a /etc/hosts 
-hostname
-hostname --fqdn
-<span style="color:#75715e"># reboot</span>
-init <span style="color:#ae81ff">6</span>
-</code></pre></div><h2 id="install-docker">Install Docker</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo hostnamectl set-hostname k8
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;172.31.74.59 k8.nathanobert.com k8&#34;</span> | sudo tee -a /etc/hosts 
+</span></span><span style="display:flex;"><span>hostname
+</span></span><span style="display:flex;"><span>hostname --fqdn
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># reboot</span>
+</span></span><span style="display:flex;"><span>init <span style="color:#ae81ff">6</span>
+</span></span></code></pre></div><h2 id="install-docker">Install Docker</h2>
 <p>Documentation at <a href="https://docs.docker.com/engine/install/ubuntu/">https://docs.docker.com/engine/install/ubuntu/</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt-get install ca-certificates curl gnupg
-sudo install -m <span style="color:#ae81ff">0755</span> -d /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-sudo chmod a+r /etc/apt/keyrings/docker.gpg
-echo <span style="color:#e6db74">&#34;deb [arch=&#34;</span><span style="color:#66d9ef">$(</span>dpkg --print-architecture<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34; signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu &#34;</span><span style="color:#66d9ef">$(</span>. /etc/os-release <span style="color:#f92672">&amp;&amp;</span> echo <span style="color:#e6db74">&#34;</span>$VERSION_CODENAME<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34; stable&#34;</span> | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
-sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
-sudo docker run hello-world
-</code></pre></div><h2 id="verify-docker-works-with-regular-user-account">Verify Docker works with regular user account</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo usermod -aG docker $USER
-newgrp docker
-docker run hello-world
-</code></pre></div><h2 id="cri-docker">CRI-Docker</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install ca-certificates curl gnupg
+</span></span><span style="display:flex;"><span>sudo install -m <span style="color:#ae81ff">0755</span> -d /etc/apt/keyrings
+</span></span><span style="display:flex;"><span>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+</span></span><span style="display:flex;"><span>sudo chmod a+r /etc/apt/keyrings/docker.gpg
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;deb [arch=&#34;</span><span style="color:#66d9ef">$(</span>dpkg --print-architecture<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34; signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu &#34;</span><span style="color:#66d9ef">$(</span>. /etc/os-release <span style="color:#f92672">&amp;&amp;</span> echo <span style="color:#e6db74">&#34;</span>$VERSION_CODENAME<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34; stable&#34;</span> | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
+</span></span><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+</span></span><span style="display:flex;"><span>sudo docker run hello-world
+</span></span></code></pre></div><h2 id="verify-docker-works-with-regular-user-account">Verify Docker works with regular user account</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo usermod -aG docker $USER
+</span></span><span style="display:flex;"><span>newgrp docker
+</span></span><span style="display:flex;"><span>docker run hello-world
+</span></span></code></pre></div><h2 id="cri-docker">CRI-Docker</h2>
 <p>Container Runtime Interface - Docker allows for you to use a CRI compliant interface to Kubernetes that back-ends to Docker.  This allows you to share the images between Kubernetes and Docker.  You can build an image with Docker, and then immediately its available to kubernetes without the need to push the image to a repository with Docker, and pull the image back with Kubernetes.  Very useful for development.</p>
 <p>Documentation at <a href="https://github.com/Mirantis/cri-dockerd/releases">https://github.com/Mirantis/cri-dockerd/releases</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget https://github.com/Mirantis/cri-dockerd/releases/download/v0.3.1/cri-dockerd_0.3.1.3-0.ubuntu-jammy_amd64.deb
-sudo apt install ./cri-dockerd_0.3.1.3-0.ubuntu-jammy_amd64.deb -y
-sudo systemctl status docker.service
-sudo systmctl status cri-docker.service
-</code></pre></div><h2 id="kubernetes">Kubernetes</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget https://github.com/Mirantis/cri-dockerd/releases/download/v0.3.1/cri-dockerd_0.3.1.3-0.ubuntu-jammy_amd64.deb
+</span></span><span style="display:flex;"><span>sudo apt install ./cri-dockerd_0.3.1.3-0.ubuntu-jammy_amd64.deb -y
+</span></span><span style="display:flex;"><span>sudo systemctl status docker.service
+</span></span><span style="display:flex;"><span>sudo systmctl status cri-docker.service
+</span></span></code></pre></div><h2 id="kubernetes">Kubernetes</h2>
 <p>Install Kubernetes, based on <a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/">https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt-get update
-sudo apt-get install -y apt-transport-https ca-certificates curl
-sudo curl -fsSLo /etc/apt/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
-echo <span style="color:#e6db74">&#34;deb [signed-by=/etc/apt/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main&#34;</span> | sudo tee /etc/apt/sources.list.d/kubernetes.list
-sudo apt-get update
-sudo apt-get install -y kubelet kubeadm kubectl
-<span style="color:#75715e"># This will prevent updates from breaking Kubernetes unexpectidly</span>
-sudo apt-mark hold kubelet kubeadm kubectl
-</code></pre></div><h2 id="set-selinux-to-permissive">Set selinux to permissive</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>sudo apt-get install -y apt-transport-https ca-certificates curl
+</span></span><span style="display:flex;"><span>sudo curl -fsSLo /etc/apt/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;deb [signed-by=/etc/apt/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main&#34;</span> | sudo tee /etc/apt/sources.list.d/kubernetes.list
+</span></span><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>sudo apt-get install -y kubelet kubeadm kubectl
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># This will prevent updates from breaking Kubernetes unexpectidly</span>
+</span></span><span style="display:flex;"><span>sudo apt-mark hold kubelet kubeadm kubectl
+</span></span></code></pre></div><h2 id="set-selinux-to-permissive">Set selinux to permissive</h2>
 <p>Amazon&rsquo;s image did not have selinux enabled, but you want it off.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo sestatus
-<span style="color:#75715e"># how to disable if needed</span>
-sudo setenforce <span style="color:#ae81ff">0</span>
-sudo sed -i <span style="color:#e6db74">&#39;s/^SELINUX=enforcing$/SELINUX=permissive/&#39;</span> /etc/selinux/config
-sudo sestatus
-</code></pre></div><h2 id="disable-swap">Disable swap</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo sestatus
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># how to disable if needed</span>
+</span></span><span style="display:flex;"><span>sudo setenforce <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>sudo sed -i <span style="color:#e6db74">&#39;s/^SELINUX=enforcing$/SELINUX=permissive/&#39;</span> /etc/selinux/config
+</span></span><span style="display:flex;"><span>sudo sestatus
+</span></span></code></pre></div><h2 id="disable-swap">Disable swap</h2>
 <p>Amazon&rsquo;s image did not have swap enabled, but you dont want swap!</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo swapoff -a
-
-<span style="color:#75715e"># amazon workspace (ubuntu)</span>
-sudo rm -f /etc/udev/rules.d/10-zram0.rules
-
-<span style="color:#75715e"># regular ubuntu</span>
-sudo sed -i <span style="color:#e6db74">&#39;/ swap / s/^\(.*\)$/#\1/g&#39;</span> /etc/fstab
-free -m
-</code></pre></div><h2 id="enable-the-kernel-modules-overlay--br_netfilter">Enable the kernel modules: overlay &amp; br_netfilter</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo swapoff -a
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># amazon workspace (ubuntu)</span>
+</span></span><span style="display:flex;"><span>sudo rm -f /etc/udev/rules.d/10-zram0.rules
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># regular ubuntu</span>
+</span></span><span style="display:flex;"><span>sudo sed -i <span style="color:#e6db74">&#39;/ swap / s/^\(.*\)$/#\1/g&#39;</span> /etc/fstab
+</span></span><span style="display:flex;"><span>free -m
+</span></span></code></pre></div><h2 id="enable-the-kernel-modules-overlay--br_netfilter">Enable the kernel modules: overlay &amp; br_netfilter</h2>
 <p>These kernel modules are necessary</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo modprobe overlay
-sudo modprobe br_netfilter
-</code></pre></div><h2 id="create-script-to-load-modules-on-every-reboot">Create script to load modules on every reboot</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo modprobe overlay
+</span></span><span style="display:flex;"><span>sudo modprobe br_netfilter
+</span></span></code></pre></div><h2 id="create-script-to-load-modules-on-every-reboot">Create script to load modules on every reboot</h2>
 <p>These modules are necessary</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat <span style="color:#e6db74">&lt;&lt;EOF | sudo tee /etc/modules-load.d/k8s.conf
-</span><span style="color:#e6db74">overlay
-</span><span style="color:#e6db74">br_netfilter
-</span><span style="color:#e6db74">EOF</span>
-
-cat <span style="color:#e6db74">&lt;&lt;EOF | sudo tee /etc/sysctl.d/k8s.conf
-</span><span style="color:#e6db74">net.bridge.bridge-nf-call-iptables  = 1
-</span><span style="color:#e6db74">net.bridge.bridge-nf-call-ip6tables = 1
-</span><span style="color:#e6db74">net.ipv4.ip_forward                 = 1
-</span><span style="color:#e6db74">EOF</span>
-
-
-sudo sysctl --system
-</code></pre></div><h2 id="remove-resolved">Remove Resolved</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat <span style="color:#e6db74">&lt;&lt;EOF | sudo tee /etc/modules-load.d/k8s.conf
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">overlay
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">br_netfilter
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cat <span style="color:#e6db74">&lt;&lt;EOF | sudo tee /etc/sysctl.d/k8s.conf
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">net.bridge.bridge-nf-call-iptables  = 1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">net.bridge.bridge-nf-call-ip6tables = 1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">net.ipv4.ip_forward                 = 1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo sysctl --system
+</span></span></code></pre></div><h2 id="remove-resolved">Remove Resolved</h2>
 <p>If you have 127.0.0.1 in your /etc/resolv.conf file most likely you will have coredns problems when you start Kubernetes.   Essentially there will be a loop inside of Kubernetes and it won&rsquo;t know how to get to a DNS Server.   These are the steps to bypass resolved and go directly to a real DNS server.  Note you can choose your own DNS servers.  8.8.x.x. is google :)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ls -ltr /etc/resolv.conf
-<span style="color:#75715e"># lrwxrwxrwx 1 root root 39 Mar 25 03:04 /etc/resolv.conf -&gt; ../run/systemd/resolve/stub-resolv.conf</span>
-sudo rm /etc/resolv.conf
-echo <span style="color:#e6db74">&#34;nameserver 8.8.8.8&#34;</span> | sudo tee -a /etc/resolv.conf
-echo <span style="color:#e6db74">&#34;nameserver 8.8.4.4&#34;</span> | sudo tee -a /etc/resolv.conf
-echo <span style="color:#e6db74">&#34;nameserver 1.1.1.1&#34;</span> | sudo tee -a /etc/resolv.conf
-echo <span style="color:#e6db74">&#34;nameserver 1.0.0.1&#34;</span> | sudo tee -a /etc/resolv.conf
-
-echo <span style="color:#e6db74">&#34;options edns0 trust-ad&#34;</span> | sudo tee -a /etc/resolv.conf
-<span style="color:#75715e"># this should be your domain name</span>
-echo <span style="color:#e6db74">&#34;search nathanobert.com&#34;</span> | sudo tee -a /etc/resolv.conf
-sudo systemctl stop systemd-resolved
-sudo systemctl disable systemd-resolved
-</code></pre></div><p>At this point you need to decide which ip address you want to choose to use, as well as which Container Network Interface.  We are choosing Calico with the default IP Range of 192.168.10.0/16.  We are also assuming the control plan endpoint is this local machine&rsquo;s hostname that we put in /etc/hosts.  The two commans in the hostname force it to be in all lowercase to follow RFC-1123 DNS subdomain standards.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ls -ltr /etc/resolv.conf
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># lrwxrwxrwx 1 root root 39 Mar 25 03:04 /etc/resolv.conf -&gt; ../run/systemd/resolve/stub-resolv.conf</span>
+</span></span><span style="display:flex;"><span>sudo rm /etc/resolv.conf
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;nameserver 8.8.8.8&#34;</span> | sudo tee -a /etc/resolv.conf
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;nameserver 8.8.4.4&#34;</span> | sudo tee -a /etc/resolv.conf
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;nameserver 1.1.1.1&#34;</span> | sudo tee -a /etc/resolv.conf
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;nameserver 1.0.0.1&#34;</span> | sudo tee -a /etc/resolv.conf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;options edns0 trust-ad&#34;</span> | sudo tee -a /etc/resolv.conf
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># this should be your domain name</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;search nathanobert.com&#34;</span> | sudo tee -a /etc/resolv.conf
+</span></span><span style="display:flex;"><span>sudo systemctl stop systemd-resolved
+</span></span><span style="display:flex;"><span>sudo systemctl disable systemd-resolved
+</span></span></code></pre></div><p>At this point you need to decide which ip address you want to choose to use, as well as which Container Network Interface.  We are choosing Calico with the default IP Range of 192.168.10.0/16.  We are also assuming the control plan endpoint is this local machine&rsquo;s hostname that we put in /etc/hosts.  The two commans in the hostname force it to be in all lowercase to follow RFC-1123 DNS subdomain standards.</p>
 <h2 id="start-kubernetes">Start Kubernetes</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo systemctl enable --now kubelet
-sudo kubeadm config images pull  --cri-socket /var/run/cri-dockerd.sock
-sudo kubeadm init --pod-network-cidr<span style="color:#f92672">=</span>192.168.10.0/16 --control-plane-endpoint <span style="color:#f92672">{</span><span style="color:#e6db74">`</span>hostname --fqdn<span style="color:#e6db74">`</span>,,<span style="color:#f92672">}</span> --cri-socket /var/run/cri-dockerd.sock
-mkdir -p $HOME/.kube
-sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-sudo chown <span style="color:#66d9ef">$(</span>id -u<span style="color:#66d9ef">)</span>:<span style="color:#66d9ef">$(</span>id -g<span style="color:#66d9ef">)</span> $HOME/.kube/config
-echo export KUBECONFIG<span style="color:#f92672">=</span>/etc/kubernetes/admin.conf | sudo tee -a /root/.bashrc
-</code></pre></div><h2 id="taints">Taints</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl enable --now kubelet
+</span></span><span style="display:flex;"><span>sudo kubeadm config images pull  --cri-socket /var/run/cri-dockerd.sock
+</span></span><span style="display:flex;"><span>sudo kubeadm init --pod-network-cidr<span style="color:#f92672">=</span>192.168.10.0/16 --control-plane-endpoint <span style="color:#f92672">{</span><span style="color:#e6db74">`</span>hostname --fqdn<span style="color:#e6db74">`</span>,,<span style="color:#f92672">}</span> --cri-socket /var/run/cri-dockerd.sock
+</span></span><span style="display:flex;"><span>mkdir -p $HOME/.kube
+</span></span><span style="display:flex;"><span>sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+</span></span><span style="display:flex;"><span>sudo chown <span style="color:#66d9ef">$(</span>id -u<span style="color:#66d9ef">)</span>:<span style="color:#66d9ef">$(</span>id -g<span style="color:#66d9ef">)</span> $HOME/.kube/config
+</span></span><span style="display:flex;"><span>echo export KUBECONFIG<span style="color:#f92672">=</span>/etc/kubernetes/admin.conf | sudo tee -a /root/.bashrc
+</span></span></code></pre></div><h2 id="taints">Taints</h2>
 <p>Remote taints from Node so it can schedule containers on this Kubernetes node.  (Note: the master taint is usually not necessary)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl taint nodes --all node-role.kubernetes.io/master-
-kubectl taint nodes --all node-role.kubernetes.io/control-plane-
-</code></pre></div><h2 id="calico">Calico</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl taint nodes --all node-role.kubernetes.io/master-
+</span></span><span style="display:flex;"><span>kubectl taint nodes --all node-role.kubernetes.io/control-plane-
+</span></span></code></pre></div><h2 id="calico">Calico</h2>
 <p>Install Container Network Interface (CNI) - Calico.   Note if you choose a different IP Range you will need to modify this Yaml file.  If you used the default of 192.168.10/16, you will be happy.  Also verify you are using the newest/stable calico.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.1/manifests/calico.yaml
-<span style="color:#75715e"># commands to troubleshoot</span>
-ip addr | grep cni
-kubectl get pods -n kube-system
-</code></pre></div><h2 id="helm">HELM</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.1/manifests/calico.yaml
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># commands to troubleshoot</span>
+</span></span><span style="display:flex;"><span>ip addr | grep cni
+</span></span><span style="display:flex;"><span>kubectl get pods -n kube-system
+</span></span></code></pre></div><h2 id="helm">HELM</h2>
 <p>Most of the time people want HELM if they are installing Kubernetes.<br>
 Documentation: <a href="https://helm.sh/docs/intro/install/">https://helm.sh/docs/intro/install/</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl https://baltocdn.com/helm/signing.asc | gpg --dearmor | sudo tee /usr/share/keyrings/helm.gpg &gt; /dev/null
-sudo apt-get install apt-transport-https --yes
-echo <span style="color:#e6db74">&#34;deb [arch=</span><span style="color:#66d9ef">$(</span>dpkg --print-architecture<span style="color:#66d9ef">)</span><span style="color:#e6db74"> signed-by=/usr/share/keyrings/helm.gpg] https://baltocdn.com/helm/stable/debian/ all main&#34;</span> | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
-sudo apt-get update
-sudo apt-get install helm
-</code></pre></div><h2 id="ha-proxy-ingress-controller">HA Proxy Ingress Controller</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl https://baltocdn.com/helm/signing.asc | gpg --dearmor | sudo tee /usr/share/keyrings/helm.gpg &gt; /dev/null
+</span></span><span style="display:flex;"><span>sudo apt-get install apt-transport-https --yes
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;deb [arch=</span><span style="color:#66d9ef">$(</span>dpkg --print-architecture<span style="color:#66d9ef">)</span><span style="color:#e6db74"> signed-by=/usr/share/keyrings/helm.gpg] https://baltocdn.com/helm/stable/debian/ all main&#34;</span> | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
+</span></span><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>sudo apt-get install helm
+</span></span></code></pre></div><h2 id="ha-proxy-ingress-controller">HA Proxy Ingress Controller</h2>
 <p>There are different ingress controllers, here is how you add HA Proxy if you would like it.
 Documentation: <a href="https://haproxy-ingress.github.io/docs/getting-started/">https://haproxy-ingress.github.io/docs/getting-started/</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">helm repo add haproxy-ingress https://haproxy-ingress.github.io/charts
-kubectl cluster-info
-echo <span style="color:#e6db74">&#34;controller:&#34;</span> &gt; haproxy-ingress-values.yaml
-echo <span style="color:#e6db74">&#34;  hostNetwork: true&#34;</span> &gt;&gt; haproxy-ingress-values.yaml
-helm install haproxy-ingress haproxy-ingress/haproxy-ingress --create-namespace --namespace ingress-controller --version 0.14.2 -f haproxy-ingress-values.yaml
-kubectl --namespace ingress-controller get services haproxy-ingress -o wide
-<span style="color:#75715e"># Note mine always says &lt;pending&gt; under EXTERNAL-IP</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>helm repo add haproxy-ingress https://haproxy-ingress.github.io/charts
+</span></span><span style="display:flex;"><span>kubectl cluster-info
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;controller:&#34;</span> &gt; haproxy-ingress-values.yaml
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;  hostNetwork: true&#34;</span> &gt;&gt; haproxy-ingress-values.yaml
+</span></span><span style="display:flex;"><span>helm install haproxy-ingress haproxy-ingress/haproxy-ingress --create-namespace --namespace ingress-controller --version 0.14.2 -f haproxy-ingress-values.yaml
+</span></span><span style="display:flex;"><span>kubectl --namespace ingress-controller get services haproxy-ingress -o wide
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Note mine always says &lt;pending&gt; under EXTERNAL-IP</span>
+</span></span></code></pre></div>
 		</div>
 		<footer class="post__footer">
 			
@@ -347,6 +346,12 @@ kubectl --namespace ingress-controller get services haproxy-ingress -o wide
 		<a class="pager__link" href="/posts/blog-map-windows-to-unix/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">Map Windows share to Linux</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/posts/blog-bash-colors/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">Changing the colors in BASH</p>
 		</a>
 	</div>
 </nav>

@@ -14,7 +14,6 @@
 <meta property="article:published_time" content="2023-05-09T06:00:00-07:00" />
 <meta property="article:modified_time" content="2023-05-09T06:00:00-07:00" />
 
-
 		<meta itemprop="name" content="XRP to remote Gnome on Ubuntu 22.04">
 <meta itemprop="description" content="XRP to remote Gnome on Ubuntu 22.04"><meta itemprop="datePublished" content="2023-05-09T06:00:00-07:00" />
 <meta itemprop="dateModified" content="2023-05-09T06:00:00-07:00" />
@@ -152,36 +151,36 @@
 <p>We will be turning a Command Line Interface (CLI) Redhat 9 server hosted at Amazon on EC2 into a full Xwindows based workstation that you can use Remote Desktop Protocal (RDP) to using xRDP.</p>
 <h1 id="installation">Installation</h1>
 <h2 id="install-the-updates">Install the updates</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt update -y
-sudo apt upgrade -y
-<span style="color:#75715e"># Kernel Updates wanted a reboot</span>
-sudo init <span style="color:#ae81ff">6</span>
-</code></pre></div><h2 id="install-ubuntu-desktop-gnome-xwindows-etc">Install ubuntu-desktop (Gnome, Xwindows, etc)</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt-get install ubuntu-desktop -y
-</code></pre></div><h2 id="install-xrdp">Install XRDP</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt install xrdp net-tools -y
-<span style="color:#75715e"># insure xrpd on on ipv4</span>
-sudo sed -i <span style="color:#e6db74">&#39;s/^port=3389/port=tcp:\/\/:3389/g&#39;</span> /etc/xrdp/xrdp.ini
-sudo systemctl enable xrdp.service
-sudo systemctl start xrdp.service
-<span style="color:#75715e"># had to do extra start/stop to get it to switch to ipv4 also</span>
-sudo systemctl stop xrdp.service
-sudo systemctl start xrdp.service
-sudo systemctl status xrdp.service
-sudo netstat -antp | grep xrdp
-</code></pre></div><p>Example of successful installation:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update -y
+</span></span><span style="display:flex;"><span>sudo apt upgrade -y
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Kernel Updates wanted a reboot</span>
+</span></span><span style="display:flex;"><span>sudo init <span style="color:#ae81ff">6</span>
+</span></span></code></pre></div><h2 id="install-ubuntu-desktop-gnome-xwindows-etc">Install ubuntu-desktop (Gnome, Xwindows, etc)</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install ubuntu-desktop -y
+</span></span></code></pre></div><h2 id="install-xrdp">Install XRDP</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install xrdp net-tools -y
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># insure xrpd on on ipv4</span>
+</span></span><span style="display:flex;"><span>sudo sed -i <span style="color:#e6db74">&#39;s/^port=3389/port=tcp:\/\/:3389/g&#39;</span> /etc/xrdp/xrdp.ini
+</span></span><span style="display:flex;"><span>sudo systemctl enable xrdp.service
+</span></span><span style="display:flex;"><span>sudo systemctl start xrdp.service
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># had to do extra start/stop to get it to switch to ipv4 also</span>
+</span></span><span style="display:flex;"><span>sudo systemctl stop xrdp.service
+</span></span><span style="display:flex;"><span>sudo systemctl start xrdp.service
+</span></span><span style="display:flex;"><span>sudo systemctl status xrdp.service
+</span></span><span style="display:flex;"><span>sudo netstat -antp | grep xrdp
+</span></span></code></pre></div><p>Example of successful installation:</p>
 <p><img src="/img/ubuntu_xrdp_1.jpg" alt="xrdp image" title="xrpd image"></p>
 <p>Assign a regular password to the user for RDP</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo passwd ubuntu
-</code></pre></div><h2 id="configure-firewall">Configure Firewall</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo passwd ubuntu
+</span></span></code></pre></div><h2 id="configure-firewall">Configure Firewall</h2>
 <p>If you have firewalld running, open the RDP port on RHEL, note on the EC2 instance we did this on, firewalld was not even installed because there is also an Amazon firewall.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Check if firewall is enabled</span>
-sudo ufw status
-<span style="color:#75715e"># Add firewall rule</span>
-sudo ufw allow <span style="color:#ae81ff">3389</span>
-<span style="color:#75715e"># Verify</span>
-sudo ufw status numbered
-</code></pre></div><p>On Amazon EC2, modify the security group to allow RDP Traffic, you should be as restrictive as possible on which Internet Protocal (IP) Addresses are allowed to access your RDP Port.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Check if firewall is enabled</span>
+</span></span><span style="display:flex;"><span>sudo ufw status
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add firewall rule</span>
+</span></span><span style="display:flex;"><span>sudo ufw allow <span style="color:#ae81ff">3389</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Verify</span>
+</span></span><span style="display:flex;"><span>sudo ufw status numbered
+</span></span></code></pre></div><p>On Amazon EC2, modify the security group to allow RDP Traffic, you should be as restrictive as possible on which Internet Protocal (IP) Addresses are allowed to access your RDP Port.</p>
 <p><img src="/img/rhel9_xrdp_3.jpg" alt="xrdp image" title="xrpd image"></p>
 <h2 id="connect-with-rdp">Connect with RDP</h2>
 <p>Connect to your ubuntu server using Amazon&rsquo;s external IP Address and the account you setup the password</p>

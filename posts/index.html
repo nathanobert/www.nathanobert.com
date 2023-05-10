@@ -12,7 +12,6 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.nathanobert.com/posts/" />
 
-
 		<meta itemprop="name" content="Posts">
 <meta itemprop="description" content="Nathan Obert&#39;s Personal blog about everything">
 		<meta name="twitter:card" content="summary"/>
@@ -100,6 +99,46 @@
 	<header class="main__header">
 		<h1 class="main__title">Posts</h1>
 	</header><article class="list__item post">
+	
+	<figure class="list__thumbnail thumbnail">
+		<a class="thumbnail__link" href="/posts/blog-bash-colors/">
+		<img class="thumbnail__image" src="/img/bash.png" alt="Changing the colors in BASH">
+		</a>
+	</figure>
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/posts/blog-bash-colors/" rel="bookmark">
+			Changing the colors in BASH
+			</a>
+		</h2>
+		<p class="list__lead post__lead">Quick way to change colors in bash</p>
+		<div class="list__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Nathan Obert</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-05-09T12:28:10-07:00">2023-05-09</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/blog/" rel="category">Blog</a>
+	</span>
+</div>
+<div class="post__tags tags clearfix">
+        <svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+        <ul class="tags__list">
+                <li class="tags__item">
+                        <a class="tags__link btn" href="/tags/linux/" rel="tag">LINUX</a>
+                </li>
+                <li class="tags__item">
+                        <a class="tags__link btn" href="/tags/devops/" rel="tag">DEVOPS</a>
+                </li>
+                <li class="tags__item">
+                        <a class="tags__link btn" href="/tags/bash/" rel="tag">BASH</a>
+                </li>
+        </ul>
+</div>
+</div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		Changing colors in BASH So I find some color combations very hard to read. If you have a black background, the dark blue directory color is hard to read. If you have a white background the bright green executable color is hard to read. For whatever reason it was not thought very well through to have well contrasting colors for everything. I found this Ask Ubunutu on how to change the directory colors and decided to write a blog post to make sure I never lost the steps again.
+	</div>
+</article><article class="list__item post">
 	
 	<figure class="list__thumbnail thumbnail">
 		<a class="thumbnail__link" href="/posts/blog-kubernetes-on-ubuntu/">
@@ -786,7 +825,7 @@ Installation Linux Install script provided by Docker:
 curl -sSL https://get.docker.com/ | sh Or see Installation instructions for your Linux distribution.
 Mac OS X Download and install Docker For Mac
 Create Docker VM with Docker Machine You can use Docker Machine to:
- Install and run Docker on Mac or Windows Provision and manage multiple remote Docker hosts Provision Swarm clusters  A simple example to create a local Docker VM with VirtualBox:
+Install and run Docker on Mac or Windows Provision and manage multiple remote Docker hosts Provision Swarm clusters A simple example to create a local Docker VM with VirtualBox:
 	</div>
 </article><article class="list__item post">
 	
@@ -824,7 +863,7 @@ Create Docker VM with Docker Machine You can use Docker Machine to:
 	</header>
 	<div class="content list__excerpt post__content clearfix">
 		Introduction This is a quick cheat sheet from Sematext&rsquo;s Elastic Developer Cheatsheet
-Data Manipulation Put/Get/Delete index curl -XPUT localhost:9200/index-name -d '{&quot;settings&quot;: { &quot;number_of_shards&quot;: 1}}' curl -XGET localhost:9200/index-name?pretty curl -XDELETE localhost:9200/index-name  Put/Get/Delete template curl -XPUT localhost:9200/_template/template-name -d '{ &quot;template&quot;: &quot;logs*&quot;, &quot;mappings&quot;: { &quot;foo-type&quot;: { &quot;properties&quot;: { &quot;foo-field&quot;: { &quot;type&quot;: &quot;text&quot; } } } }, &quot;settings&quot;: { &quot;number_of_shards&quot;: 1 } }' curl -XGET localhost:9200/_template/template-name?pretty curl -XDELETE localhost:9200/_template/template-name  Bulk API echo '{&quot;index&quot;: { &quot;_index&quot;: &quot;logs01&quot;, &quot;_type&quot;: &quot;logs&quot;}} {&quot;title&quot;: &quot;this is an error&quot;} {&quot;index&quot;: { &quot;_index&quot;: &quot;logs02&quot;, &quot;_type&quot;: &quot;logs&quot;}} {&quot;title&quot;: &quot;this is a warning&quot;} {&quot;delete&quot;: { &quot;_index&quot;: &quot;logs03&quot;, &quot;_type&quot;: &quot;logs&quot;, &quot;_id&quot;: &quot;abc123&quot;}} ' &gt; /tmp/bulk curl localhost:9200/_bulk?
+Data Manipulation Put/Get/Delete index curl -XPUT localhost:9200/index-name -d '{&quot;settings&quot;: { &quot;number_of_shards&quot;: 1}}' curl -XGET localhost:9200/index-name?pretty curl -XDELETE localhost:9200/index-name Put/Get/Delete template curl -XPUT localhost:9200/_template/template-name -d '{ &quot;template&quot;: &quot;logs*&quot;, &quot;mappings&quot;: { &quot;foo-type&quot;: { &quot;properties&quot;: { &quot;foo-field&quot;: { &quot;type&quot;: &quot;text&quot; } } } }, &quot;settings&quot;: { &quot;number_of_shards&quot;: 1 } }' curl -XGET localhost:9200/_template/template-name?pretty curl -XDELETE localhost:9200/_template/template-name Bulk API echo '{&quot;index&quot;: { &quot;_index&quot;: &quot;logs01&quot;, &quot;_type&quot;: &quot;logs&quot;}} {&quot;title&quot;: &quot;this is an error&quot;} {&quot;index&quot;: { &quot;_index&quot;: &quot;logs02&quot;, &quot;_type&quot;: &quot;logs&quot;}} {&quot;title&quot;: &quot;this is a warning&quot;} {&quot;delete&quot;: { &quot;_index&quot;: &quot;logs03&quot;, &quot;_type&quot;: &quot;logs&quot;, &quot;_id&quot;: &quot;abc123&quot;}} ' &gt; /tmp/bulk curl localhost:9200/_bulk?
 	</div>
 </article><article class="list__item post">
 	
@@ -863,8 +902,8 @@ Data Manipulation Put/Get/Delete index curl -XPUT localhost:9200/index-name -d '
 	<div class="content list__excerpt post__content clearfix">
 		Introduction This is a quick cheat sheet from Sematext&rsquo;s Elastic Devops Cheatsheet
 DevOps cheatsheet Allocation Allocation awareness Avoids putting two copies of the same shard on nodes with the same attribute (e.g. rack, availability zone). For example:
-node.attr.availability_zone: us-east1 # in elasticsearch.yml  Awareness is enabled at the cluster level:
-curl -XPUT localhost:9200/_cluster/settings?pretty -d '{ &quot;persistent&quot; : { &quot;cluster.routing.allocation.awareness.attributes&quot; : &quot;availability_zone&quot; } }'  Allocation filtering Shards of an index can prefer/avoid nodes with certain attributes.
+node.attr.availability_zone: us-east1 # in elasticsearch.yml Awareness is enabled at the cluster level:
+curl -XPUT localhost:9200/_cluster/settings?pretty -d '{ &quot;persistent&quot; : { &quot;cluster.routing.allocation.awareness.attributes&quot; : &quot;availability_zone&quot; } }' Allocation filtering Shards of an index can prefer/avoid nodes with certain attributes.
 	</div>
 </article><article class="list__item post">
 	
@@ -915,45 +954,6 @@ localhost:8983/solr/admin/metrics?wt=json&amp;indent=true
 Jetty Metrics Number of Requests with Given Response Status
 Check the number of requests with the given HTTP status, useful when checking for number of errors and successful requests:
 	</div>
-</article><article class="list__item post">
-	
-	<figure class="list__thumbnail thumbnail">
-		<a class="thumbnail__link" href="/posts/cheatsheet-kubernetes/">
-		<img class="thumbnail__image" src="/img/kubernetes.svg" alt="Kubernetes Cheatsheet">
-		</a>
-	</figure>
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/posts/cheatsheet-kubernetes/" rel="bookmark">
-			Kubernetes Cheatsheet
-			</a>
-		</h2>
-		<p class="list__lead post__lead">Cheatsheet for Kubernetes</p>
-		<div class="list__meta meta"><div class="meta__item-author meta__item">
-	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Nathan Obert</span>
-</div>
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-05-01T09:30:00-07:00">2023-05-01</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/cheatsheets/" rel="category">Cheatsheets</a>
-	</span>
-</div>
-<div class="post__tags tags clearfix">
-        <svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
-        <ul class="tags__list">
-                <li class="tags__item">
-                        <a class="tags__link btn" href="/tags/kubernetes/" rel="tag">KUBERNETES</a>
-                </li>
-                <li class="tags__item">
-                        <a class="tags__link btn" href="/tags/devops/" rel="tag">DEVOPS</a>
-                </li>
-        </ul>
-</div>
-</div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		Introduction This is a quick cheat sheet from Kubernetes Website&rsquo;s Cheatsheet.
-This page contains a list of commonly used kubectl commands and flags.
-Kubectl autocomplete BASH source &lt;(kubectl completion bash) # set up autocomplete in bash into the current shell, bash-completion package should be installed first. echo &#34;source &lt;(kubectl completion bash)&#34; &gt;&gt; ~/.bashrc # add autocomplete permanently to your bash shell. You can also use a shorthand alias for kubectl that also works with completion:
-	</div>
 </article>
 </main>
 
@@ -977,11 +977,11 @@ Kubectl autocomplete BASH source &lt;(kubectl completion bash) # set up autocomp
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/posts/blog-bash-colors/">Changing the colors in BASH</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/blog-kubernetes-on-ubuntu/">Kubernetes on Ubuntu 22.4 with CRI-Docker</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/blog-map-windows-to-unix/">Map Windows share to Linux</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/blog-aws-workspace-ubuntu/">Amazon Workspace with Ubuntu 22.04</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/blog-xrdp-gnome-on-ubuntu/">XRP to remote Gnome on Ubuntu 22.04</a></li>
-			<li class="widget__item"><a class="widget__link" href="/posts/blog-github-actions-docker/">GitHub Actions to automatically build Docker and push to registry</a></li>
 		</ul>
 	</div>
 </div>
