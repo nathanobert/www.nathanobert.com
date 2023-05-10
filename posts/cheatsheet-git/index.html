@@ -14,6 +14,7 @@
 <meta property="article:published_time" content="2023-05-02T05:00:00-07:00" />
 <meta property="article:modified_time" content="2023-05-02T05:00:00-07:00" />
 
+
 		<meta itemprop="name" content="Git Cheatsheet">
 <meta itemprop="description" content="Git Cheatsheet"><meta itemprop="datePublished" content="2023-05-02T05:00:00-07:00" />
 <meta itemprop="dateModified" content="2023-05-02T05:00:00-07:00" />
@@ -176,189 +177,189 @@
 <pre tabindex="0"><code>git config --global color.ui true
 git config --global push.default current
 git config --global core.editor vim
-git config --global user.name &#34;John Doe&#34;
+git config --global user.name &quot;John Doe&quot;
 git config --global user.email foo@citrix.com
 git config --global diff.tool meld
 </code></pre><h3 id="credential-helper">Credential Helper</h3>
 <p>If you are using http, and are tried of entering your passed on every git command.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># enable to credential helper and ask it to store your password</span>
-</span></span><span style="display:flex;"><span>git config --global credential.helper cache
-</span></span><span style="display:flex;"><span>git config --global credential.helper store
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># length of time in seconds before you have to re-type password</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Cache for 1 hour</span>
-</span></span><span style="display:flex;"><span>git config --global credential.helper <span style="color:#e6db74">&#34;cache --timeout=3600&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Cache for 1 day</span>
-</span></span><span style="display:flex;"><span>git config --global credential.helper <span style="color:#e6db74">&#34;cache --timeout=86400&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Cache for 1 week</span>
-</span></span><span style="display:flex;"><span>git config --global credential.helper <span style="color:#e6db74">&#34;cache --timeout=604800&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Cache for 1 year</span>
-</span></span><span style="display:flex;"><span>git config --global credential.helper <span style="color:#e6db74">&#34;cache --timeout=31449600&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Cache for 32 years .... :)</span>
-</span></span><span style="display:flex;"><span>git config --global credential.helper <span style="color:#e6db74">&#34;cache --timeout=10006387200&#34;</span>
-</span></span></code></pre></div><h3 id="working-with-local-branch">Working with Local Branch</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># enable to credential helper and ask it to store your password</span>
+git config --global credential.helper cache
+git config --global credential.helper store
+
+<span style="color:#75715e"># length of time in seconds before you have to re-type password</span>
+
+<span style="color:#75715e"># Cache for 1 hour</span>
+git config --global credential.helper <span style="color:#e6db74">&#34;cache --timeout=3600&#34;</span>
+
+<span style="color:#75715e"># Cache for 1 day</span>
+git config --global credential.helper <span style="color:#e6db74">&#34;cache --timeout=86400&#34;</span>
+
+<span style="color:#75715e"># Cache for 1 week</span>
+git config --global credential.helper <span style="color:#e6db74">&#34;cache --timeout=604800&#34;</span>
+
+<span style="color:#75715e"># Cache for 1 year</span>
+git config --global credential.helper <span style="color:#e6db74">&#34;cache --timeout=31449600&#34;</span>
+
+<span style="color:#75715e"># Cache for 32 years .... :)</span>
+git config --global credential.helper <span style="color:#e6db74">&#34;cache --timeout=10006387200&#34;</span>
+</code></pre></div><h3 id="working-with-local-branch">Working with Local Branch</h3>
 <h4 id="branching">Branching</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># See the list of all local branches</span>
-</span></span><span style="display:flex;"><span>git branch
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Switch to existing local branch</span>
-</span></span><span style="display:flex;"><span>git checkout branchname
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Checkout current branch into a new branch, named new-branch-name</span>
-</span></span><span style="display:flex;"><span>git checkout -b new-branch-name
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Merge branch-name into the current branch</span>
-</span></span><span style="display:flex;"><span>git merge branchname
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Merge branch without fast forwarding. This is what pull requests do.</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># It helps to preserve history of the changes as relavant to that branch</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># It&#39;s an advanced feature, but try it out with GUI to see the difference</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># between the regular merge and merge --no-ff</span>
-</span></span><span style="display:flex;"><span>git merge --no-ff branchname
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Soft branch delete, will complain if the branch is not merged</span>
-</span></span><span style="display:flex;"><span>git branch -d branchname
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Hard branch delete, will not complain about nothing. Like rm -rf in bash</span>
-</span></span><span style="display:flex;"><span>git branch -D branchname
-</span></span></code></pre></div><h4 id="updating-current-branch">Updating Current Branch</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># See the list of all local branches</span>
+git branch
+
+<span style="color:#75715e"># Switch to existing local branch</span>
+git checkout branchname
+
+<span style="color:#75715e"># Checkout current branch into a new branch, named new-branch-name</span>
+git checkout -b new-branch-name
+
+<span style="color:#75715e"># Merge branch-name into the current branch</span>
+git merge branchname
+
+<span style="color:#75715e"># Merge branch without fast forwarding. This is what pull requests do.</span>
+<span style="color:#75715e"># It helps to preserve history of the changes as relavant to that branch</span>
+<span style="color:#75715e"># It&#39;s an advanced feature, but try it out with GUI to see the difference</span>
+<span style="color:#75715e"># between the regular merge and merge --no-ff</span>
+git merge --no-ff branchname
+
+<span style="color:#75715e"># Soft branch delete, will complain if the branch is not merged</span>
+git branch -d branchname
+
+<span style="color:#75715e"># Hard branch delete, will not complain about nothing. Like rm -rf in bash</span>
+git branch -D branchname
+</code></pre></div><h4 id="updating-current-branch">Updating Current Branch</h4>
 <p><strong>Standard Flow</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># See all commits</span>
-</span></span><span style="display:flex;"><span>git log
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Pretty commit view, you can customize it as much as you want. </span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Just google it :)</span>
-</span></span><span style="display:flex;"><span>git log --pretty<span style="color:#f92672">=</span>format:<span style="color:#e6db74">&#34;%h %s&#34;</span> --graph
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># See what you worked on in the past week</span>
-</span></span><span style="display:flex;"><span>git log --author<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Alex&#39;</span> --after<span style="color:#f92672">={</span>1.week.ago<span style="color:#f92672">}</span> --pretty<span style="color:#f92672">=</span>oneline --abbrev-commit
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># See only changes made on this branch (assuming it was branched form master branch)</span>
-</span></span><span style="display:flex;"><span>git log --no-merges master..
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># See status of your current git branch. </span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Often will have advice on command that you need to run</span>
-</span></span><span style="display:flex;"><span>git status
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Short view of status. Helpful for seeing things at a glance</span>
-</span></span><span style="display:flex;"><span>git status -s
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add modified file to be commited(aka stage the file)</span>
-</span></span><span style="display:flex;"><span>git add filename
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add all modified files to be commited(aka stage all files)</span>
-</span></span><span style="display:flex;"><span>git add .
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add only text files, etc.</span>
-</span></span><span style="display:flex;"><span>git add <span style="color:#e6db74">&#39;*.txt&#39;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Tell git not to track file anymore</span>
-</span></span><span style="display:flex;"><span>git rm filename
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Record changes to git. Default editor will open for a commit message.</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># (Visible via git log)</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Once files are commited, they are history.</span>
-</span></span><span style="display:flex;"><span>git commit 
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># A short hand for commiting files and writing a commit message via one command</span>
-</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#39;Some commit message&#39;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Changing the history :) If you want to change your previous commit, </span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># you can, if you haven&#39;t pushed it yet to a remote repo</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Simply make new changes, add them via git add, and run the following command. </span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Past commit will be ammended.</span>
-</span></span><span style="display:flex;"><span>git commit --amend
-</span></span></code></pre></div><p><strong>Advanced</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Unstage pending changes, the changes will still remain on file system</span>
-</span></span><span style="display:flex;"><span>git reset
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Unstage pending changes, and reset files to pre-commit state. If </span>
-</span></span><span style="display:flex;"><span>git reset --hard HEAD
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Go back to some time in history, on the current branch</span>
-</span></span><span style="display:flex;"><span>git reset tag
-</span></span><span style="display:flex;"><span>git reset &lt;commit-hash&gt;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Save current changes, without having to commit them to repo</span>
-</span></span><span style="display:flex;"><span>git stash
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># And later return those changes</span>
-</span></span><span style="display:flex;"><span>git stash pop
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Return file to it&#39;s previous version, if it hasn’t been staged yet.</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Otherwise use git reset filename or git reset --hard filename</span>
-</span></span><span style="display:flex;"><span>git checkout filename 
-</span></span></code></pre></div><p><strong>Comparing changes</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># See current changes, that have not been staged yet. </span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Good thing to check before running git add</span>
-</span></span><span style="display:flex;"><span>git diff
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># See current changes, that have not been commited yet (including staged changes)</span>
-</span></span><span style="display:flex;"><span>git diff HEAD
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Compare current branch to some other branch</span>
-</span></span><span style="display:flex;"><span>git diff branch-name
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Same as diff, but opens changes via difftool that you have configured</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># -d tells it to open it in a directory mode, instead of having to open</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># each file one at a time.</span>
-</span></span><span style="display:flex;"><span>git difftool -d
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># See only changes made in the current branch (compared to master branch)</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Helpful when working on a stand alone branch for a while</span>
-</span></span><span style="display:flex;"><span>git difftool -d master..
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># See only the file names that has changed in current branch</span>
-</span></span><span style="display:flex;"><span>git diff --no-commit-id --name-only --no-merges origin/master...
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Similar to above, but see statistics on what files have changed and how</span>
-</span></span><span style="display:flex;"><span>git diff --stat <span style="color:#75715e">#Your diff condition</span>
-</span></span></code></pre></div><h3 id="working-with-remote-branch">Working with Remote Branch</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># See list of remote repos available. If you did git clone, </span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># you&#39;ll have at least one named &#34;origin&#34;</span>
-</span></span><span style="display:flex;"><span>git remote
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Detailed view of remote repos, with their git urls</span>
-</span></span><span style="display:flex;"><span>git remote -v
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add a new remote. I.e. origin if it is not set</span>
-</span></span><span style="display:flex;"><span>git remote add origin &lt;https://some-git-remote-url&gt;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Push current branch to remote branch (usually with the same name) </span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># called upstream branch</span>
-</span></span><span style="display:flex;"><span>git push
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># If a remote branch is not set up as an upstream, you can make it so</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># The -u tells Git to remember the parameters</span>
-</span></span><span style="display:flex;"><span>git push -u origin master 
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Otherwise you can manually specify remote and branch to use every time</span>
-</span></span><span style="display:flex;"><span>git push origin branchname
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Just like pushing, you can get the latest updates from remote. </span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># By defaul Git will try to pull from &#34;origin&#34; and upstream branch</span>
-</span></span><span style="display:flex;"><span>git pull
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Or you can tell git to pull a specific branch</span>
-</span></span><span style="display:flex;"><span>git pull origin branchname
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Git pull, is actually a short hand for two command.</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Telling git to first fetch changes from a remote branch</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># And then to merge them into current branch</span>
-</span></span><span style="display:flex;"><span>git fetch <span style="color:#f92672">&amp;&amp;</span> git merge origin/remote-branch-name
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># If you want to update history of remote branches, you can fetch and purge</span>
-</span></span><span style="display:flex;"><span>git fetch -p
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># To see the list of remote branches</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># -a stands for all</span>
-</span></span><span style="display:flex;"><span>git branch -a 
-</span></span></code></pre></div><h2 id="resources">Resources</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># See all commits</span>
+git log
+
+<span style="color:#75715e"># Pretty commit view, you can customize it as much as you want. </span>
+<span style="color:#75715e"># Just google it :)</span>
+git log --pretty<span style="color:#f92672">=</span>format:<span style="color:#e6db74">&#34;%h %s&#34;</span> --graph
+
+<span style="color:#75715e"># See what you worked on in the past week</span>
+git log --author<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Alex&#39;</span> --after<span style="color:#f92672">={</span>1.week.ago<span style="color:#f92672">}</span> --pretty<span style="color:#f92672">=</span>oneline --abbrev-commit
+
+<span style="color:#75715e"># See only changes made on this branch (assuming it was branched form master branch)</span>
+git log --no-merges master..
+
+<span style="color:#75715e"># See status of your current git branch. </span>
+<span style="color:#75715e"># Often will have advice on command that you need to run</span>
+git status
+
+<span style="color:#75715e"># Short view of status. Helpful for seeing things at a glance</span>
+git status -s
+
+<span style="color:#75715e"># Add modified file to be commited(aka stage the file)</span>
+git add filename
+
+<span style="color:#75715e"># Add all modified files to be commited(aka stage all files)</span>
+git add .
+
+<span style="color:#75715e"># Add only text files, etc.</span>
+git add <span style="color:#e6db74">&#39;*.txt&#39;</span>
+
+<span style="color:#75715e"># Tell git not to track file anymore</span>
+git rm filename
+
+<span style="color:#75715e"># Record changes to git. Default editor will open for a commit message.</span>
+<span style="color:#75715e"># (Visible via git log)</span>
+<span style="color:#75715e"># Once files are commited, they are history.</span>
+git commit 
+
+<span style="color:#75715e"># A short hand for commiting files and writing a commit message via one command</span>
+git commit -m <span style="color:#e6db74">&#39;Some commit message&#39;</span>
+
+<span style="color:#75715e"># Changing the history :) If you want to change your previous commit, </span>
+<span style="color:#75715e"># you can, if you haven&#39;t pushed it yet to a remote repo</span>
+<span style="color:#75715e"># Simply make new changes, add them via git add, and run the following command. </span>
+<span style="color:#75715e"># Past commit will be ammended.</span>
+git commit --amend
+</code></pre></div><p><strong>Advanced</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Unstage pending changes, the changes will still remain on file system</span>
+git reset
+
+<span style="color:#75715e"># Unstage pending changes, and reset files to pre-commit state. If </span>
+git reset --hard HEAD
+
+<span style="color:#75715e"># Go back to some time in history, on the current branch</span>
+git reset tag
+git reset &lt;commit-hash&gt;
+
+<span style="color:#75715e"># Save current changes, without having to commit them to repo</span>
+git stash
+
+<span style="color:#75715e"># And later return those changes</span>
+git stash pop
+
+<span style="color:#75715e"># Return file to it&#39;s previous version, if it hasn’t been staged yet.</span>
+<span style="color:#75715e"># Otherwise use git reset filename or git reset --hard filename</span>
+git checkout filename 
+</code></pre></div><p><strong>Comparing changes</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># See current changes, that have not been staged yet. </span>
+<span style="color:#75715e"># Good thing to check before running git add</span>
+git diff
+
+<span style="color:#75715e"># See current changes, that have not been commited yet (including staged changes)</span>
+git diff HEAD
+
+<span style="color:#75715e"># Compare current branch to some other branch</span>
+git diff branch-name
+
+<span style="color:#75715e"># Same as diff, but opens changes via difftool that you have configured</span>
+<span style="color:#75715e"># -d tells it to open it in a directory mode, instead of having to open</span>
+<span style="color:#75715e"># each file one at a time.</span>
+git difftool -d
+
+<span style="color:#75715e"># See only changes made in the current branch (compared to master branch)</span>
+<span style="color:#75715e"># Helpful when working on a stand alone branch for a while</span>
+git difftool -d master..
+
+<span style="color:#75715e"># See only the file names that has changed in current branch</span>
+git diff --no-commit-id --name-only --no-merges origin/master...
+
+<span style="color:#75715e"># Similar to above, but see statistics on what files have changed and how</span>
+git diff --stat <span style="color:#75715e">#Your diff condition</span>
+</code></pre></div><h3 id="working-with-remote-branch">Working with Remote Branch</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># See list of remote repos available. If you did git clone, </span>
+<span style="color:#75715e"># you&#39;ll have at least one named &#34;origin&#34;</span>
+git remote
+
+<span style="color:#75715e"># Detailed view of remote repos, with their git urls</span>
+git remote -v
+
+<span style="color:#75715e"># Add a new remote. I.e. origin if it is not set</span>
+git remote add origin &lt;https://some-git-remote-url&gt;
+
+<span style="color:#75715e"># Push current branch to remote branch (usually with the same name) </span>
+<span style="color:#75715e"># called upstream branch</span>
+git push
+
+<span style="color:#75715e"># If a remote branch is not set up as an upstream, you can make it so</span>
+<span style="color:#75715e"># The -u tells Git to remember the parameters</span>
+git push -u origin master 
+
+<span style="color:#75715e"># Otherwise you can manually specify remote and branch to use every time</span>
+git push origin branchname
+
+<span style="color:#75715e"># Just like pushing, you can get the latest updates from remote. </span>
+<span style="color:#75715e"># By defaul Git will try to pull from &#34;origin&#34; and upstream branch</span>
+git pull
+
+<span style="color:#75715e"># Or you can tell git to pull a specific branch</span>
+git pull origin branchname
+
+<span style="color:#75715e"># Git pull, is actually a short hand for two command.</span>
+<span style="color:#75715e"># Telling git to first fetch changes from a remote branch</span>
+<span style="color:#75715e"># And then to merge them into current branch</span>
+git fetch <span style="color:#f92672">&amp;&amp;</span> git merge origin/remote-branch-name
+
+<span style="color:#75715e"># If you want to update history of remote branches, you can fetch and purge</span>
+git fetch -p
+
+<span style="color:#75715e"># To see the list of remote branches</span>
+<span style="color:#75715e"># -a stands for all</span>
+git branch -a 
+</code></pre></div><h2 id="resources">Resources</h2>
 <h3 id="reference">Reference</h3>
 <ul>
 <li>Try Github - <a href="https://try.github.io">https://try.github.io</a></li>
@@ -379,18 +380,18 @@ git config --global diff.tool meld
 <li>Webstorm</li>
 </ul>
 <h3 id="rebasing-to-avoiding-merge">Rebasing to avoiding merge</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># If there are changes made on remote branch that you want to pull, you can avoid merging them, by rebasing your commits on top of the them.</span>
-</span></span><span style="display:flex;"><span>git pull --rebase
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># If conflicts arise during the rebase, resolve them manually, stage the modified files and continue the rebase.</span>
-</span></span><span style="display:flex;"><span>git add .
-</span></span><span style="display:flex;"><span>git rebase --continue
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># If at any point, you want to abort the rebasing, you can run.</span>
-</span></span><span style="display:flex;"><span>git rebase --abort
-</span></span></code></pre></div><h3 id="how-to-undo-a-file-you-mistakenly-added-to-a-commit">How to undo a file you mistakenly added to a commit</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git add *                     <span style="color:#75715e"># oops</span>
-</span></span><span style="display:flex;"><span>git rm --cached &lt;FILENAME&gt;    <span style="color:#75715e"># selectivaly remove files from the commit but leave them on filesystem</span>
-</span></span><span style="display:flex;"><span>git status                    <span style="color:#75715e"># verify which files are within the given commit</span>
-</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># If there are changes made on remote branch that you want to pull, you can avoid merging them, by rebasing your commits on top of the them.</span>
+git pull --rebase
+<span style="color:#75715e"># If conflicts arise during the rebase, resolve them manually, stage the modified files and continue the rebase.</span>
+git add .
+git rebase --continue
+<span style="color:#75715e"># If at any point, you want to abort the rebasing, you can run.</span>
+git rebase --abort
+</code></pre></div><h3 id="how-to-undo-a-file-you-mistakenly-added-to-a-commit">How to undo a file you mistakenly added to a commit</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git add *                     <span style="color:#75715e"># oops</span>
+git rm --cached &lt;FILENAME&gt;    <span style="color:#75715e"># selectivaly remove files from the commit but leave them on filesystem</span>
+git status                    <span style="color:#75715e"># verify which files are within the given commit</span>
+</code></pre></div>
 		</div>
 		<footer class="post__footer">
 			

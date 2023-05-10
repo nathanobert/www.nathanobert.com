@@ -14,10 +14,11 @@
 <meta property="article:published_time" content="2023-05-08T19:30:00-07:00" />
 <meta property="article:modified_time" content="2023-05-08T19:30:00-07:00" />
 
+
 		<meta itemprop="name" content="GitHub Actions to automatically build Docker and push to registry">
 <meta itemprop="description" content="GitHub Actions to automatically build Docker and push to registry"><meta itemprop="datePublished" content="2023-05-08T19:30:00-07:00" />
 <meta itemprop="dateModified" content="2023-05-08T19:30:00-07:00" />
-<meta itemprop="wordCount" content="243">
+<meta itemprop="wordCount" content="242">
 <meta itemprop="keywords" content="GITHUB ACTIONS,GITHUB,DEVOPS,DOCKER,KUBERNETES," />
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="GitHub Actions to automatically build Docker and push to registry"/>
@@ -161,21 +162,21 @@
 <ul>
 <li>replace NAMEOFYOURIMAGE with the name of the image you are pushing.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">name</span>: <span style="color:#ae81ff">push-github-to-registry</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">run-name</span>: <span style="color:#ae81ff">${{ github.actor }} is publishing Registry</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">on</span>: [<span style="color:#ae81ff">push]</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">jobs</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">publish-to-registry</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">steps</span>:
-</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/checkout@v3</span>
-</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">run</span>: |<span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          export TAG=latest
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          export IMAGE=NAMEOFYOURIMAGE
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          echo  ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin ${{ secrets.DOCKER_SERVER }}
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          docker build -t ${{ secrets.DOCKER_SERVER }}/${{ secrets.DOCKER_USERNAME }}/&#34;${IMAGE}&#34;:&#34;${TAG}&#34; .
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          docker push ${{ secrets.DOCKER_SERVER }}/${{ secrets.DOCKER_USERNAME }}/&#34;${IMAGE}&#34;:&#34;${TAG}&#34;</span>          
-</span></span></code></pre></div><h2 id="github-secret-token">GitHub Secret Token</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">name</span>: <span style="color:#ae81ff">push-github-to-registry</span>
+<span style="color:#f92672">run-name</span>: <span style="color:#ae81ff">${{ github.actor }} is publishing Registry</span>
+<span style="color:#f92672">on</span>: [<span style="color:#ae81ff">push]</span>
+<span style="color:#f92672">jobs</span>:
+  <span style="color:#f92672">publish-to-registry</span>:
+    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
+    <span style="color:#f92672">steps</span>:
+      - <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/checkout@v3</span>
+      - <span style="color:#f92672">run</span>: |<span style="color:#e6db74">
+</span><span style="color:#e6db74">          export TAG=latest
+</span><span style="color:#e6db74">          export IMAGE=NAMEOFYOURIMAGE
+</span><span style="color:#e6db74">          echo  ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin ${{ secrets.DOCKER_SERVER }}
+</span><span style="color:#e6db74">          docker build -t ${{ secrets.DOCKER_SERVER }}/${{ secrets.DOCKER_USERNAME }}/&#34;${IMAGE}&#34;:&#34;${TAG}&#34; .
+</span><span style="color:#e6db74">          docker push ${{ secrets.DOCKER_SERVER }}/${{ secrets.DOCKER_USERNAME }}/&#34;${IMAGE}&#34;:&#34;${TAG}&#34;</span>          
+</code></pre></div><h2 id="github-secret-token">GitHub Secret Token</h2>
 <p>Create Actions Secrets in the git repository.</p>
 <ol>
 <li>DOCKER_USERNAME is the username for your repository.</li>
