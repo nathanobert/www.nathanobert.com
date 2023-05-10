@@ -6,7 +6,16 @@
     <description>Recent content in WINDOWS on Nathan Obert</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 03 May 2023 05:03:00 -0700</lastBuildDate><atom:link href="https://www.nathanobert.com/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 May 2023 12:28:10 -0700</lastBuildDate><atom:link href="https://www.nathanobert.com/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Map Windows share to Linux</title>
+      <link>https://www.nathanobert.com/posts/blog-map-windows-to-unix/</link>
+      <pubDate>Tue, 09 May 2023 12:28:10 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/posts/blog-map-windows-to-unix/</guid>
+      <description>Mounting Windows on Linux Setup on Ubuntu sudo apt-get install keyutils sudo apt-get install cifs-utils Setup on Redhat sudo yum install keyutils cifs-utils Syntax UNC=server.domain.com/share USERNAME=yourwindowslogin DOMAIN=NAMEOFDOMAIN PASSWORD=yourpassword sudo mkdir -p /mnt/${UNC} sudo mount -t cifs -o username=${USERNAME},domain=${DOMAIN},password=${PASSWORD} //${UNC} /mnt/${UNC} </description>
+    </item>
+    
     <item>
       <title>Amazon Web Services (AWS) Command Line Interface (CLI) on Windows 11</title>
       <link>https://www.nathanobert.com/posts/blog-aws-cli/</link>

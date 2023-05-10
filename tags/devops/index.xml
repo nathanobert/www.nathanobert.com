@@ -19,6 +19,15 @@ Installation Update Ubuntu Install the updates on your fresh server from Amazon.
     </item>
     
     <item>
+      <title>Map Windows share to Linux</title>
+      <link>https://www.nathanobert.com/posts/blog-map-windows-to-unix/</link>
+      <pubDate>Tue, 09 May 2023 12:28:10 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/posts/blog-map-windows-to-unix/</guid>
+      <description>Mounting Windows on Linux Setup on Ubuntu sudo apt-get install keyutils sudo apt-get install cifs-utils Setup on Redhat sudo yum install keyutils cifs-utils Syntax UNC=server.domain.com/share USERNAME=yourwindowslogin DOMAIN=NAMEOFDOMAIN PASSWORD=yourpassword sudo mkdir -p /mnt/${UNC} sudo mount -t cifs -o username=${USERNAME},domain=${DOMAIN},password=${PASSWORD} //${UNC} /mnt/${UNC} </description>
+    </item>
+    
+    <item>
       <title>GitHub Actions to automatically build Docker and push to registry</title>
       <link>https://www.nathanobert.com/posts/blog-github-actions-docker/</link>
       <pubDate>Mon, 08 May 2023 19:30:00 -0700</pubDate>
@@ -94,7 +103,7 @@ Installation Linux Install script provided by Docker:
 curl -sSL https://get.docker.com/ | sh Or see Installation instructions for your Linux distribution.
 Mac OS X Download and install Docker For Mac
 Create Docker VM with Docker Machine You can use Docker Machine to:
-Install and run Docker on Mac or Windows Provision and manage multiple remote Docker hosts Provision Swarm clusters A simple example to create a local Docker VM with VirtualBox:</description>
+ Install and run Docker on Mac or Windows Provision and manage multiple remote Docker hosts Provision Swarm clusters  A simple example to create a local Docker VM with VirtualBox:</description>
     </item>
     
     <item>
@@ -105,8 +114,8 @@ Install and run Docker on Mac or Windows Provision and manage multiple remote Do
       <guid>https://www.nathanobert.com/posts/cheatsheet-elastic-devops/</guid>
       <description>Introduction This is a quick cheat sheet from Sematext&amp;rsquo;s Elastic Devops Cheatsheet
 DevOps cheatsheet Allocation Allocation awareness Avoids putting two copies of the same shard on nodes with the same attribute (e.g. rack, availability zone). For example:
-node.attr.availability_zone: us-east1 # in elasticsearch.yml Awareness is enabled at the cluster level:
-curl -XPUT localhost:9200/_cluster/settings?pretty -d &#39;{ &amp;quot;persistent&amp;quot; : { &amp;quot;cluster.routing.allocation.awareness.attributes&amp;quot; : &amp;quot;availability_zone&amp;quot; } }&#39; Allocation filtering Shards of an index can prefer/avoid nodes with certain attributes.</description>
+node.attr.availability_zone: us-east1 # in elasticsearch.yml  Awareness is enabled at the cluster level:
+curl -XPUT localhost:9200/_cluster/settings?pretty -d &#39;{ &amp;quot;persistent&amp;quot; : { &amp;quot;cluster.routing.allocation.awareness.attributes&amp;quot; : &amp;quot;availability_zone&amp;quot; } }&#39;  Allocation filtering Shards of an index can prefer/avoid nodes with certain attributes.</description>
     </item>
     
     <item>

@@ -14,6 +14,7 @@
 <meta property="article:published_time" content="2023-04-29T08:28:10-07:00" />
 <meta property="article:modified_time" content="2023-04-29T08:28:10-07:00" />
 
+
 		<meta itemprop="name" content="Kubernetes on Redhat Enterprise Linux 9">
 <meta itemprop="description" content="Kubernetes on Redhat Enterprise Linux 9"><meta itemprop="datePublished" content="2023-04-29T08:28:10-07:00" />
 <meta itemprop="dateModified" content="2023-04-29T08:28:10-07:00" />
@@ -143,91 +144,91 @@
 <p>We will install a Kubernetes on RHEL 9 with CRI-O, and Podman.  We are using an r5.large on Amazon EC2 using Amazon&rsquo;s provided Red Hat Enterprise Linux.</p>
 <h1 id="installation">Installation</h1>
 <p>Install the updates on your fresh server from Amazon.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dnf update -y
-</span></span></code></pre></div><p>Setup DNS or atleast Hostname entries in your /etc/hosts file</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">`</span>/sbin/ifconfig eth0 | grep <span style="color:#e6db74">&#39;inet &#39;</span> | awk <span style="color:#f92672">{</span><span style="color:#e6db74">&#39;print $2&#39;</span><span style="color:#f92672">}</span><span style="color:#e6db74">`</span> <span style="color:#e6db74">${</span>HOSTNAME<span style="color:#e6db74">}</span> | sudo tee -a /etc/hosts
-</span></span></code></pre></div><p>Set selinux to permissive</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo setenforce <span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span>sudo sed -i <span style="color:#e6db74">&#39;s/^SELINUX=enforcing$/SELINUX=permissive/&#39;</span> /etc/selinux/config
-</span></span><span style="display:flex;"><span>sestatus
-</span></span></code></pre></div><p>Disable swap</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo swapoff -a
-</span></span><span style="display:flex;"><span>sudo sed -i <span style="color:#e6db74">&#39;/ swap / s/^\(.*\)$/#\1/g&#39;</span> /etc/fstab
-</span></span><span style="display:flex;"><span>free -m
-</span></span></code></pre></div><p>Enable the kernel modules: overlay &amp; br_netfilter</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo modprobe overlay
-</span></span><span style="display:flex;"><span>sudo modprobe br_netfilter
-</span></span></code></pre></div><p>Create script to load modules on every reboot</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat <span style="color:#e6db74">&lt;&lt;EOF | sudo tee /etc/modules-load.d/k8s.conf
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">overlay
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">br_netfilter
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>cat <span style="color:#e6db74">&lt;&lt;EOF | sudo tee /etc/sysctl.d/k8s.conf
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">net.bridge.bridge-nf-call-iptables  = 1
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">net.bridge.bridge-nf-call-ip6tables = 1
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">net.ipv4.ip_forward                 = 1
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>sudo sysctl --system
-</span></span></code></pre></div><p>Verify the 3 net commands in previous step are in output</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo dnf update -y
+</code></pre></div><p>Setup DNS or atleast Hostname entries in your /etc/hosts file</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">`</span>/sbin/ifconfig eth0 | grep <span style="color:#e6db74">&#39;inet &#39;</span> | awk <span style="color:#f92672">{</span><span style="color:#e6db74">&#39;print $2&#39;</span><span style="color:#f92672">}</span><span style="color:#e6db74">`</span> <span style="color:#e6db74">${</span>HOSTNAME<span style="color:#e6db74">}</span> | sudo tee -a /etc/hosts
+</code></pre></div><p>Set selinux to permissive</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo setenforce <span style="color:#ae81ff">0</span>
+sudo sed -i <span style="color:#e6db74">&#39;s/^SELINUX=enforcing$/SELINUX=permissive/&#39;</span> /etc/selinux/config
+sestatus
+</code></pre></div><p>Disable swap</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo swapoff -a
+sudo sed -i <span style="color:#e6db74">&#39;/ swap / s/^\(.*\)$/#\1/g&#39;</span> /etc/fstab
+free -m
+</code></pre></div><p>Enable the kernel modules: overlay &amp; br_netfilter</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo modprobe overlay
+sudo modprobe br_netfilter
+</code></pre></div><p>Create script to load modules on every reboot</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat <span style="color:#e6db74">&lt;&lt;EOF | sudo tee /etc/modules-load.d/k8s.conf
+</span><span style="color:#e6db74">overlay
+</span><span style="color:#e6db74">br_netfilter
+</span><span style="color:#e6db74">EOF</span>
+
+cat <span style="color:#e6db74">&lt;&lt;EOF | sudo tee /etc/sysctl.d/k8s.conf
+</span><span style="color:#e6db74">net.bridge.bridge-nf-call-iptables  = 1
+</span><span style="color:#e6db74">net.bridge.bridge-nf-call-ip6tables = 1
+</span><span style="color:#e6db74">net.ipv4.ip_forward                 = 1
+</span><span style="color:#e6db74">EOF</span>
+
+
+sudo sysctl --system
+</code></pre></div><p>Verify the 3 net commands in previous step are in output</p>
 <p><img src="/img/rhel9_k8_1.jpg" alt="rhel k8 image" title="rhel k8 image"></p>
 <p>Instal CRI-O, set the version to the current version first!</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export VERSION<span style="color:#f92672">=</span>1.27
-</span></span><span style="display:flex;"><span>sudo curl -L -o /etc/yum.repos.d/devel:kubic:libcontainers:stable.repo https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/CentOS_8/devel:kubic:libcontainers:stable.repo
-</span></span><span style="display:flex;"><span>sudo curl -L -o /etc/yum.repos.d/devel:kubic:libcontainers:stable:cri-o:$VERSION.repo https://download.opensuse.org/repositories/devel:kubic:libcontainers:stable:cri-o:$VERSION/CentOS_8/devel:kubic:libcontainers:stable:cri-o:$VERSION.repo
-</span></span><span style="display:flex;"><span>sudo dnf repolist
-</span></span><span style="display:flex;"><span>sudo dnf makecache
-</span></span><span style="display:flex;"><span>sudo dnf install -y cri-o
-</span></span><span style="display:flex;"><span>sudo systemctl enable crio
-</span></span><span style="display:flex;"><span>sudo systemctl start crio
-</span></span><span style="display:flex;"><span>sudo systemctl status crio
-</span></span></code></pre></div><p>cri-o installed:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export VERSION<span style="color:#f92672">=</span>1.27
+sudo curl -L -o /etc/yum.repos.d/devel:kubic:libcontainers:stable.repo https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/CentOS_8/devel:kubic:libcontainers:stable.repo
+sudo curl -L -o /etc/yum.repos.d/devel:kubic:libcontainers:stable:cri-o:$VERSION.repo https://download.opensuse.org/repositories/devel:kubic:libcontainers:stable:cri-o:$VERSION/CentOS_8/devel:kubic:libcontainers:stable:cri-o:$VERSION.repo
+sudo dnf repolist
+sudo dnf makecache
+sudo dnf install -y cri-o
+sudo systemctl enable crio
+sudo systemctl start crio
+sudo systemctl status crio
+</code></pre></div><p>cri-o installed:</p>
 <p><img src="/img/rhel9_k8_2.jpg" alt="rhel k8 image" title="rhel k8 image"></p>
 <p>Verify Kernel Modules are Loaded</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lsmod | grep br_netfilter
-</span></span></code></pre></div><p><img src="/img/rhel9_k8_3.jpg" alt="rhel k8 image" title="rhel k8 image"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">lsmod | grep br_netfilter
+</code></pre></div><p><img src="/img/rhel9_k8_3.jpg" alt="rhel k8 image" title="rhel k8 image"></p>
 <p>Install Kubernetes</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat <span style="color:#e6db74">&lt;&lt;EOF | sudo tee /etc/yum.repos.d/kubernetes.repo
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">[kubernetes]
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">name=Kubernetes
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-\$basearch
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">enabled=1
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">gpgcheck=1
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">exclude=kubelet kubeadm kubectl
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>sudo dnf repolist
-</span></span><span style="display:flex;"><span>sudo dnf makecache
-</span></span><span style="display:flex;"><span>sudo dnf install -y kubelet kubeadm kubectl --disableexcludes<span style="color:#f92672">=</span>kubernetes
-</span></span><span style="display:flex;"><span>sudo systemctl enable --now kubelet
-</span></span><span style="display:flex;"><span>sudo kubeadm config images pull
-</span></span></code></pre></div><p>At this point you need to decide which ip address you want to choose to use, as well as which Container Network Interface.  We are choosing Calico with the default IP Range of 192.168.10.0/16.  We are also assuming the control plan endpoint is this local machine&rsquo;s hostname that we put in /etc/hosts</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo kubeadm init --pod-network-cidr<span style="color:#f92672">=</span>192.168.10.0/16 --control-plane-endpoint <span style="color:#e6db74">${</span>HOSTNAME<span style="color:#e6db74">}</span>
-</span></span><span style="display:flex;"><span>mkdir -p $HOME/.kube
-</span></span><span style="display:flex;"><span>sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-</span></span><span style="display:flex;"><span>sudo chown <span style="color:#66d9ef">$(</span>id -u<span style="color:#66d9ef">)</span>:<span style="color:#66d9ef">$(</span>id -g<span style="color:#66d9ef">)</span> $HOME/.kube/config
-</span></span><span style="display:flex;"><span>echo export KUBECONFIG<span style="color:#f92672">=</span>/etc/kubernetes/admin.conf | tee -a /root/.bashrc
-</span></span></code></pre></div><p>Remote taints from Node so it can schedule containers on this Kubernetes node.  (Note: the master taint is usually not necessary)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl taint nodes --all node-role.kubernetes.io/master-
-</span></span><span style="display:flex;"><span>kubectl taint nodes --all node-role.kubernetes.io/control-plane-
-</span></span></code></pre></div><p>Install Container Network Interface (CNI) - Calico.   Note if you choose a different IP Range you will need to modify this Yaml file.  If you used the default of 192.168.10/16, you will be happy.  Also verify you are using the newest/stable calico.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.1/manifests/calico.yaml
-</span></span><span style="display:flex;"><span>ip addr | grep cni
-</span></span><span style="display:flex;"><span>kubectl get pods -n kube-system
-</span></span></code></pre></div><p>There should be a new network interface named &lsquo;cni0&rsquo; as well as the pods should be Running.  (this might take a few minutes if you have a slow computer)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat <span style="color:#e6db74">&lt;&lt;EOF | sudo tee /etc/yum.repos.d/kubernetes.repo
+</span><span style="color:#e6db74">[kubernetes]
+</span><span style="color:#e6db74">name=Kubernetes
+</span><span style="color:#e6db74">baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-\$basearch
+</span><span style="color:#e6db74">enabled=1
+</span><span style="color:#e6db74">gpgcheck=1
+</span><span style="color:#e6db74">gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+</span><span style="color:#e6db74">exclude=kubelet kubeadm kubectl
+</span><span style="color:#e6db74">EOF</span>
+
+sudo dnf repolist
+sudo dnf makecache
+sudo dnf install -y kubelet kubeadm kubectl --disableexcludes<span style="color:#f92672">=</span>kubernetes
+sudo systemctl enable --now kubelet
+sudo kubeadm config images pull
+</code></pre></div><p>At this point you need to decide which ip address you want to choose to use, as well as which Container Network Interface.  We are choosing Calico with the default IP Range of 192.168.10.0/16.  We are also assuming the control plan endpoint is this local machine&rsquo;s hostname that we put in /etc/hosts</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo kubeadm init --pod-network-cidr<span style="color:#f92672">=</span>192.168.10.0/16 --control-plane-endpoint <span style="color:#e6db74">${</span>HOSTNAME<span style="color:#e6db74">}</span>
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown <span style="color:#66d9ef">$(</span>id -u<span style="color:#66d9ef">)</span>:<span style="color:#66d9ef">$(</span>id -g<span style="color:#66d9ef">)</span> $HOME/.kube/config
+echo export KUBECONFIG<span style="color:#f92672">=</span>/etc/kubernetes/admin.conf | tee -a /root/.bashrc
+</code></pre></div><p>Remote taints from Node so it can schedule containers on this Kubernetes node.  (Note: the master taint is usually not necessary)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl taint nodes --all node-role.kubernetes.io/master-
+kubectl taint nodes --all node-role.kubernetes.io/control-plane-
+</code></pre></div><p>Install Container Network Interface (CNI) - Calico.   Note if you choose a different IP Range you will need to modify this Yaml file.  If you used the default of 192.168.10/16, you will be happy.  Also verify you are using the newest/stable calico.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.1/manifests/calico.yaml
+ip addr | grep cni
+kubectl get pods -n kube-system
+</code></pre></div><p>There should be a new network interface named &lsquo;cni0&rsquo; as well as the pods should be Running.  (this might take a few minutes if you have a slow computer)</p>
 <p><img src="/img/rhel9_k8_4.jpg" alt="rhel k8 image" title="rhel k8 image"></p>
 <p>Inspect Kubernetes, its online!</p>
 <p><img src="/img/rhel9_k8_5.jpg" alt="rhel k8 image" title="rhel k8 image"></p>
 <p>On RHEL9 to create Container images we recommend Podman over Docker</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dnf group install -y <span style="color:#e6db74">&#34;Container Management&#34;</span>
-</span></span><span style="display:flex;"><span>sudo dnf install -y podman-docker
-</span></span><span style="display:flex;"><span>sudo touch /etc/containers/nodocker
-</span></span><span style="display:flex;"><span>sudo dnf install -y podman-remote
-</span></span><span style="display:flex;"><span>sudo dnf install -y skopeo
-</span></span></code></pre></div><p>Now you have a complete Kubernetes server on RHEL 9 with all the container tools!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo dnf group install -y <span style="color:#e6db74">&#34;Container Management&#34;</span>
+sudo dnf install -y podman-docker
+sudo touch /etc/containers/nodocker
+sudo dnf install -y podman-remote
+sudo dnf install -y skopeo
+</code></pre></div><p>Now you have a complete Kubernetes server on RHEL 9 with all the container tools!</p>
 <p>If you are new to podman, skopeo, buildah, or want a refresher there is a great whitepaper at redhat.  You can access it with a free Developer account at Redhat: <a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/pdf/building_running_and_managing_containers/red_hat_enterprise_linux-9-building_running_and_managing_containers-en-us.pdf">RHEL 9 building running and managing containers PDF</a>.</p>
 
 		</div>

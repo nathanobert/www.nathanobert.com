@@ -12,6 +12,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.nathanobert.com/tags/devops/" />
 
+
 		<meta itemprop="name" content="DEVOPS">
 <meta itemprop="description" content="Nathan Obert&#39;s Personal blog about everything">
 		<meta name="twitter:card" content="summary"/>
@@ -145,6 +146,52 @@
 		Introduction We will install a Kubernetes on Ubuntu 22.4 with Docker and CRI-Docker. We are using an r5.2xlarge on Amazon EC2 using Amazon&rsquo;s provided Ubuntu 22.4. You can get by with a much smaller instance depending on what you plan to run.
 Installation Update Ubuntu Install the updates on your fresh server from Amazon.
 ## Update Ubunutu sudo bash sudo apt update -y sudo apt upgrade -y sudo apt autoremove -y # if you see kenerl updates you should reboot # init 6 Hostname Your hostname should be in /etc/hosts.
+	</div>
+</article><article class="list__item post">
+	
+	<figure class="list__thumbnail thumbnail">
+		<a class="thumbnail__link" href="/posts/blog-map-windows-to-unix/">
+		<img class="thumbnail__image" src="/img/bash.png" alt="Map Windows share to Linux">
+		</a>
+	</figure>
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/posts/blog-map-windows-to-unix/" rel="bookmark">
+			Map Windows share to Linux
+			</a>
+		</h2>
+		<p class="list__lead post__lead">Quick way to copy files from Windows to Linux</p>
+		<div class="list__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Nathan Obert</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-05-09T12:28:10-07:00">2023-05-09</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/blog/" rel="category">Blog</a>
+	</span>
+</div>
+<div class="post__tags tags clearfix">
+        <svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+        <ul class="tags__list">
+                <li class="tags__item">
+                        <a class="tags__link btn" href="/tags/linux/" rel="tag">LINUX</a>
+                </li>
+                <li class="tags__item">
+                        <a class="tags__link btn" href="/tags/devops/" rel="tag">DEVOPS</a>
+                </li>
+                <li class="tags__item">
+                        <a class="tags__link btn" href="/tags/cif/" rel="tag">CIF</a>
+                </li>
+                <li class="tags__item">
+                        <a class="tags__link btn" href="/tags/bash/" rel="tag">BASH</a>
+                </li>
+                <li class="tags__item">
+                        <a class="tags__link btn" href="/tags/windows/" rel="tag">WINDOWS</a>
+                </li>
+        </ul>
+</div>
+</div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		Mounting Windows on Linux Setup on Ubuntu sudo apt-get install keyutils sudo apt-get install cifs-utils Setup on Redhat sudo yum install keyutils cifs-utils Syntax UNC=server.domain.com/share USERNAME=yourwindowslogin DOMAIN=NAMEOFDOMAIN PASSWORD=yourpassword sudo mkdir -p /mnt/${UNC} sudo mount -t cifs -o username=${USERNAME},domain=${DOMAIN},password=${PASSWORD} //${UNC} /mnt/${UNC} 
 	</div>
 </article><article class="list__item post">
 	
@@ -489,7 +536,7 @@ Installation Linux Install script provided by Docker:
 curl -sSL https://get.docker.com/ | sh Or see Installation instructions for your Linux distribution.
 Mac OS X Download and install Docker For Mac
 Create Docker VM with Docker Machine You can use Docker Machine to:
-Install and run Docker on Mac or Windows Provision and manage multiple remote Docker hosts Provision Swarm clusters A simple example to create a local Docker VM with VirtualBox:
+ Install and run Docker on Mac or Windows Provision and manage multiple remote Docker hosts Provision Swarm clusters  A simple example to create a local Docker VM with VirtualBox:
 	</div>
 </article><article class="list__item post">
 	
@@ -528,8 +575,8 @@ Install and run Docker on Mac or Windows Provision and manage multiple remote Do
 	<div class="content list__excerpt post__content clearfix">
 		Introduction This is a quick cheat sheet from Sematext&rsquo;s Elastic Devops Cheatsheet
 DevOps cheatsheet Allocation Allocation awareness Avoids putting two copies of the same shard on nodes with the same attribute (e.g. rack, availability zone). For example:
-node.attr.availability_zone: us-east1 # in elasticsearch.yml Awareness is enabled at the cluster level:
-curl -XPUT localhost:9200/_cluster/settings?pretty -d '{ &quot;persistent&quot; : { &quot;cluster.routing.allocation.awareness.attributes&quot; : &quot;availability_zone&quot; } }' Allocation filtering Shards of an index can prefer/avoid nodes with certain attributes.
+node.attr.availability_zone: us-east1 # in elasticsearch.yml  Awareness is enabled at the cluster level:
+curl -XPUT localhost:9200/_cluster/settings?pretty -d '{ &quot;persistent&quot; : { &quot;cluster.routing.allocation.awareness.attributes&quot; : &quot;availability_zone&quot; } }'  Allocation filtering Shards of an index can prefer/avoid nodes with certain attributes.
 	</div>
 </article><article class="list__item post">
 	
@@ -716,10 +763,10 @@ echo `/sbin/ifconfig eth0 | grep &#39;inet &#39; | awk {&#39;print $2&#39;}` ${H
 	<div class="widget__content">
 		<ul class="widget__list">
 			<li class="widget__item"><a class="widget__link" href="/posts/blog-kubernetes-on-ubuntu/">Kubernetes on Ubuntu 22.4 with CRI-Docker</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/blog-map-windows-to-unix/">Map Windows share to Linux</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/blog-aws-workspace-ubuntu/">Amazon Workspace with Ubuntu 22.04</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/blog-xrdp-gnome-on-ubuntu/">XRP to remote Gnome on Ubuntu 22.04</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/blog-github-actions-docker/">GitHub Actions to automatically build Docker and push to registry</a></li>
-			<li class="widget__item"><a class="widget__link" href="/posts/blog-init-container-check-service/">Kubernetes init container to verify dependent service(s) are online.</a></li>
 		</ul>
 	</div>
 </div>
@@ -741,6 +788,7 @@ echo `/sbin/ifconfig eth0 | grep &#39;inet &#39; | awk {&#39;print $2&#39;}` ${H
 		<a class="widget-taglist__link widget__link btn" href="/tags/aws-workspace/" title="AWS WORKSPACE">AWS WORKSPACE</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bash/" title="BASH">BASH</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/busybox/" title="BUSYBOX">BUSYBOX</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cif/" title="CIF">CIF</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/cli/" title="CLI">CLI</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/containerd/" title="CONTAINERD">CONTAINERD</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/cri-docker/" title="CRI-Docker">CRI-Docker</a>
@@ -756,6 +804,7 @@ echo `/sbin/ifconfig eth0 | grep &#39;inet &#39; | awk {&#39;print $2&#39;}` ${H
 		<a class="widget-taglist__link widget__link btn" href="/tags/helm/" title="HELM">HELM</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="HUGO">HUGO</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kubernetes/" title="KUBERNETES">KUBERNETES</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/linux/" title="LINUX">LINUX</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/markdown/" title="MARKDOWN">MARKDOWN</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/metrics/" title="METRICS">METRICS</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/moby/" title="MOBY">MOBY</a>

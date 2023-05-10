@@ -19,6 +19,15 @@ Installation Update Ubuntu Install the updates on your fresh server from Amazon.
     </item>
     
     <item>
+      <title>Map Windows share to Linux</title>
+      <link>https://www.nathanobert.com/posts/blog-map-windows-to-unix/</link>
+      <pubDate>Tue, 09 May 2023 12:28:10 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/posts/blog-map-windows-to-unix/</guid>
+      <description>Mounting Windows on Linux Setup on Ubuntu sudo apt-get install keyutils sudo apt-get install cifs-utils Setup on Redhat sudo yum install keyutils cifs-utils Syntax UNC=server.domain.com/share USERNAME=yourwindowslogin DOMAIN=NAMEOFDOMAIN PASSWORD=yourpassword sudo mkdir -p /mnt/${UNC} sudo mount -t cifs -o username=${USERNAME},domain=${DOMAIN},password=${PASSWORD} //${UNC} /mnt/${UNC} </description>
+    </item>
+    
+    <item>
       <title>Amazon Workspace with Ubuntu 22.04</title>
       <link>https://www.nathanobert.com/posts/blog-aws-workspace-ubuntu/</link>
       <pubDate>Tue, 09 May 2023 08:28:10 -0700</pubDate>

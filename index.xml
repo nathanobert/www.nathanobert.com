@@ -19,6 +19,15 @@ Installation Update Ubuntu Install the updates on your fresh server from Amazon.
     </item>
     
     <item>
+      <title>Map Windows share to Linux</title>
+      <link>https://www.nathanobert.com/posts/blog-map-windows-to-unix/</link>
+      <pubDate>Tue, 09 May 2023 12:28:10 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/posts/blog-map-windows-to-unix/</guid>
+      <description>Mounting Windows on Linux Setup on Ubuntu sudo apt-get install keyutils sudo apt-get install cifs-utils Setup on Redhat sudo yum install keyutils cifs-utils Syntax UNC=server.domain.com/share USERNAME=yourwindowslogin DOMAIN=NAMEOFDOMAIN PASSWORD=yourpassword sudo mkdir -p /mnt/${UNC} sudo mount -t cifs -o username=${USERNAME},domain=${DOMAIN},password=${PASSWORD} //${UNC} /mnt/${UNC} </description>
+    </item>
+    
+    <item>
       <title>Amazon Workspace with Ubuntu 22.04</title>
       <link>https://www.nathanobert.com/posts/blog-aws-workspace-ubuntu/</link>
       <pubDate>Tue, 09 May 2023 08:28:10 -0700</pubDate>
@@ -152,7 +161,7 @@ Installation Linux Install script provided by Docker:
 curl -sSL https://get.docker.com/ | sh Or see Installation instructions for your Linux distribution.
 Mac OS X Download and install Docker For Mac
 Create Docker VM with Docker Machine You can use Docker Machine to:
-Install and run Docker on Mac or Windows Provision and manage multiple remote Docker hosts Provision Swarm clusters A simple example to create a local Docker VM with VirtualBox:</description>
+ Install and run Docker on Mac or Windows Provision and manage multiple remote Docker hosts Provision Swarm clusters  A simple example to create a local Docker VM with VirtualBox:</description>
     </item>
     
     <item>
@@ -162,7 +171,7 @@ Install and run Docker on Mac or Windows Provision and manage multiple remote Do
       
       <guid>https://www.nathanobert.com/posts/cheatsheet-elastic-dev/</guid>
       <description>Introduction This is a quick cheat sheet from Sematext&amp;rsquo;s Elastic Developer Cheatsheet
-Data Manipulation Put/Get/Delete index curl -XPUT localhost:9200/index-name -d &#39;{&amp;quot;settings&amp;quot;: { &amp;quot;number_of_shards&amp;quot;: 1}}&#39; curl -XGET localhost:9200/index-name?pretty curl -XDELETE localhost:9200/index-name Put/Get/Delete template curl -XPUT localhost:9200/_template/template-name -d &#39;{ &amp;quot;template&amp;quot;: &amp;quot;logs*&amp;quot;, &amp;quot;mappings&amp;quot;: { &amp;quot;foo-type&amp;quot;: { &amp;quot;properties&amp;quot;: { &amp;quot;foo-field&amp;quot;: { &amp;quot;type&amp;quot;: &amp;quot;text&amp;quot; } } } }, &amp;quot;settings&amp;quot;: { &amp;quot;number_of_shards&amp;quot;: 1 } }&#39; curl -XGET localhost:9200/_template/template-name?pretty curl -XDELETE localhost:9200/_template/template-name Bulk API echo &#39;{&amp;quot;index&amp;quot;: { &amp;quot;_index&amp;quot;: &amp;quot;logs01&amp;quot;, &amp;quot;_type&amp;quot;: &amp;quot;logs&amp;quot;}} {&amp;quot;title&amp;quot;: &amp;quot;this is an error&amp;quot;} {&amp;quot;index&amp;quot;: { &amp;quot;_index&amp;quot;: &amp;quot;logs02&amp;quot;, &amp;quot;_type&amp;quot;: &amp;quot;logs&amp;quot;}} {&amp;quot;title&amp;quot;: &amp;quot;this is a warning&amp;quot;} {&amp;quot;delete&amp;quot;: { &amp;quot;_index&amp;quot;: &amp;quot;logs03&amp;quot;, &amp;quot;_type&amp;quot;: &amp;quot;logs&amp;quot;, &amp;quot;_id&amp;quot;: &amp;quot;abc123&amp;quot;}} &#39; &amp;gt; /tmp/bulk curl localhost:9200/_bulk?</description>
+Data Manipulation Put/Get/Delete index curl -XPUT localhost:9200/index-name -d &#39;{&amp;quot;settings&amp;quot;: { &amp;quot;number_of_shards&amp;quot;: 1}}&#39; curl -XGET localhost:9200/index-name?pretty curl -XDELETE localhost:9200/index-name  Put/Get/Delete template curl -XPUT localhost:9200/_template/template-name -d &#39;{ &amp;quot;template&amp;quot;: &amp;quot;logs*&amp;quot;, &amp;quot;mappings&amp;quot;: { &amp;quot;foo-type&amp;quot;: { &amp;quot;properties&amp;quot;: { &amp;quot;foo-field&amp;quot;: { &amp;quot;type&amp;quot;: &amp;quot;text&amp;quot; } } } }, &amp;quot;settings&amp;quot;: { &amp;quot;number_of_shards&amp;quot;: 1 } }&#39; curl -XGET localhost:9200/_template/template-name?pretty curl -XDELETE localhost:9200/_template/template-name  Bulk API echo &#39;{&amp;quot;index&amp;quot;: { &amp;quot;_index&amp;quot;: &amp;quot;logs01&amp;quot;, &amp;quot;_type&amp;quot;: &amp;quot;logs&amp;quot;}} {&amp;quot;title&amp;quot;: &amp;quot;this is an error&amp;quot;} {&amp;quot;index&amp;quot;: { &amp;quot;_index&amp;quot;: &amp;quot;logs02&amp;quot;, &amp;quot;_type&amp;quot;: &amp;quot;logs&amp;quot;}} {&amp;quot;title&amp;quot;: &amp;quot;this is a warning&amp;quot;} {&amp;quot;delete&amp;quot;: { &amp;quot;_index&amp;quot;: &amp;quot;logs03&amp;quot;, &amp;quot;_type&amp;quot;: &amp;quot;logs&amp;quot;, &amp;quot;_id&amp;quot;: &amp;quot;abc123&amp;quot;}} &#39; &amp;gt; /tmp/bulk curl localhost:9200/_bulk?</description>
     </item>
     
     <item>
@@ -173,8 +182,8 @@ Data Manipulation Put/Get/Delete index curl -XPUT localhost:9200/index-name -d &
       <guid>https://www.nathanobert.com/posts/cheatsheet-elastic-devops/</guid>
       <description>Introduction This is a quick cheat sheet from Sematext&amp;rsquo;s Elastic Devops Cheatsheet
 DevOps cheatsheet Allocation Allocation awareness Avoids putting two copies of the same shard on nodes with the same attribute (e.g. rack, availability zone). For example:
-node.attr.availability_zone: us-east1 # in elasticsearch.yml Awareness is enabled at the cluster level:
-curl -XPUT localhost:9200/_cluster/settings?pretty -d &#39;{ &amp;quot;persistent&amp;quot; : { &amp;quot;cluster.routing.allocation.awareness.attributes&amp;quot; : &amp;quot;availability_zone&amp;quot; } }&#39; Allocation filtering Shards of an index can prefer/avoid nodes with certain attributes.</description>
+node.attr.availability_zone: us-east1 # in elasticsearch.yml  Awareness is enabled at the cluster level:
+curl -XPUT localhost:9200/_cluster/settings?pretty -d &#39;{ &amp;quot;persistent&amp;quot; : { &amp;quot;cluster.routing.allocation.awareness.attributes&amp;quot; : &amp;quot;availability_zone&amp;quot; } }&#39;  Allocation filtering Shards of an index can prefer/avoid nodes with certain attributes.</description>
     </item>
     
     <item>
