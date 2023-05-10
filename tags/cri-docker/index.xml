@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CRI-Docker on Nathan Obert</title>
+    <link>https://www.nathanobert.com/tags/cri-docker/</link>
+    <description>Recent content in CRI-Docker on Nathan Obert</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 09 May 2023 12:28:10 -0700</lastBuildDate><atom:link href="https://www.nathanobert.com/tags/cri-docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kubernetes on Ubuntu 22.4 with CRI-Docker</title>
+      <link>https://www.nathanobert.com/posts/blog-kubernetes-on-ubuntu/</link>
+      <pubDate>Tue, 09 May 2023 12:28:10 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/posts/blog-kubernetes-on-ubuntu/</guid>
+      <description>Introduction We will install a Kubernetes on Ubuntu 22.4 with Docker and CRI-Docker. We are using an r5.2xlarge on Amazon EC2 using Amazon&amp;rsquo;s provided Ubuntu 22.4. You can get by with a much smaller instance depending on what you plan to run.
+Installation Update Ubuntu Install the updates on your fresh server from Amazon.
+## Update Ubunutu sudo bash sudo apt update -y sudo apt upgrade -y sudo apt autoremove -y # if you see kenerl updates you should reboot # init 6 Hostname Your hostname should be in /etc/hosts.</description>
+    </item>
+    
+  </channel>
+</rss>

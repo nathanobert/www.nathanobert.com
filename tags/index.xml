@@ -6,7 +6,52 @@
     <description>Recent content in Tags on Nathan Obert</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 09 May 2023 08:28:10 -0700</lastBuildDate><atom:link href="https://www.nathanobert.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 May 2023 12:28:10 -0700</lastBuildDate><atom:link href="https://www.nathanobert.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CRI-Docker</title>
+      <link>https://www.nathanobert.com/tags/cri-docker/</link>
+      <pubDate>Tue, 09 May 2023 12:28:10 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/tags/cri-docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DEVOPS</title>
+      <link>https://www.nathanobert.com/tags/devops/</link>
+      <pubDate>Tue, 09 May 2023 12:28:10 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/tags/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DOCKER</title>
+      <link>https://www.nathanobert.com/tags/docker/</link>
+      <pubDate>Tue, 09 May 2023 12:28:10 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>KUBERNETES</title>
+      <link>https://www.nathanobert.com/tags/kubernetes/</link>
+      <pubDate>Tue, 09 May 2023 12:28:10 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>UBUNTU</title>
+      <link>https://www.nathanobert.com/tags/ubuntu/</link>
+      <pubDate>Tue, 09 May 2023 12:28:10 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/tags/ubuntu/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>AWS</title>
       <link>https://www.nathanobert.com/tags/aws/</link>
@@ -22,15 +67,6 @@
       <pubDate>Tue, 09 May 2023 08:28:10 -0700</pubDate>
       
       <guid>https://www.nathanobert.com/tags/aws-workspace/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>UBUNTU</title>
-      <link>https://www.nathanobert.com/tags/ubuntu/</link>
-      <pubDate>Tue, 09 May 2023 08:28:10 -0700</pubDate>
-      
-      <guid>https://www.nathanobert.com/tags/ubuntu/</guid>
       <description></description>
     </item>
     
@@ -53,24 +89,6 @@
     </item>
     
     <item>
-      <title>DEVOPS</title>
-      <link>https://www.nathanobert.com/tags/devops/</link>
-      <pubDate>Mon, 08 May 2023 19:30:00 -0700</pubDate>
-      
-      <guid>https://www.nathanobert.com/tags/devops/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>DOCKER</title>
-      <link>https://www.nathanobert.com/tags/docker/</link>
-      <pubDate>Mon, 08 May 2023 19:30:00 -0700</pubDate>
-      
-      <guid>https://www.nathanobert.com/tags/docker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>GITHUB</title>
       <link>https://www.nathanobert.com/tags/github/</link>
       <pubDate>Mon, 08 May 2023 19:30:00 -0700</pubDate>
@@ -85,15 +103,6 @@
       <pubDate>Mon, 08 May 2023 19:30:00 -0700</pubDate>
       
       <guid>https://www.nathanobert.com/tags/github-actions/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>KUBERNETES</title>
-      <link>https://www.nathanobert.com/tags/kubernetes/</link>
-      <pubDate>Mon, 08 May 2023 19:30:00 -0700</pubDate>
-      
-      <guid>https://www.nathanobert.com/tags/kubernetes/</guid>
       <description></description>
     </item>
     

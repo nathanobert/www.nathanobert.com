@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Kubernetes on Ubuntu 22.4 with CRI-Docker - Nathan Obert</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Kubernetes on Ubuntu 22.4 with CRI-Docker">
+		<meta property="og:title" content="Kubernetes on Ubuntu 22.4 with CRI-Docker" />
+<meta property="og:description" content="Kubernetes on Ubuntu 22.4 with CRI-Docker" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.nathanobert.com/posts/blog-kubernetes-on-ubuntu/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-05-09T12:28:10-07:00" />
+<meta property="article:modified_time" content="2023-05-09T12:28:10-07:00" />
+
+		<meta itemprop="name" content="Kubernetes on Ubuntu 22.4 with CRI-Docker">
+<meta itemprop="description" content="Kubernetes on Ubuntu 22.4 with CRI-Docker"><meta itemprop="datePublished" content="2023-05-09T12:28:10-07:00" />
+<meta itemprop="dateModified" content="2023-05-09T12:28:10-07:00" />
+<meta itemprop="wordCount" content="958">
+<meta itemprop="keywords" content="KUBERNETES,UBUNTU,CRI-Docker,DEVOPS,DOCKER," />
+		<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Kubernetes on Ubuntu 22.4 with CRI-Docker"/>
+<meta name="twitter:description" content="Kubernetes on Ubuntu 22.4 with CRI-Docker"/>
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo logo--mixed">
+		<a class="logo__link" href="/" title="Nathan Obert" rel="home">
+			<div class="logo__item logo__imagebox">
+					<img class="logo__img" src="/img/nathan.jpg">
+				</div><div class="logo__item logo__text">
+					<div class="logo__title">Nathan Obert</div>
+					
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/blog/">
+				
+				<span class="menu__text">Blog</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/categories/cheatsheets/">
+				
+				<span class="menu__text">Cheatsheets</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/tags/">
+				
+				<span class="menu__text">Tags</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/posts/about/">
+				
+				<span class="menu__text">About</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Kubernetes on Ubuntu 22.4 with CRI-Docker</h1>
+			<p class="post__lead">Installation of Kubernetes Server</p>
+			<div class="post__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Nathan Obert</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-05-09T12:28:10-07:00">2023-05-09</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/blog/" rel="category">Blog</a>
+	</span>
+</div>
+<div class="post__tags tags clearfix">
+        <svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+        <ul class="tags__list">
+                <li class="tags__item">
+                        <a class="tags__link btn" href="/tags/kubernetes/" rel="tag">KUBERNETES</a>
+                </li>
+                <li class="tags__item">
+                        <a class="tags__link btn" href="/tags/ubuntu/" rel="tag">UBUNTU</a>
+                </li>
+                <li class="tags__item">
+                        <a class="tags__link btn" href="/tags/cri-docker/" rel="tag">CRI-Docker</a>
+                </li>
+                <li class="tags__item">
+                        <a class="tags__link btn" href="/tags/devops/" rel="tag">DEVOPS</a>
+                </li>
+                <li class="tags__item">
+                        <a class="tags__link btn" href="/tags/docker/" rel="tag">DOCKER</a>
+                </li>
+        </ul>
+</div>
+</div>
+		</header>
+		
+	<figure class="post__thumbnail thumbnail">
+		
+		<img class="thumbnail__image" src="/img/kubernetes.svg" alt="Kubernetes on Ubuntu 22.4 with CRI-Docker">
+		
+	</figure>
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#update-ubuntu">Update Ubuntu</a></li>
+    <li><a href="#hostname">Hostname</a></li>
+    <li><a href="#install-docker">Install Docker</a></li>
+    <li><a href="#verify-docker-works-with-regular-user-account">Verify Docker works with regular user account</a></li>
+    <li><a href="#cri-docker">CRI-Docker</a></li>
+    <li><a href="#kubernetes">Kubernetes</a></li>
+    <li><a href="#set-selinux-to-permissive">Set selinux to permissive</a></li>
+    <li><a href="#disable-swap">Disable swap</a></li>
+    <li><a href="#enable-the-kernel-modules-overlay--br_netfilter">Enable the kernel modules: overlay &amp; br_netfilter</a></li>
+    <li><a href="#create-script-to-load-modules-on-every-reboot">Create script to load modules on every reboot</a></li>
+    <li><a href="#remove-resolved">Remove Resolved</a></li>
+    <li><a href="#start-kubernetes">Start Kubernetes</a></li>
+    <li><a href="#taints">Taints</a></li>
+    <li><a href="#calico">Calico</a></li>
+    <li><a href="#helm">HELM</a></li>
+    <li><a href="#ha-proxy-ingress-controller">HA Proxy Ingress Controller</a></li>
+  </ul>
+</nav>
+	</div>
+</div><div class="content post__content clearfix">
+			<h1 id="introduction">Introduction</h1>
+<p>We will install a Kubernetes on Ubuntu 22.4 with Docker and CRI-Docker.  We are using an r5.2xlarge on Amazon EC2 using Amazon&rsquo;s provided Ubuntu 22.4.  You can get by with a much smaller instance depending on what you plan to run.</p>
+<h1 id="installation">Installation</h1>
+<h2 id="update-ubuntu">Update Ubuntu</h2>
+<p>Install the updates on your fresh server from Amazon.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">## Update Ubunutu</span>
+</span></span><span style="display:flex;"><span>sudo bash
+</span></span><span style="display:flex;"><span>sudo apt update -y
+</span></span><span style="display:flex;"><span>sudo apt upgrade -y
+</span></span><span style="display:flex;"><span>sudo apt autoremove -y
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># if you see kenerl updates you should reboot</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># init 6</span>
+</span></span></code></pre></div><h2 id="hostname">Hostname</h2>
+<p>Your hostname should be in /etc/hosts.  If its not there, put it there.  If this is a fresh Amazon instance fix the hostname first.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo hostnamectl set-hostname k8
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;172.31.74.59 k8.nathanobert.com k8&#34;</span> | sudo tee -a /etc/hosts 
+</span></span><span style="display:flex;"><span>hostname
+</span></span><span style="display:flex;"><span>hostname --fqdn
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># reboot</span>
+</span></span><span style="display:flex;"><span>init <span style="color:#ae81ff">6</span>
+</span></span></code></pre></div><h2 id="install-docker">Install Docker</h2>
+<p>Documentation at <a href="https://docs.docker.com/engine/install/ubuntu/">https://docs.docker.com/engine/install/ubuntu/</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install ca-certificates curl gnupg
+</span></span><span style="display:flex;"><span>sudo install -m <span style="color:#ae81ff">0755</span> -d /etc/apt/keyrings
+</span></span><span style="display:flex;"><span>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+</span></span><span style="display:flex;"><span>sudo chmod a+r /etc/apt/keyrings/docker.gpg
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;deb [arch=&#34;</span><span style="color:#66d9ef">$(</span>dpkg --print-architecture<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34; signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu &#34;</span><span style="color:#66d9ef">$(</span>. /etc/os-release <span style="color:#f92672">&amp;&amp;</span> echo <span style="color:#e6db74">&#34;</span>$VERSION_CODENAME<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34; stable&#34;</span> | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
+</span></span><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+</span></span><span style="display:flex;"><span>sudo docker run hello-world
+</span></span></code></pre></div><h2 id="verify-docker-works-with-regular-user-account">Verify Docker works with regular user account</h2>
+<pre tabindex="0"><code>sudo usermod -aG docker $USER
+newgrp docker
+docker run hello-world
+</code></pre><h2 id="cri-docker">CRI-Docker</h2>
+<p>Container Runtime Interface - Docker allows for you to use a CRI compliant interface to Kubernetes that back-ends to Docker.  This allows you to share the images between Kubernetes and Docker.  You can build an image with Docker, and then immediately its available to kubernetes without the need to push the image to a repository with Docker, and pull the image back with Kubernetes.  Very useful for development.</p>
+<p>Documentation at <a href="https://github.com/Mirantis/cri-dockerd/releases">https://github.com/Mirantis/cri-dockerd/releases</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget https://github.com/Mirantis/cri-dockerd/releases/download/v0.3.1/cri-dockerd_0.3.1.3-0.ubuntu-jammy_amd64.deb
+</span></span><span style="display:flex;"><span>sudo apt install ./cri-dockerd_0.3.1.3-0.ubuntu-jammy_amd64.deb -y
+</span></span><span style="display:flex;"><span>sudo systemctl status docker.service
+</span></span><span style="display:flex;"><span>sudo systmctl status cri-docker.service
+</span></span></code></pre></div><h2 id="kubernetes">Kubernetes</h2>
+<p>Install Kubernetes, based on <a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/">https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>sudo apt-get install -y apt-transport-https ca-certificates curl
+</span></span><span style="display:flex;"><span>sudo curl -fsSLo /etc/apt/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;deb [signed-by=/etc/apt/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main&#34;</span> | sudo tee /etc/apt/sources.list.d/kubernetes.list
+</span></span><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>sudo apt-get install -y kubelet kubeadm kubectl
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># This will prevent updates from breaking Kubernetes unexpectidly</span>
+</span></span><span style="display:flex;"><span>sudo apt-mark hold kubelet kubeadm kubectl
+</span></span></code></pre></div><h2 id="set-selinux-to-permissive">Set selinux to permissive</h2>
+<p>Amazon&rsquo;s image did not have selinux enabled, but you want it off.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo sestatus
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># how to disable if needed</span>
+</span></span><span style="display:flex;"><span>sudo setenforce <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>sudo sed -i <span style="color:#e6db74">&#39;s/^SELINUX=enforcing$/SELINUX=permissive/&#39;</span> /etc/selinux/config
+</span></span><span style="display:flex;"><span>sudo sestatus
+</span></span></code></pre></div><h2 id="disable-swap">Disable swap</h2>
+<p>Amazon&rsquo;s image did not have swap enabled, but you dont want swap!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo swapoff -a
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># amazon workspace (ubuntu)</span>
+</span></span><span style="display:flex;"><span>sudo rm -f /etc/udev/rules.d/10-zram0.rules
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># regular ubuntu</span>
+</span></span><span style="display:flex;"><span>sudo sed -i <span style="color:#e6db74">&#39;/ swap / s/^\(.*\)$/#\1/g&#39;</span> /etc/fstab
+</span></span><span style="display:flex;"><span>free -m
+</span></span></code></pre></div><h2 id="enable-the-kernel-modules-overlay--br_netfilter">Enable the kernel modules: overlay &amp; br_netfilter</h2>
+<p>These kernel modules are necessary</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo modprobe overlay
+</span></span><span style="display:flex;"><span>sudo modprobe br_netfilter
+</span></span></code></pre></div><h2 id="create-script-to-load-modules-on-every-reboot">Create script to load modules on every reboot</h2>
+<p>These modules are necessary</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat <span style="color:#e6db74">&lt;&lt;EOF | sudo tee /etc/modules-load.d/k8s.conf
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">overlay
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">br_netfilter
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cat <span style="color:#e6db74">&lt;&lt;EOF | sudo tee /etc/sysctl.d/k8s.conf
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">net.bridge.bridge-nf-call-iptables  = 1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">net.bridge.bridge-nf-call-ip6tables = 1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">net.ipv4.ip_forward                 = 1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo sysctl --system
+</span></span></code></pre></div><h2 id="remove-resolved">Remove Resolved</h2>
+<p>If you have 127.0.0.1 in your /etc/resolv.conf file most likely you will have coredns problems when you start Kubernetes.   Essentially there will be a loop inside of Kubernetes and it won&rsquo;t know how to get to a DNS Server.   These are the steps to bypass resolved and go directly to a real DNS server.  Note you can choose your own DNS servers.  8.8.x.x. is google :)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ls -ltr /etc/resolv.conf
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># lrwxrwxrwx 1 root root 39 Mar 25 03:04 /etc/resolv.conf -&gt; ../run/systemd/resolve/stub-resolv.conf</span>
+</span></span><span style="display:flex;"><span>sudo rm /etc/resolv.conf
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;nameserver 8.8.8.8&#34;</span> | sudo tee -a /etc/resolv.conf
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;nameserver 8.8.4.4&#34;</span> | sudo tee -a /etc/resolv.conf
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;nameserver 1.1.1.1&#34;</span> | sudo tee -a /etc/resolv.conf
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;nameserver 1.0.0.1&#34;</span> | sudo tee -a /etc/resolv.conf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;options edns0 trust-ad&#34;</span> | sudo tee -a /etc/resolv.conf
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># this should be your domain name</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;search nathanobert.com&#34;</span> | sudo tee -a /etc/resolv.conf
+</span></span><span style="display:flex;"><span>sudo systemctl stop systemd-resolved
+</span></span><span style="display:flex;"><span>sudo systemctl disable systemd-resolved
+</span></span></code></pre></div><p>At this point you need to decide which ip address you want to choose to use, as well as which Container Network Interface.  We are choosing Calico with the default IP Range of 192.168.10.0/16.  We are also assuming the control plan endpoint is this local machine&rsquo;s hostname that we put in /etc/hosts.  The two commans in the hostname force it to be in all lowercase to follow RFC-1123 DNS subdomain standards.</p>
+<h2 id="start-kubernetes">Start Kubernetes</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl enable --now kubelet
+</span></span><span style="display:flex;"><span>sudo kubeadm config images pull  --cri-socket /var/run/cri-dockerd.sock
+</span></span><span style="display:flex;"><span>sudo kubeadm init --pod-network-cidr<span style="color:#f92672">=</span>192.168.10.0/16 --control-plane-endpoint <span style="color:#f92672">{</span><span style="color:#e6db74">`</span>hostname --fqdn<span style="color:#e6db74">`</span>,,<span style="color:#f92672">}</span> --cri-socket /var/run/cri-dockerd.sock
+</span></span><span style="display:flex;"><span>mkdir -p $HOME/.kube
+</span></span><span style="display:flex;"><span>sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+</span></span><span style="display:flex;"><span>sudo chown <span style="color:#66d9ef">$(</span>id -u<span style="color:#66d9ef">)</span>:<span style="color:#66d9ef">$(</span>id -g<span style="color:#66d9ef">)</span> $HOME/.kube/config
+</span></span><span style="display:flex;"><span>echo export KUBECONFIG<span style="color:#f92672">=</span>/etc/kubernetes/admin.conf | sudo tee -a /root/.bashrc
+</span></span></code></pre></div><h2 id="taints">Taints</h2>
+<p>Remote taints from Node so it can schedule containers on this Kubernetes node.  (Note: the master taint is usually not necessary)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl taint nodes --all node-role.kubernetes.io/master-
+</span></span><span style="display:flex;"><span>kubectl taint nodes --all node-role.kubernetes.io/control-plane-
+</span></span></code></pre></div><h2 id="calico">Calico</h2>
+<p>Install Container Network Interface (CNI) - Calico.   Note if you choose a different IP Range you will need to modify this Yaml file.  If you used the default of 192.168.10/16, you will be happy.  Also verify you are using the newest/stable calico.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.1/manifests/calico.yaml
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># commands to troubleshoot</span>
+</span></span><span style="display:flex;"><span>ip addr | grep cni
+</span></span><span style="display:flex;"><span>kubectl get pods -n kube-system
+</span></span></code></pre></div><h2 id="helm">HELM</h2>
+<p>Most of the time people want HELM if they are installing Kubernetes.<br>
+Documentation: <a href="https://helm.sh/docs/intro/install/">https://helm.sh/docs/intro/install/</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl https://baltocdn.com/helm/signing.asc | gpg --dearmor | sudo tee /usr/share/keyrings/helm.gpg &gt; /dev/null
+</span></span><span style="display:flex;"><span>sudo apt-get install apt-transport-https --yes
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;deb [arch=</span><span style="color:#66d9ef">$(</span>dpkg --print-architecture<span style="color:#66d9ef">)</span><span style="color:#e6db74"> signed-by=/usr/share/keyrings/helm.gpg] https://baltocdn.com/helm/stable/debian/ all main&#34;</span> | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
+</span></span><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>sudo apt-get install helm
+</span></span></code></pre></div><h2 id="ha-proxy-ingress-controller">HA Proxy Ingress Controller</h2>
+<p>There are different ingress controllers, here is how you add HA Proxy if you would like it.
+Documentation: <a href="https://haproxy-ingress.github.io/docs/getting-started/">https://haproxy-ingress.github.io/docs/getting-started/</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>helm repo add haproxy-ingress https://haproxy-ingress.github.io/charts
+</span></span><span style="display:flex;"><span>kubectl cluster-info
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;controller:&#34;</span> &gt; haproxy-ingress-values.yaml
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;  hostNetwork: true&#34;</span> &gt;&gt; haproxy-ingress-values.yaml
+</span></span><span style="display:flex;"><span>helm install haproxy-ingress haproxy-ingress/haproxy-ingress --create-namespace --namespace ingress-controller --version 0.14.2 -f haproxy-ingress-values.yaml
+</span></span><span style="display:flex;"><span>kubectl --namespace ingress-controller get services haproxy-ingress -o wide
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Note mine always says &lt;pending&gt; under EXTERNAL-IP</span>
+</span></span></code></pre></div>
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/kubernetes/" rel="tag">KUBERNETES</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/ubuntu/" rel="tag">UBUNTU</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/cri-docker/" rel="tag">CRI-Docker</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/devops/" rel="tag">DEVOPS</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/docker/" rel="tag">DOCKER</a>
+		</li>
+	</ul>
+</div>
+
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<figure class="authorbox__avatar">
+		<img alt="Nathan Obert avatar" src="/img/nathan.jpg" class="avatar" height="90" width="90">
+	</figure>
+	<div class="authorbox__header">
+		<span class="authorbox__name">About Nathan Obert</span>
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/posts/blog-aws-workspace-ubuntu/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">Amazon Workspace with Ubuntu 22.04</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2023 Nathan Obert.
+
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/js/menu.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+</body>
+</html>

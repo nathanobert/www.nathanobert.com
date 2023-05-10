@@ -17,7 +17,7 @@
 		<meta itemprop="name" content="XRP to remote Gnome on Ubuntu 22.04">
 <meta itemprop="description" content="XRP to remote Gnome on Ubuntu 22.04"><meta itemprop="datePublished" content="2023-05-09T06:00:00-07:00" />
 <meta itemprop="dateModified" content="2023-05-09T06:00:00-07:00" />
-<meta itemprop="wordCount" content="242">
+<meta itemprop="wordCount" content="264">
 <meta itemprop="keywords" content="XRDP,UBUNTU,GNOME," />
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="XRP to remote Gnome on Ubuntu 22.04"/>
@@ -162,6 +162,9 @@
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># insure xrpd on on ipv4</span>
 </span></span><span style="display:flex;"><span>sudo sed -i <span style="color:#e6db74">&#39;s/^port=3389/port=tcp:\/\/:3389/g&#39;</span> /etc/xrdp/xrdp.ini
 </span></span><span style="display:flex;"><span>sudo systemctl enable xrdp.service
+</span></span><span style="display:flex;"><span>sudo systemctl start xrdp.service
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># had to do extra start/stop to get it to switch to ipv4 also</span>
+</span></span><span style="display:flex;"><span>sudo systemctl stop xrdp.service
 </span></span><span style="display:flex;"><span>sudo systemctl start xrdp.service
 </span></span><span style="display:flex;"><span>sudo systemctl status xrdp.service
 </span></span><span style="display:flex;"><span>sudo netstat -antp | grep xrdp

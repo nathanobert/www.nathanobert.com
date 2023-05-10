@@ -101,6 +101,54 @@
 	</header><article class="list__item post">
 	
 	<figure class="list__thumbnail thumbnail">
+		<a class="thumbnail__link" href="/posts/blog-kubernetes-on-ubuntu/">
+		<img class="thumbnail__image" src="/img/kubernetes.svg" alt="Kubernetes on Ubuntu 22.4 with CRI-Docker">
+		</a>
+	</figure>
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/posts/blog-kubernetes-on-ubuntu/" rel="bookmark">
+			Kubernetes on Ubuntu 22.4 with CRI-Docker
+			</a>
+		</h2>
+		<p class="list__lead post__lead">Installation of Kubernetes Server</p>
+		<div class="list__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Nathan Obert</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-05-09T12:28:10-07:00">2023-05-09</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/blog/" rel="category">Blog</a>
+	</span>
+</div>
+<div class="post__tags tags clearfix">
+        <svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+        <ul class="tags__list">
+                <li class="tags__item">
+                        <a class="tags__link btn" href="/tags/kubernetes/" rel="tag">KUBERNETES</a>
+                </li>
+                <li class="tags__item">
+                        <a class="tags__link btn" href="/tags/ubuntu/" rel="tag">UBUNTU</a>
+                </li>
+                <li class="tags__item">
+                        <a class="tags__link btn" href="/tags/cri-docker/" rel="tag">CRI-Docker</a>
+                </li>
+                <li class="tags__item">
+                        <a class="tags__link btn" href="/tags/devops/" rel="tag">DEVOPS</a>
+                </li>
+                <li class="tags__item">
+                        <a class="tags__link btn" href="/tags/docker/" rel="tag">DOCKER</a>
+                </li>
+        </ul>
+</div>
+</div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		Introduction We will install a Kubernetes on Ubuntu 22.4 with Docker and CRI-Docker. We are using an r5.2xlarge on Amazon EC2 using Amazon&rsquo;s provided Ubuntu 22.4. You can get by with a much smaller instance depending on what you plan to run.
+Installation Update Ubuntu Install the updates on your fresh server from Amazon.
+## Update Ubunutu sudo bash sudo apt update -y sudo apt upgrade -y sudo apt autoremove -y # if you see kenerl updates you should reboot # init 6 Hostname Your hostname should be in /etc/hosts.
+	</div>
+</article><article class="list__item post">
+	
+	<figure class="list__thumbnail thumbnail">
 		<a class="thumbnail__link" href="/posts/blog-aws-workspace-ubuntu/">
 		<img class="thumbnail__image" src="/img/aws_workspace_0.png" alt="Amazon Workspace with Ubuntu 22.04">
 		</a>
@@ -893,49 +941,6 @@ Kubectl autocomplete BASH source &lt;(kubectl completion bash) # set up autocomp
 	<div class="content list__excerpt post__content clearfix">
 		Introduction This cheat sheet from Dave Wongillies&rsquo;s Cheatsheet. OpenSSL is a very strong tool when working with certificates. OpenSSL can be used to for a wide variaty of taks involving SSL/TLS. For instance you can use it to convert certificates from format to another, use it as a debugging tool, use it to generate certificates, use it to download certificates from hosts, and even use it as a connectivity tool if telnet is not available.
 	</div>
-</article><article class="list__item post">
-	
-	<figure class="list__thumbnail thumbnail">
-		<a class="thumbnail__link" href="/posts/cheatsheet-markdown/">
-		<img class="thumbnail__image" src="/img/markdown.png" alt="Markdown Cheatsheet">
-		</a>
-	</figure>
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/posts/cheatsheet-markdown/" rel="bookmark">
-			Markdown Cheatsheet
-			</a>
-		</h2>
-		<p class="list__lead post__lead">Cheatsheet for writing Markdown</p>
-		<div class="list__meta meta"><div class="meta__item-author meta__item">
-	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Nathan Obert</span>
-</div>
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-05-01T05:49:00-07:00">2023-05-01</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/cheatsheets/" rel="category">Cheatsheets</a>
-	</span>
-</div>
-<div class="post__tags tags clearfix">
-        <svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
-        <ul class="tags__list">
-                <li class="tags__item">
-                        <a class="tags__link btn" href="/tags/markdown/" rel="tag">MARKDOWN</a>
-                </li>
-                <li class="tags__item">
-                        <a class="tags__link btn" href="/tags/hugo/" rel="tag">HUGO</a>
-                </li>
-                <li class="tags__item">
-                        <a class="tags__link btn" href="/tags/devops/" rel="tag">DEVOPS</a>
-                </li>
-                <li class="tags__item">
-                        <a class="tags__link btn" href="/tags/development/" rel="tag">DEVELOPMENT</a>
-                </li>
-        </ul>
-</div>
-</div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		Introduction This is a quick cheat sheet from Adam Pritchard&rsquo;s Cheatsheet that is useful when writing markup to make sure the syntax is correct. Markdown is a syntax used to format text. It essentially is a short form version of Hypertext Mark Up Language (HTML). You can achieve similar formatting with far less effort and by writing in Markdown instead of HTML. There is a Live Demo of Markdown available. This is especially useful if you would like to see what the rendered interactively.
-	</div>
 </article>
 </main>
 
@@ -959,11 +964,11 @@ Kubectl autocomplete BASH source &lt;(kubectl completion bash) # set up autocomp
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/posts/blog-kubernetes-on-ubuntu/">Kubernetes on Ubuntu 22.4 with CRI-Docker</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/blog-aws-workspace-ubuntu/">Amazon Workspace with Ubuntu 22.04</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/blog-xrdp-gnome-on-ubuntu/">XRP to remote Gnome on Ubuntu 22.04</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/blog-github-actions-docker/">GitHub Actions to automatically build Docker and push to registry</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/blog-init-container-check-service/">Kubernetes init container to verify dependent service(s) are online.</a></li>
-			<li class="widget__item"><a class="widget__link" href="/posts/blog-github-actions-copy-repo/">GitHub Actions copy one git repository to another git repository</a></li>
 		</ul>
 	</div>
 </div>
@@ -987,6 +992,7 @@ Kubectl autocomplete BASH source &lt;(kubectl completion bash) # set up autocomp
 		<a class="widget-taglist__link widget__link btn" href="/tags/busybox/" title="BUSYBOX">BUSYBOX</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/cli/" title="CLI">CLI</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/containerd/" title="CONTAINERD">CONTAINERD</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cri-docker/" title="CRI-Docker">CRI-Docker</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/cri-o/" title="CRI-O">CRI-O</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/development/" title="DEVELOPMENT">DEVELOPMENT</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/devops/" title="DEVOPS">DEVOPS</a>
