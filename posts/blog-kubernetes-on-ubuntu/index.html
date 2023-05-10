@@ -196,10 +196,10 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 sudo docker run hello-world
 </code></pre></div><h2 id="verify-docker-works-with-regular-user-account">Verify Docker works with regular user account</h2>
-<pre tabindex="0"><code>sudo usermod -aG docker $USER
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo usermod -aG docker $USER
 newgrp docker
 docker run hello-world
-</code></pre><h2 id="cri-docker">CRI-Docker</h2>
+</code></pre></div><h2 id="cri-docker">CRI-Docker</h2>
 <p>Container Runtime Interface - Docker allows for you to use a CRI compliant interface to Kubernetes that back-ends to Docker.  This allows you to share the images between Kubernetes and Docker.  You can build an image with Docker, and then immediately its available to kubernetes without the need to push the image to a repository with Docker, and pull the image back with Kubernetes.  Very useful for development.</p>
 <p>Documentation at <a href="https://github.com/Mirantis/cri-dockerd/releases">https://github.com/Mirantis/cri-dockerd/releases</a></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget https://github.com/Mirantis/cri-dockerd/releases/download/v0.3.1/cri-dockerd_0.3.1.3-0.ubuntu-jammy_amd64.deb
