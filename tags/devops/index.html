@@ -12,7 +12,6 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.nathanobert.com/tags/devops/" />
 
-
 		<meta itemprop="name" content="DEVOPS">
 <meta itemprop="description" content="Nathan Obert&#39;s Personal blog about everything">
 		<meta name="twitter:card" content="summary"/>
@@ -102,6 +101,44 @@
 	</header><article class="list__item post">
 	
 	<figure class="list__thumbnail thumbnail">
+		<a class="thumbnail__link" href="/posts/blog-patch-service-external/">
+		<img class="thumbnail__image" src="/img/kubernetes.svg" alt="Kubernetes how to patch external address into service">
+		</a>
+	</figure>
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/posts/blog-patch-service-external/" rel="bookmark">
+			Kubernetes how to patch external address into service
+			</a>
+		</h2>
+		<p class="list__lead post__lead">How to make an service bind to host</p>
+		<div class="list__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Nathan Obert</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-05-11T15:00:00-07:00">2023-05-11</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/blog/" rel="category">Blog</a>
+	</span>
+</div>
+<div class="post__tags tags clearfix">
+        <svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+        <ul class="tags__list">
+                <li class="tags__item">
+                        <a class="tags__link btn" href="/tags/kubernetes/" rel="tag">KUBERNETES</a>
+                </li>
+                <li class="tags__item">
+                        <a class="tags__link btn" href="/tags/devops/" rel="tag">DEVOPS</a>
+                </li>
+        </ul>
+</div>
+</div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		Introduction This will be a quick short blog entry. Today I had an container running Oracle at Amazon EC2 on Kubernetes. I was trying to work thorugh some Pl/SQL code in sqlplus, and decided I wanted to instead use SQL Developer. After a little research this is what I came up with, and wanted to share it.
+Bash Script kubectl patch svc oracle -p &#39;{&#34;spec&#34;:{&#34;externalIPs&#34;:[&#34;1.2.3.4&#34;]}}&#39; Basically you pass the kubernetes service name, as well as your ip address of the host (in this example 1.
+	</div>
+</article><article class="list__item post">
+	
+	<figure class="list__thumbnail thumbnail">
 		<a class="thumbnail__link" href="/posts/blog-ssh-keepalive/">
 		<img class="thumbnail__image" src="/img/ssh.png" alt="Configure SSH to keep from timing out">
 		</a>
@@ -137,7 +174,7 @@
 </div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		SSH Keep Alive Secure Shell is a means to connect terminals to servers. When it detects you are idle it disconnects you. This is for security. This however is very annoying and can cause issues if you are installing something and need to keep the terminal active. Some people try to leave &lsquo;top&rsquo; running or &lsquo;screen&rsquo; to keep the terminal busy. There is a simple configuration that can just as easily do this.
+		SSH Keep Alive Secure Shell is a means to connect terminals to servers. When it detects you are idle it disconnects you. This is for security. This however is very annoying and can cause issues if you are installing something and need to keep the terminal active. Some people try to leave &rsquo;top&rsquo; running or &lsquo;screen&rsquo; to keep the terminal busy. There is a simple configuration that can just as easily do this.
 	</div>
 </article><article class="list__item post">
 	
@@ -616,7 +653,7 @@ Installation Linux Install script provided by Docker:
 curl -sSL https://get.docker.com/ | sh Or see Installation instructions for your Linux distribution.
 Mac OS X Download and install Docker For Mac
 Create Docker VM with Docker Machine You can use Docker Machine to:
- Install and run Docker on Mac or Windows Provision and manage multiple remote Docker hosts Provision Swarm clusters  A simple example to create a local Docker VM with VirtualBox:
+Install and run Docker on Mac or Windows Provision and manage multiple remote Docker hosts Provision Swarm clusters A simple example to create a local Docker VM with VirtualBox:
 	</div>
 </article><article class="list__item post">
 	
@@ -655,8 +692,8 @@ Create Docker VM with Docker Machine You can use Docker Machine to:
 	<div class="content list__excerpt post__content clearfix">
 		Introduction This is a quick cheat sheet from Sematext&rsquo;s Elastic Devops Cheatsheet
 DevOps cheatsheet Allocation Allocation awareness Avoids putting two copies of the same shard on nodes with the same attribute (e.g. rack, availability zone). For example:
-node.attr.availability_zone: us-east1 # in elasticsearch.yml  Awareness is enabled at the cluster level:
-curl -XPUT localhost:9200/_cluster/settings?pretty -d '{ &quot;persistent&quot; : { &quot;cluster.routing.allocation.awareness.attributes&quot; : &quot;availability_zone&quot; } }'  Allocation filtering Shards of an index can prefer/avoid nodes with certain attributes.
+node.attr.availability_zone: us-east1 # in elasticsearch.yml Awareness is enabled at the cluster level:
+curl -XPUT localhost:9200/_cluster/settings?pretty -d '{ &quot;persistent&quot; : { &quot;cluster.routing.allocation.awareness.attributes&quot; : &quot;availability_zone&quot; } }' Allocation filtering Shards of an index can prefer/avoid nodes with certain attributes.
 	</div>
 </article><article class="list__item post">
 	
@@ -842,11 +879,11 @@ echo `/sbin/ifconfig eth0 | grep &#39;inet &#39; | awk {&#39;print $2&#39;}` ${H
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/posts/blog-patch-service-external/">Kubernetes how to patch external address into service</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/blog-ssh-keepalive/">Configure SSH to keep from timing out</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/blog-bash-colors/">Changing the colors in BASH</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/blog-kubernetes-on-ubuntu/">Kubernetes on Ubuntu 22.4 with CRI-Docker</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/blog-map-windows-to-unix/">Map Windows share to Linux</a></li>
-			<li class="widget__item"><a class="widget__link" href="/posts/blog-aws-workspace-ubuntu/">Amazon Workspace with Ubuntu 22.04</a></li>
 		</ul>
 	</div>
 </div>

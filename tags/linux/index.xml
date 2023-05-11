@@ -13,7 +13,7 @@
       <pubDate>Wed, 10 May 2023 08:00:00 -0700</pubDate>
       
       <guid>https://www.nathanobert.com/posts/blog-ssh-keepalive/</guid>
-      <description>SSH Keep Alive Secure Shell is a means to connect terminals to servers. When it detects you are idle it disconnects you. This is for security. This however is very annoying and can cause issues if you are installing something and need to keep the terminal active. Some people try to leave &amp;lsquo;top&amp;rsquo; running or &amp;lsquo;screen&amp;rsquo; to keep the terminal busy. There is a simple configuration that can just as easily do this.</description>
+      <description>SSH Keep Alive Secure Shell is a means to connect terminals to servers. When it detects you are idle it disconnects you. This is for security. This however is very annoying and can cause issues if you are installing something and need to keep the terminal active. Some people try to leave &amp;rsquo;top&amp;rsquo; running or &amp;lsquo;screen&amp;rsquo; to keep the terminal busy. There is a simple configuration that can just as easily do this.</description>
     </item>
     
     <item>

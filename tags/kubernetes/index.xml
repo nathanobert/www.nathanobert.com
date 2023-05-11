@@ -6,7 +6,17 @@
     <description>Recent content in KUBERNETES on Nathan Obert</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 09 May 2023 12:28:10 -0700</lastBuildDate><atom:link href="https://www.nathanobert.com/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 11 May 2023 15:00:00 -0700</lastBuildDate><atom:link href="https://www.nathanobert.com/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kubernetes how to patch external address into service</title>
+      <link>https://www.nathanobert.com/posts/blog-patch-service-external/</link>
+      <pubDate>Thu, 11 May 2023 15:00:00 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/posts/blog-patch-service-external/</guid>
+      <description>Introduction This will be a quick short blog entry. Today I had an container running Oracle at Amazon EC2 on Kubernetes. I was trying to work thorugh some Pl/SQL code in sqlplus, and decided I wanted to instead use SQL Developer. After a little research this is what I came up with, and wanted to share it.
+Bash Script kubectl patch svc oracle -p &amp;#39;{&amp;#34;spec&amp;#34;:{&amp;#34;externalIPs&amp;#34;:[&amp;#34;1.2.3.4&amp;#34;]}}&amp;#39; Basically you pass the kubernetes service name, as well as your ip address of the host (in this example 1.</description>
+    </item>
+    
     <item>
       <title>Kubernetes on Ubuntu 22.4 with CRI-Docker</title>
       <link>https://www.nathanobert.com/posts/blog-kubernetes-on-ubuntu/</link>

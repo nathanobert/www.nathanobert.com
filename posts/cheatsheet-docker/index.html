@@ -14,7 +14,6 @@
 <meta property="article:published_time" content="2023-05-01T09:45:00-07:00" />
 <meta property="article:modified_time" content="2023-05-01T09:45:00-07:00" />
 
-
 		<meta itemprop="name" content="Docker Cheatsheet">
 <meta itemprop="description" content="Docker Cheatsheet"><meta itemprop="datePublished" content="2023-05-01T09:45:00-07:00" />
 <meta itemprop="dateModified" content="2023-05-01T09:45:00-07:00" />
@@ -178,9 +177,9 @@
 <p>A simple example to create a local Docker VM with VirtualBox:</p>
 <pre tabindex="0"><code>docker-machine create --driver=virtualbox default
 docker-machine ls
-eval &quot;$(docker-machine env default)&quot;
+eval &#34;$(docker-machine env default)&#34;
 </code></pre><p>Then start up a container:</p>
-<pre tabindex="0"><code>docker run alpine echo &quot;hello-world&quot;
+<pre tabindex="0"><code>docker run alpine echo &#34;hello-world&#34;
 </code></pre><p>That&rsquo;s it, you have a running Docker container.</p>
 <h2 id="container-lifecycle">Container lifecycle</h2>
 <ul>

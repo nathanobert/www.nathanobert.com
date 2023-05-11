@@ -6,14 +6,24 @@
     <description>Recent content in DEVOPS on Nathan Obert</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 10 May 2023 08:00:00 -0700</lastBuildDate><atom:link href="https://www.nathanobert.com/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 11 May 2023 15:00:00 -0700</lastBuildDate><atom:link href="https://www.nathanobert.com/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kubernetes how to patch external address into service</title>
+      <link>https://www.nathanobert.com/posts/blog-patch-service-external/</link>
+      <pubDate>Thu, 11 May 2023 15:00:00 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/posts/blog-patch-service-external/</guid>
+      <description>Introduction This will be a quick short blog entry. Today I had an container running Oracle at Amazon EC2 on Kubernetes. I was trying to work thorugh some Pl/SQL code in sqlplus, and decided I wanted to instead use SQL Developer. After a little research this is what I came up with, and wanted to share it.
+Bash Script kubectl patch svc oracle -p &amp;#39;{&amp;#34;spec&amp;#34;:{&amp;#34;externalIPs&amp;#34;:[&amp;#34;1.2.3.4&amp;#34;]}}&amp;#39; Basically you pass the kubernetes service name, as well as your ip address of the host (in this example 1.</description>
+    </item>
+    
     <item>
       <title>Configure SSH to keep from timing out</title>
       <link>https://www.nathanobert.com/posts/blog-ssh-keepalive/</link>
       <pubDate>Wed, 10 May 2023 08:00:00 -0700</pubDate>
       
       <guid>https://www.nathanobert.com/posts/blog-ssh-keepalive/</guid>
-      <description>SSH Keep Alive Secure Shell is a means to connect terminals to servers. When it detects you are idle it disconnects you. This is for security. This however is very annoying and can cause issues if you are installing something and need to keep the terminal active. Some people try to leave &amp;lsquo;top&amp;rsquo; running or &amp;lsquo;screen&amp;rsquo; to keep the terminal busy. There is a simple configuration that can just as easily do this.</description>
+      <description>SSH Keep Alive Secure Shell is a means to connect terminals to servers. When it detects you are idle it disconnects you. This is for security. This however is very annoying and can cause issues if you are installing something and need to keep the terminal active. Some people try to leave &amp;rsquo;top&amp;rsquo; running or &amp;lsquo;screen&amp;rsquo; to keep the terminal busy. There is a simple configuration that can just as easily do this.</description>
     </item>
     
     <item>
@@ -121,7 +131,7 @@ Installation Linux Install script provided by Docker:
 curl -sSL https://get.docker.com/ | sh Or see Installation instructions for your Linux distribution.
 Mac OS X Download and install Docker For Mac
 Create Docker VM with Docker Machine You can use Docker Machine to:
- Install and run Docker on Mac or Windows Provision and manage multiple remote Docker hosts Provision Swarm clusters  A simple example to create a local Docker VM with VirtualBox:</description>
+Install and run Docker on Mac or Windows Provision and manage multiple remote Docker hosts Provision Swarm clusters A simple example to create a local Docker VM with VirtualBox:</description>
     </item>
     
     <item>
@@ -132,8 +142,8 @@ Create Docker VM with Docker Machine You can use Docker Machine to:
       <guid>https://www.nathanobert.com/posts/cheatsheet-elastic-devops/</guid>
       <description>Introduction This is a quick cheat sheet from Sematext&amp;rsquo;s Elastic Devops Cheatsheet
 DevOps cheatsheet Allocation Allocation awareness Avoids putting two copies of the same shard on nodes with the same attribute (e.g. rack, availability zone). For example:
-node.attr.availability_zone: us-east1 # in elasticsearch.yml  Awareness is enabled at the cluster level:
-curl -XPUT localhost:9200/_cluster/settings?pretty -d &#39;{ &amp;quot;persistent&amp;quot; : { &amp;quot;cluster.routing.allocation.awareness.attributes&amp;quot; : &amp;quot;availability_zone&amp;quot; } }&#39;  Allocation filtering Shards of an index can prefer/avoid nodes with certain attributes.</description>
+node.attr.availability_zone: us-east1 # in elasticsearch.yml Awareness is enabled at the cluster level:
+curl -XPUT localhost:9200/_cluster/settings?pretty -d &#39;{ &amp;quot;persistent&amp;quot; : { &amp;quot;cluster.routing.allocation.awareness.attributes&amp;quot; : &amp;quot;availability_zone&amp;quot; } }&#39; Allocation filtering Shards of an index can prefer/avoid nodes with certain attributes.</description>
     </item>
     
     <item>

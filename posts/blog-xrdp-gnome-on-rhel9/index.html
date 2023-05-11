@@ -14,7 +14,6 @@
 <meta property="article:published_time" content="2023-05-01T14:28:10-07:00" />
 <meta property="article:modified_time" content="2023-05-01T14:28:10-07:00" />
 
-
 		<meta itemprop="name" content="XRP to remote Gnome on Redhat Enterprise Linux 9">
 <meta itemprop="description" content="XRP to remote Gnome on Redhat Enterprise Linux 9"><meta itemprop="datePublished" content="2023-05-01T14:28:10-07:00" />
 <meta itemprop="dateModified" content="2023-05-01T14:28:10-07:00" />
@@ -138,30 +137,30 @@
 <p>We will be turning a Command Line Interface (CLI) Redhat 9 server hosted at Amazon on EC2 into a full Xwindows based workstation that you can use Remote Desktop Protocal (RDP) to using xRDP.</p>
 <h1 id="installation">Installation</h1>
 <p>Install the updates on your fresh server from Amazon.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo dnf update -y
-</code></pre></div><p>Install &ldquo;Extra Packages for Enterprise Linux&rdquo; (EPEL).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm 
-sudo dnf repolist
-sudo dnf makecache
-</code></pre></div><p>Install &ldquo;Workstation&rdquo; or &ldquo;Server with GUI&rdquo; (not both)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo dnf -y group install Workstation
-</code></pre></div><p>Install XRDP</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo dnf install -y tigervnc-server xrdp
-sudo systemctl enable xrdp.service
-sudo systemctl start xrdp.service
-sudo systemctl status xrdp.service
-sudo netstat -antp | grep xrdp
-</code></pre></div><p>Example of successful installation:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dnf update -y
+</span></span></code></pre></div><p>Install &ldquo;Extra Packages for Enterprise Linux&rdquo; (EPEL).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm 
+</span></span><span style="display:flex;"><span>sudo dnf repolist
+</span></span><span style="display:flex;"><span>sudo dnf makecache
+</span></span></code></pre></div><p>Install &ldquo;Workstation&rdquo; or &ldquo;Server with GUI&rdquo; (not both)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dnf -y group install Workstation
+</span></span></code></pre></div><p>Install XRDP</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dnf install -y tigervnc-server xrdp
+</span></span><span style="display:flex;"><span>sudo systemctl enable xrdp.service
+</span></span><span style="display:flex;"><span>sudo systemctl start xrdp.service
+</span></span><span style="display:flex;"><span>sudo systemctl status xrdp.service
+</span></span><span style="display:flex;"><span>sudo netstat -antp | grep xrdp
+</span></span></code></pre></div><p>Example of successful installation:</p>
 <p><img src="/img/rhel9_xrdp_1.jpg" alt="xrdp image" title="xrpd image"></p>
 <p>If you have firewalld running, open the RDP port on RHEL, note on the EC2 instance we did this on, firewalld was not even installed because there is also an Amazon firewall.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo firewall-cmd –permanent –add-port<span style="color:#f92672">=</span>3389/tcp
-sudo firewall-cmd –reload
-</code></pre></div><p>If you decide you want to completely shutdown firewalld here are the commands:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo systemctl stop firewalld.service
-sudo systemctl disable firewalld.service
-</code></pre></div><p>Assign a regular password to the user for RDP</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo passwd ec2-user
-</code></pre></div><p>Example on how to change the password:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo firewall-cmd –permanent –add-port<span style="color:#f92672">=</span>3389/tcp
+</span></span><span style="display:flex;"><span>sudo firewall-cmd –reload
+</span></span></code></pre></div><p>If you decide you want to completely shutdown firewalld here are the commands:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl stop firewalld.service
+</span></span><span style="display:flex;"><span>sudo systemctl disable firewalld.service
+</span></span></code></pre></div><p>Assign a regular password to the user for RDP</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo passwd ec2-user
+</span></span></code></pre></div><p>Example on how to change the password:</p>
 <p><img src="/img/rhel9_xrdp_2.jpg" alt="xrdp image" title="xrpd image"></p>
 <p>On Amazon EC2, modify the security group to allow RDP Traffic, you should be as restrictive as possible on which Internet Protocal (IP) Addresses are allowed to access your RDP Port.</p>
 <p><img src="/img/rhel9_xrdp_3.jpg" alt="xrdp image" title="xrpd image"></p>

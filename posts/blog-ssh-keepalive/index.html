@@ -14,7 +14,6 @@
 <meta property="article:published_time" content="2023-05-10T08:00:00-07:00" />
 <meta property="article:modified_time" content="2023-05-10T08:00:00-07:00" />
 
-
 		<meta itemprop="name" content="Configure SSH to keep from timing out">
 <meta itemprop="description" content="Configure SSH to keep from timing out"><meta itemprop="datePublished" content="2023-05-10T08:00:00-07:00" />
 <meta itemprop="dateModified" content="2023-05-10T08:00:00-07:00" />
@@ -145,10 +144,10 @@
 	</div>
 </div><div class="content post__content clearfix">
 			<h1 id="ssh-keep-alive">SSH Keep Alive</h1>
-<p>Secure Shell is a means to connect terminals to servers.  When it detects you are idle it disconnects you.  This is for security.  This however is very annoying and can cause issues if you are installing something and need to keep the terminal active.  Some people try to leave &lsquo;top&rsquo; running or &lsquo;screen&rsquo; to keep the terminal busy.  There is a simple configuration that can just as easily do this.</p>
+<p>Secure Shell is a means to connect terminals to servers.  When it detects you are idle it disconnects you.  This is for security.  This however is very annoying and can cause issues if you are installing something and need to keep the terminal active.  Some people try to leave &rsquo;top&rsquo; running or &lsquo;screen&rsquo; to keep the terminal busy.  There is a simple configuration that can just as easily do this.</p>
 <h2 id="bash">bash</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;ServerAliveInterval 60&#34;</span> &gt;  ~/.ssh/config
-</code></pre></div><p>This single setting will tell ssh (client) to send a keep alive packet through SSH every 60 seconds to keep your session from timing out.  The default setting is 0 (meaning never).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;ServerAliveInterval 60&#34;</span> &gt;  ~/.ssh/config
+</span></span></code></pre></div><p>This single setting will tell ssh (client) to send a keep alive packet through SSH every 60 seconds to keep your session from timing out.  The default setting is 0 (meaning never).</p>
 
 		</div>
 		<footer class="post__footer">
@@ -186,6 +185,12 @@
 		<a class="pager__link" href="/posts/blog-bash-colors/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
 			<p class="pager__title">Changing the colors in BASH</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/posts/blog-patch-service-external/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">Kubernetes how to patch external address into service</p>
 		</a>
 	</div>
 </nav>

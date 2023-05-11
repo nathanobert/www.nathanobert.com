@@ -14,7 +14,6 @@
 <meta property="article:published_time" content="2023-05-05T05:30:00-07:00" />
 <meta property="article:modified_time" content="2023-05-05T05:30:00-07:00" />
 
-
 		<meta itemprop="name" content="Hugo install on Redhat Enterprise Linux 9">
 <meta itemprop="description" content="Hugo install on Redhat Enterprise Linux 9"><meta itemprop="datePublished" content="2023-05-05T05:30:00-07:00" />
 <meta itemprop="dateModified" content="2023-05-05T05:30:00-07:00" />
@@ -136,23 +135,23 @@
 <p>The current installation instructions i&rsquo;ve seen for Hugo on RHEL9 uses snap.   The snap hugo instructions worked on my rocky 9 WSL2 image (on windows 11), however on &lsquo;real&rsquo; RHEL 9 security would not permit snap apps to run.   The below instructions will install HUGO without SNAP and get it working quickly on RHEL9.</p>
 <h1 id="installation">Installation</h1>
 <p>Install Hugo Binaries</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Repo file from https://copr.fedorainfracloud.org/coprs/daftaupe/hugo/</span>
-cat <span style="color:#e6db74">&lt;&lt;EOF | sudo tee /etc/yum.repos.d/hugo.repo
-</span><span style="color:#e6db74">[copr:copr.fedorainfracloud.org:daftaupe:hugo]
-</span><span style="color:#e6db74">name=Copr repo for hugo owned by daftaupe
-</span><span style="color:#e6db74">baseurl=https://download.copr.fedorainfracloud.org/results/daftaupe/hugo/epel-7-x86_64/
-</span><span style="color:#e6db74">type=rpm-md
-</span><span style="color:#e6db74">skip_if_unavailable=True
-</span><span style="color:#e6db74">gpgcheck=1
-</span><span style="color:#e6db74">gpgkey=https://download.copr.fedorainfracloud.org/results/daftaupe/hugo/pubkey.gpg
-</span><span style="color:#e6db74">repo_gpgcheck=0
-</span><span style="color:#e6db74">enabled=1
-</span><span style="color:#e6db74">enabled_metadata=1
-</span><span style="color:#e6db74">EOF</span>
-sudo dnf repolist
-sudo dnf makecache
-sudo dnf -y install hugo
-</code></pre></div><p>Now that Hugo is installed, you can proceed with the (quick start)[https://gohugo.io/getting-started/quick-start/]</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Repo file from https://copr.fedorainfracloud.org/coprs/daftaupe/hugo/</span>
+</span></span><span style="display:flex;"><span>cat <span style="color:#e6db74">&lt;&lt;EOF | sudo tee /etc/yum.repos.d/hugo.repo
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">[copr:copr.fedorainfracloud.org:daftaupe:hugo]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">name=Copr repo for hugo owned by daftaupe
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">baseurl=https://download.copr.fedorainfracloud.org/results/daftaupe/hugo/epel-7-x86_64/
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">type=rpm-md
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">skip_if_unavailable=True
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">gpgcheck=1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">gpgkey=https://download.copr.fedorainfracloud.org/results/daftaupe/hugo/pubkey.gpg
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">repo_gpgcheck=0
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">enabled=1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">enabled_metadata=1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span><span style="display:flex;"><span>sudo dnf repolist
+</span></span><span style="display:flex;"><span>sudo dnf makecache
+</span></span><span style="display:flex;"><span>sudo dnf -y install hugo
+</span></span></code></pre></div><p>Now that Hugo is installed, you can proceed with the (quick start)[https://gohugo.io/getting-started/quick-start/]</p>
 
 		</div>
 		<footer class="post__footer">
