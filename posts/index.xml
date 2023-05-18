@@ -294,5 +294,85 @@ sudo dnf update -y Setup DNS or atleast Hostname entries in your /etc/hosts file
 echo `/sbin/ifconfig eth0 | grep &amp;#39;inet &amp;#39; | awk {&amp;#39;print $2&amp;#39;}` ${HOSTNAME} | sudo tee -a /etc/hosts Set selinux to permissive</description>
     </item>
     
+    <item>
+      <title>How to Rent Camera Gear at LensRental.com</title>
+      <link>https://www.nathanobert.com/posts/lensrental/</link>
+      <pubDate>Fri, 18 Feb 2022 08:00:00 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/posts/lensrental/</guid>
+      <description>Introduction How to Rent Camera Gear at LensRental.com
+Video </description>
+    </item>
+    
+    <item>
+      <title>Lowepro Truckee BP 250 Camera Bag Review</title>
+      <link>https://www.nathanobert.com/posts/lowspro-truckee-bp250/</link>
+      <pubDate>Fri, 18 Feb 2022 08:00:00 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/posts/lowspro-truckee-bp250/</guid>
+      <description>Introduction Review of the Lowepro Truckee BP 250 Camera Bag
+Video </description>
+    </item>
+    
+    <item>
+      <title>Aputure MC RGBWW Led Light Unboxing</title>
+      <link>https://www.nathanobert.com/posts/apature_mc/</link>
+      <pubDate>Thu, 17 Feb 2022 08:00:00 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/posts/apature_mc/</guid>
+      <description>Introduction Today I unbox the Aputure MC RGBWW Led Light. I review the capability and use of the aputure light.
+Video </description>
+    </item>
+    
+    <item>
+      <title>SmallRig 1/4” to Hotshoe Adapter</title>
+      <link>https://www.nathanobert.com/posts/smallrig_hotshoe/</link>
+      <pubDate>Tue, 15 Feb 2022 08:00:00 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/posts/smallrig_hotshoe/</guid>
+      <description>Introduction We provide a quick unboxing and review of the SmallRig 1/4” to Hotshoe Adapter.
+Video </description>
+    </item>
+    
+    <item>
+      <title>GorillaPod RIG 5K Unboxing and Review</title>
+      <link>https://www.nathanobert.com/posts/gorillapod_5k/</link>
+      <pubDate>Wed, 09 Feb 2022 08:00:00 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/posts/gorillapod_5k/</guid>
+      <description>Introduction Today we review and Unbox a GorillaPod RIG 5K. The GorillaPod is the standard for VLOGGERS, and the RIG provides additional features.
+Video </description>
+    </item>
+    
+    <item>
+      <title>Haida Installation on Sony FE 1.7 / 14 GM</title>
+      <link>https://www.nathanobert.com/posts/haida_nd/</link>
+      <pubDate>Mon, 07 Feb 2022 08:00:00 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/posts/haida_nd/</guid>
+      <description>Introduction What are ND Filters &amp;amp; Haida Installation on Sony FE 1.7 / 14 GM. Today we first explain what ND filters are, how they can be used. We tackle how to install ND Filters, and finally we will install a rear Haida ND filter on the Sony FE 1.7 / 14 GM Lens.
+Video </description>
+    </item>
+    
+    <item>
+      <title>How to stream video using Sony A7IV</title>
+      <link>https://www.nathanobert.com/posts/a7iv_livestream/</link>
+      <pubDate>Sun, 30 Jan 2022 08:00:00 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/posts/a7iv_livestream/</guid>
+      <description>Introduction How to stream video using Sony A7IV. I provide instructions on how to setup Live Streaming with the Sony A7IV on Mac and Windows.
+Video </description>
+    </item>
+    
+    <item>
+      <title>Sony FE 1.8 / 14 GM Lens Review</title>
+      <link>https://www.nathanobert.com/posts/sony-14gm/</link>
+      <pubDate>Fri, 28 Jan 2022 08:00:00 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/posts/sony-14gm/</guid>
+      <description>Introduction Review of Photography with the Sony FE 1.8 / 14 GM Lens, using Sony A7IV.
+Video </description>
+    </item>
+    
   </channel>
 </rss>
