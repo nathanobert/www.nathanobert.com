@@ -6,7 +6,27 @@
     <description>Recent content on Nathan Obert</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 18 May 2023 05:20:00 -0700</lastBuildDate><atom:link href="https://www.nathanobert.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 18 May 2023 12:00:00 -0700</lastBuildDate><atom:link href="https://www.nathanobert.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kubernetes how create folders for Physical Volumes (PVs) automatically</title>
+      <link>https://www.nathanobert.com/posts/blog-k8-init-create-pv/</link>
+      <pubDate>Thu, 18 May 2023 12:00:00 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/posts/blog-k8-init-create-pv/</guid>
+      <description>Introduction This will be a quick short blog entry. Today I needed to have a container that could self-initialize it&amp;rsquo;s own Physical Volumes. This is quite easy to do with an init container. I&amp;rsquo;m going to provide a simple example to show how this works with busybox.
+Deployment YAML initContainers: - name: init-pv image: {{ .Values.initpv.image }} volumeMounts: - name: init mountPath: {{ .Values.persistentVolume.path }} {{- with .Values.initpv.command }} command: {{- toYaml .</description>
+    </item>
+    
+    <item>
+      <title>Kubernetes how inject commands before entrypoint</title>
+      <link>https://www.nathanobert.com/posts/blog-k8-update-entrypoint/</link>
+      <pubDate>Thu, 18 May 2023 12:00:00 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/posts/blog-k8-update-entrypoint/</guid>
+      <description>Introduction This will be a quick short blog entry. Today I had an image running on Kubernetes from a vender invoked through HELM, and I needed to run some arbtirary commands however I did not want to extend the image and have to deal with maintaining yet another image. Below is the solution I came up with.
+YAML to inject commands before entry point. image: repository: docker.io/user/image pullPolicy: IfNotPresent tag: &amp;#34;latest&amp;#34; command: - bash - &amp;#34;-c&amp;#34; - | sed -i &amp;#39;s/^param=.</description>
+    </item>
+    
     <item>
       <title>Changing the colors in Terminal ZSH on Mac OS</title>
       <link>https://www.nathanobert.com/posts/mac-cli-colors/</link>

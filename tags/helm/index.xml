@@ -6,7 +6,17 @@
     <description>Recent content in HELM on Nathan Obert</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 08 May 2023 14:30:00 -0700</lastBuildDate><atom:link href="https://www.nathanobert.com/tags/helm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 18 May 2023 12:00:00 -0700</lastBuildDate><atom:link href="https://www.nathanobert.com/tags/helm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kubernetes how create folders for Physical Volumes (PVs) automatically</title>
+      <link>https://www.nathanobert.com/posts/blog-k8-init-create-pv/</link>
+      <pubDate>Thu, 18 May 2023 12:00:00 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/posts/blog-k8-init-create-pv/</guid>
+      <description>Introduction This will be a quick short blog entry. Today I needed to have a container that could self-initialize it&amp;rsquo;s own Physical Volumes. This is quite easy to do with an init container. I&amp;rsquo;m going to provide a simple example to show how this works with busybox.
+Deployment YAML initContainers: - name: init-pv image: {{ .Values.initpv.image }} volumeMounts: - name: init mountPath: {{ .Values.persistentVolume.path }} {{- with .Values.initpv.command }} command: {{- toYaml .</description>
+    </item>
+    
     <item>
       <title>Kubernetes init container to verify dependent service(s) are online.</title>
       <link>https://www.nathanobert.com/posts/blog-init-container-check-service/</link>

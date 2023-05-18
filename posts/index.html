@@ -108,6 +108,97 @@
 	</header><article class="list__item post">
 	
 	<figure class="list__thumbnail thumbnail">
+		<a class="thumbnail__link" href="/posts/blog-k8-init-create-pv/">
+		<img class="thumbnail__image" src="/img/kubernetes.svg" alt="Kubernetes how create folders for Physical Volumes (PVs) automatically">
+		</a>
+	</figure>
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/posts/blog-k8-init-create-pv/" rel="bookmark">
+			Kubernetes how create folders for Physical Volumes (PVs) automatically
+			</a>
+		</h2>
+		<p class="list__lead post__lead">Adding commands before an entrypoint.</p>
+		<div class="list__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Nathan Obert</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-05-18T12:00:00-07:00">2023-05-18</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/blog/" rel="category">Blog</a>
+	</span>
+</div>
+<div class="post__tags tags clearfix">
+        <svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+        <ul class="tags__list">
+                <li class="tags__item">
+                        <a class="tags__link btn" href="/tags/yaml/" rel="tag">YAML</a>
+                </li>
+                <li class="tags__item">
+                        <a class="tags__link btn" href="/tags/kubernetes/" rel="tag">KUBERNETES</a>
+                </li>
+                <li class="tags__item">
+                        <a class="tags__link btn" href="/tags/busybox/" rel="tag">BUSYBOX</a>
+                </li>
+                <li class="tags__item">
+                        <a class="tags__link btn" href="/tags/bash/" rel="tag">BASH</a>
+                </li>
+                <li class="tags__item">
+                        <a class="tags__link btn" href="/tags/devops/" rel="tag">DEVOPS</a>
+                </li>
+                <li class="tags__item">
+                        <a class="tags__link btn" href="/tags/helm/" rel="tag">HELM</a>
+                </li>
+        </ul>
+</div>
+</div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		Introduction This will be a quick short blog entry. Today I needed to have a container that could self-initialize it&rsquo;s own Physical Volumes. This is quite easy to do with an init container. I&rsquo;m going to provide a simple example to show how this works with busybox.
+Deployment YAML initContainers: - name: init-pv image: {{ .Values.initpv.image }} volumeMounts: - name: init mountPath: {{ .Values.persistentVolume.path }} {{- with .Values.initpv.command }} command: {{- toYaml .
+	</div>
+</article><article class="list__item post">
+	
+	<figure class="list__thumbnail thumbnail">
+		<a class="thumbnail__link" href="/posts/blog-k8-update-entrypoint/">
+		<img class="thumbnail__image" src="/img/kubernetes.svg" alt="Kubernetes how inject commands before entrypoint">
+		</a>
+	</figure>
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/posts/blog-k8-update-entrypoint/" rel="bookmark">
+			Kubernetes how inject commands before entrypoint
+			</a>
+		</h2>
+		<p class="list__lead post__lead">Adding commands before an entrypoint.</p>
+		<div class="list__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Nathan Obert</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-05-18T12:00:00-07:00">2023-05-18</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/blog/" rel="category">Blog</a>
+	</span>
+</div>
+<div class="post__tags tags clearfix">
+        <svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+        <ul class="tags__list">
+                <li class="tags__item">
+                        <a class="tags__link btn" href="/tags/kubernetes/" rel="tag">KUBERNETES</a>
+                </li>
+                <li class="tags__item">
+                        <a class="tags__link btn" href="/tags/devops/" rel="tag">DEVOPS</a>
+                </li>
+                <li class="tags__item">
+                        <a class="tags__link btn" href="/tags/yaml/" rel="tag">YAML</a>
+                </li>
+        </ul>
+</div>
+</div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		Introduction This will be a quick short blog entry. Today I had an image running on Kubernetes from a vender invoked through HELM, and I needed to run some arbtirary commands however I did not want to extend the image and have to deal with maintaining yet another image. Below is the solution I came up with.
+YAML to inject commands before entry point. image: repository: docker.io/user/image pullPolicy: IfNotPresent tag: &#34;latest&#34; command: - bash - &#34;-c&#34; - | sed -i &#39;s/^param=.
+	</div>
+</article><article class="list__item post">
+	
+	<figure class="list__thumbnail thumbnail">
 		<a class="thumbnail__link" href="/posts/mac-cli-colors/">
 		<img class="thumbnail__image" src="/img/terminal-icon-mac.jpg" alt="Changing the colors in Terminal ZSH on Mac OS">
 		</a>
@@ -875,86 +966,6 @@ Installation Install the updates on your fresh server from Amazon.
 sudo dnf update -y Install &ldquo;Extra Packages for Enterprise Linux&rdquo; (EPEL).
 sudo dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm sudo dnf repolist sudo dnf makecache Install &ldquo;Workstation&rdquo; or &ldquo;Server with GUI&rdquo; (not both)
 	</div>
-</article><article class="list__item post">
-	
-	<figure class="list__thumbnail thumbnail">
-		<a class="thumbnail__link" href="/posts/blog-python-http-server/">
-		<img class="thumbnail__image" src="/img/python.png" alt="Python HTTP Server">
-		</a>
-	</figure>
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/posts/blog-python-http-server/" rel="bookmark">
-			Python HTTP Server
-			</a>
-		</h2>
-		<p class="list__lead post__lead">Quick Python HTTP Server</p>
-		<div class="list__meta meta"><div class="meta__item-author meta__item">
-	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Nathan Obert</span>
-</div>
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-05-01T12:28:10-07:00">2023-05-01</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/blog/" rel="category">Blog</a>
-	</span>
-</div>
-<div class="post__tags tags clearfix">
-        <svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
-        <ul class="tags__list">
-                <li class="tags__item">
-                        <a class="tags__link btn" href="/tags/python/" rel="tag">PYTHON</a>
-                </li>
-                <li class="tags__item">
-                        <a class="tags__link btn" href="/tags/devops/" rel="tag">DEVOPS</a>
-                </li>
-        </ul>
-</div>
-</div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		python http server If you need a quick and easy webserver to copy files between servers, or from your server to your workstation all you need is Python, which is part of YUM and is on almost every redhat based linux server. Simple goto the directory you want to share, and a single command in the shell will start up a webserver that you can use to get your files copied over.
-	</div>
-</article><article class="list__item post">
-	
-	<figure class="list__thumbnail thumbnail">
-		<a class="thumbnail__link" href="/posts/cheatsheet-docker/">
-		<img class="thumbnail__image" src="/img/docker.png" alt="Docker Cheatsheet">
-		</a>
-	</figure>
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/posts/cheatsheet-docker/" rel="bookmark">
-			Docker Cheatsheet
-			</a>
-		</h2>
-		<p class="list__lead post__lead">Cheatsheet for Docker</p>
-		<div class="list__meta meta"><div class="meta__item-author meta__item">
-	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Nathan Obert</span>
-</div>
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-05-01T09:45:00-07:00">2023-05-01</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/cheatsheets/" rel="category">Cheatsheets</a>
-	</span>
-</div>
-<div class="post__tags tags clearfix">
-        <svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
-        <ul class="tags__list">
-                <li class="tags__item">
-                        <a class="tags__link btn" href="/tags/docker/" rel="tag">DOCKER</a>
-                </li>
-                <li class="tags__item">
-                        <a class="tags__link btn" href="/tags/devops/" rel="tag">DEVOPS</a>
-                </li>
-        </ul>
-</div>
-</div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		Introduction This is a quick cheat sheet from Sematext&rsquo;s Docker Cheatsheet
-Docker Cheatsheet Tutorial series Get started with Docker: https://docs.docker.com/engine/getstarted/
-Installation Linux Install script provided by Docker:
-curl -sSL https://get.docker.com/ | sh Or see Installation instructions for your Linux distribution.
-Mac OS X Download and install Docker For Mac
-Create Docker VM with Docker Machine You can use Docker Machine to:
-Install and run Docker on Mac or Windows Provision and manage multiple remote Docker hosts Provision Swarm clusters A simple example to create a local Docker VM with VirtualBox:
-	</div>
 </article>
 </main>
 
@@ -978,11 +989,11 @@ Install and run Docker on Mac or Windows Provision and manage multiple remote Do
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/posts/blog-k8-init-create-pv/">Kubernetes how create folders for Physical Volumes (PVs) automatically</a></li>
+			<li class="widget__item"><a class="widget__link" href="/posts/blog-k8-update-entrypoint/">Kubernetes how inject commands before entrypoint</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/mac-cli-colors/">Changing the colors in Terminal ZSH on Mac OS</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/blog-patch-service-external/">Kubernetes how to patch external address into service</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/blog-ssh-keepalive/">Configure SSH to keep from timing out</a></li>
-			<li class="widget__item"><a class="widget__link" href="/posts/blog-bash-colors/">Changing the colors in BASH</a></li>
-			<li class="widget__item"><a class="widget__link" href="/posts/blog-kubernetes-on-ubuntu/">Kubernetes on Ubuntu 22.4 with CRI-Docker</a></li>
 		</ul>
 	</div>
 </div>
@@ -1043,6 +1054,7 @@ Install and run Docker on Mac or Windows Provision and manage multiple remote Do
 		<a class="widget-taglist__link widget__link btn" href="/tags/unboxing/" title="UNBOXING">UNBOXING</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/windows/" title="WINDOWS">WINDOWS</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/xrdp/" title="XRDP">XRDP</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/yaml/" title="YAML">YAML</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/zsh/" title="ZSH">ZSH</a>
 	</div>
 </div>
