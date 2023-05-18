@@ -6,7 +6,16 @@
     <description>Recent content on Nathan Obert</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 11 May 2023 15:00:00 -0700</lastBuildDate><atom:link href="https://www.nathanobert.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 18 May 2023 05:20:00 -0700</lastBuildDate><atom:link href="https://www.nathanobert.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Changing the colors in Terminal ZSH on Mac OS</title>
+      <link>https://www.nathanobert.com/posts/mac-cli-colors/</link>
+      <pubDate>Thu, 18 May 2023 05:20:00 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/posts/mac-cli-colors/</guid>
+      <description>Changing colors in Terminal I utilize Command Line Interfaces (CLI) frequently, Linux, Unix, Mac etc. Small adjustments to the CLI can make huge impacts on my workflow. Readability of the screen is very important, and I personally prefer a slightly higher contrast display. What I mean by that is on a bright background I prefer dark foreground colors, and on a dark background I prefer bright foreground colors. Unfortuantly the out of the box configuration does not always allow that.</description>
+    </item>
+    
     <item>
       <title>Kubernetes how to patch external address into service</title>
       <link>https://www.nathanobert.com/posts/blog-patch-service-external/</link>

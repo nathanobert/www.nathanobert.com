@@ -100,6 +100,44 @@
 	<article class="list__item post">
 	
 	<figure class="list__thumbnail thumbnail">
+		<a class="thumbnail__link" href="/posts/cheatsheet-elastic-dev/">
+		<img class="thumbnail__image" src="/img/elastic.png" alt="Elastic Developer Cheatsheet">
+		</a>
+	</figure>
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/posts/cheatsheet-elastic-dev/" rel="bookmark">
+			Elastic Developer Cheatsheet
+			</a>
+		</h2>
+		<p class="list__lead post__lead">Cheatsheet for Elastic Developer</p>
+		<div class="list__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Nathan Obert</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-05-01T09:45:00-07:00">2023-05-01</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/cheatsheets/" rel="category">Cheatsheets</a>
+	</span>
+</div>
+<div class="post__tags tags clearfix">
+        <svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+        <ul class="tags__list">
+                <li class="tags__item">
+                        <a class="tags__link btn" href="/tags/elastic/" rel="tag">ELASTIC</a>
+                </li>
+                <li class="tags__item">
+                        <a class="tags__link btn" href="/tags/development/" rel="tag">DEVELOPMENT</a>
+                </li>
+        </ul>
+</div>
+</div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		Introduction This is a quick cheat sheet from Sematext&rsquo;s Elastic Developer Cheatsheet
+Data Manipulation Put/Get/Delete index curl -XPUT localhost:9200/index-name -d '{&quot;settings&quot;: { &quot;number_of_shards&quot;: 1}}' curl -XGET localhost:9200/index-name?pretty curl -XDELETE localhost:9200/index-name Put/Get/Delete template curl -XPUT localhost:9200/_template/template-name -d '{ &quot;template&quot;: &quot;logs*&quot;, &quot;mappings&quot;: { &quot;foo-type&quot;: { &quot;properties&quot;: { &quot;foo-field&quot;: { &quot;type&quot;: &quot;text&quot; } } } }, &quot;settings&quot;: { &quot;number_of_shards&quot;: 1 } }' curl -XGET localhost:9200/_template/template-name?pretty curl -XDELETE localhost:9200/_template/template-name Bulk API echo '{&quot;index&quot;: { &quot;_index&quot;: &quot;logs01&quot;, &quot;_type&quot;: &quot;logs&quot;}} {&quot;title&quot;: &quot;this is an error&quot;} {&quot;index&quot;: { &quot;_index&quot;: &quot;logs02&quot;, &quot;_type&quot;: &quot;logs&quot;}} {&quot;title&quot;: &quot;this is a warning&quot;} {&quot;delete&quot;: { &quot;_index&quot;: &quot;logs03&quot;, &quot;_type&quot;: &quot;logs&quot;, &quot;_id&quot;: &quot;abc123&quot;}} ' &gt; /tmp/bulk curl localhost:9200/_bulk?
+	</div>
+</article><article class="list__item post">
+	
+	<figure class="list__thumbnail thumbnail">
 		<a class="thumbnail__link" href="/posts/cheatsheet-elastic-devops/">
 		<img class="thumbnail__image" src="/img/elastic.png" alt="Elastic Devops Cheatsheet">
 		</a>
@@ -397,11 +435,11 @@ echo `/sbin/ifconfig eth0 | grep &#39;inet &#39; | awk {&#39;print $2&#39;}` ${H
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/posts/mac-cli-colors/">Changing the colors in Terminal ZSH on Mac OS</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/blog-patch-service-external/">Kubernetes how to patch external address into service</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/blog-ssh-keepalive/">Configure SSH to keep from timing out</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/blog-bash-colors/">Changing the colors in BASH</a></li>
 			<li class="widget__item"><a class="widget__link" href="/posts/blog-kubernetes-on-ubuntu/">Kubernetes on Ubuntu 22.4 with CRI-Docker</a></li>
-			<li class="widget__item"><a class="widget__link" href="/posts/blog-map-windows-to-unix/">Map Windows share to Linux</a></li>
 		</ul>
 	</div>
 </div>
@@ -440,6 +478,7 @@ echo `/sbin/ifconfig eth0 | grep &#39;inet &#39; | awk {&#39;print $2&#39;}` ${H
 		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="HUGO">HUGO</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/kubernetes/" title="KUBERNETES">KUBERNETES</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/linux/" title="LINUX">LINUX</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/mac/" title="MAC">MAC</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/markdown/" title="MARKDOWN">MARKDOWN</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/metrics/" title="METRICS">METRICS</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/moby/" title="MOBY">MOBY</a>
@@ -450,9 +489,11 @@ echo `/sbin/ifconfig eth0 | grep &#39;inet &#39; | awk {&#39;print $2&#39;}` ${H
 		<a class="widget-taglist__link widget__link btn" href="/tags/rhel-9/" title="RHEL 9">RHEL 9</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/solr/" title="SOLR">SOLR</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ssh/" title="SSH">SSH</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/terminal/" title="TERMINAL">TERMINAL</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ubuntu/" title="UBUNTU">UBUNTU</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/windows/" title="WINDOWS">WINDOWS</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/xrdp/" title="XRDP">XRDP</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/zsh/" title="ZSH">ZSH</a>
 	</div>
 </div>
 
