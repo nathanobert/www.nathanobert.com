@@ -6,7 +6,17 @@
     <description>Recent content in Blog on Nathan Obert</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 18 May 2023 12:00:00 -0700</lastBuildDate><atom:link href="https://www.nathanobert.com/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 May 2023 13:00:00 -0700</lastBuildDate><atom:link href="https://www.nathanobert.com/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to update Alfresco password(s) from database</title>
+      <link>https://www.nathanobert.com/posts/blog-alfresco-password/</link>
+      <pubDate>Fri, 19 May 2023 13:00:00 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/posts/blog-alfresco-password/</guid>
+      <description>Introduction Alfresco is a Content Management System, recently purchased by Hyland. I needed the steps to reset the admin password through the database. I decided to document the steps here.
+Inspect passwords The passwords are stored in essentially NTLM format (utf16le encoded in md4 hash). You can&amp;rsquo;t really turn a hash back into a password, however you could obviously turn a string into a hash. This could possibly be brute forced.</description>
+    </item>
+    
     <item>
       <title>Kubernetes how create folders for Physical Volumes (PVs) automatically</title>
       <link>https://www.nathanobert.com/posts/blog-k8-init-create-pv/</link>
