@@ -8,6 +8,16 @@
     <language>en-us</language>
     <lastBuildDate>Fri, 19 May 2023 13:00:00 -0700</lastBuildDate><atom:link href="https://www.nathanobert.com/categories/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>How to get recursive folder path from Alfresco</title>
+      <link>https://www.nathanobert.com/posts/blog-alfresco-recursive-sql/</link>
+      <pubDate>Fri, 19 May 2023 13:00:00 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/posts/blog-alfresco-recursive-sql/</guid>
+      <description>Introduction Alfresco is a Content Management System, recently purchased by Hyland. I needed to write a query for Oracle and Microsoft SQL that would loop through its database and build a folder structure recursivily from its tables. These snippets of SQL are what I came up with.
+Microsoft SQL Server This Article here is probably the best article I&amp;rsquo;ve found that explains MS SQL Recursion with a working example. https://www.andrewvillazon.com/recursive-cte-sql-server/</description>
+    </item>
+    
+    <item>
       <title>How to update Alfresco password(s) from database</title>
       <link>https://www.nathanobert.com/posts/blog-alfresco-password/</link>
       <pubDate>Fri, 19 May 2023 13:00:00 -0700</pubDate>
