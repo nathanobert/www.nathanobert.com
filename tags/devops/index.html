@@ -149,7 +149,7 @@
 </div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		Introduction We will install a Kubernetes on RHEL 8 with CRI-O, and Podman. We are using an r5.large on Amazon EC2 using Amazon&rsquo;s provided Red Hat Enterprise Linux.
+		Introduction We will install a Kubernetes on RHEL 8 with CRI-O, and Podman. We are using an r5.large on Amazon EC2 using Amazon&rsquo;s provided Red Hat Enterprise Linux 8.
 Installation Install the updates on your fresh server from Amazon.
 sudo dnf update -y sudo dnf install net-tools -y Setup DNS or atleast Hostname entries in your /etc/hosts file
 sudo hostnamectl set-hostname k8.obert.dev sudo init 6 echo `/sbin/ifconfig eth0 | grep &#39;inet &#39; | awk {&#39;print $2&#39;}` ${HOSTNAME} | sudo tee -a /etc/hosts Set selinux to permissive
