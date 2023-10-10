@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RHEL 8 on Nathan Obert</title>
+    <link>https://www.nathanobert.com/tags/rhel-8/</link>
+    <description>Recent content in RHEL 8 on Nathan Obert</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 10 Oct 2023 08:28:10 -0700</lastBuildDate><atom:link href="https://www.nathanobert.com/tags/rhel-8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kubernetes on Redhat Enterprise Linux 8</title>
+      <link>https://www.nathanobert.com/posts/blog-kubernetes-on-rhel8/</link>
+      <pubDate>Tue, 10 Oct 2023 08:28:10 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/posts/blog-kubernetes-on-rhel8/</guid>
+      <description>Introduction We will install a Kubernetes on RHEL 8 with CRI-O, and Podman. We are using an r5.large on Amazon EC2 using Amazon&amp;rsquo;s provided Red Hat Enterprise Linux.
+Installation Install the updates on your fresh server from Amazon.
+sudo dnf update -y sudo dnf install net-tools -y Setup DNS or atleast Hostname entries in your /etc/hosts file
+sudo hostnamectl set-hostname k8.obert.dev sudo init 6 echo `/sbin/ifconfig eth0 | grep &amp;#39;inet &amp;#39; | awk {&amp;#39;print $2&amp;#39;}` ${HOSTNAME} | sudo tee -a /etc/hosts Set selinux to permissive</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,7 +6,52 @@
     <description>Recent content in Tags on Nathan Obert</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 19 May 2023 13:00:00 -0700</lastBuildDate><atom:link href="https://www.nathanobert.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 10 Oct 2023 08:28:10 -0700</lastBuildDate><atom:link href="https://www.nathanobert.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CRI-O</title>
+      <link>https://www.nathanobert.com/tags/cri-o/</link>
+      <pubDate>Tue, 10 Oct 2023 08:28:10 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/tags/cri-o/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DEVOPS</title>
+      <link>https://www.nathanobert.com/tags/devops/</link>
+      <pubDate>Tue, 10 Oct 2023 08:28:10 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/tags/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>KUBERNETES</title>
+      <link>https://www.nathanobert.com/tags/kubernetes/</link>
+      <pubDate>Tue, 10 Oct 2023 08:28:10 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PODMAN</title>
+      <link>https://www.nathanobert.com/tags/podman/</link>
+      <pubDate>Tue, 10 Oct 2023 08:28:10 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/tags/podman/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RHEL 8</title>
+      <link>https://www.nathanobert.com/tags/rhel-8/</link>
+      <pubDate>Tue, 10 Oct 2023 08:28:10 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/tags/rhel-8/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>ALFRESCO</title>
       <link>https://www.nathanobert.com/tags/alfresco/</link>
@@ -62,29 +107,11 @@
     </item>
     
     <item>
-      <title>DEVOPS</title>
-      <link>https://www.nathanobert.com/tags/devops/</link>
-      <pubDate>Thu, 18 May 2023 12:00:00 -0700</pubDate>
-      
-      <guid>https://www.nathanobert.com/tags/devops/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>HELM</title>
       <link>https://www.nathanobert.com/tags/helm/</link>
       <pubDate>Thu, 18 May 2023 12:00:00 -0700</pubDate>
       
       <guid>https://www.nathanobert.com/tags/helm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>KUBERNETES</title>
-      <link>https://www.nathanobert.com/tags/kubernetes/</link>
-      <pubDate>Thu, 18 May 2023 12:00:00 -0700</pubDate>
-      
-      <guid>https://www.nathanobert.com/tags/kubernetes/</guid>
       <description></description>
     </item>
     
@@ -364,24 +391,6 @@
       <pubDate>Mon, 01 May 2023 05:49:00 -0700</pubDate>
       
       <guid>https://www.nathanobert.com/tags/markdown/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>CRI-O</title>
-      <link>https://www.nathanobert.com/tags/cri-o/</link>
-      <pubDate>Sat, 29 Apr 2023 08:28:10 -0700</pubDate>
-      
-      <guid>https://www.nathanobert.com/tags/cri-o/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>PODMAN</title>
-      <link>https://www.nathanobert.com/tags/podman/</link>
-      <pubDate>Sat, 29 Apr 2023 08:28:10 -0700</pubDate>
-      
-      <guid>https://www.nathanobert.com/tags/podman/</guid>
       <description></description>
     </item>
     
