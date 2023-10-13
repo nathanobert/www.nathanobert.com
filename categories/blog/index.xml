@@ -6,7 +6,17 @@
     <description>Recent content in Blog on Nathan Obert</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Oct 2023 08:28:10 -0700</lastBuildDate><atom:link href="https://www.nathanobert.com/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Oct 2023 05:28:10 -0700</lastBuildDate><atom:link href="https://www.nathanobert.com/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker Compose with Podman Redhat Enterprise Linux 8</title>
+      <link>https://www.nathanobert.com/posts/blog-docker-compose-podman/</link>
+      <pubDate>Fri, 13 Oct 2023 05:28:10 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/posts/blog-docker-compose-podman/</guid>
+      <description>Introduction Below is the steps to get docker-compose working with podman. Note, that podman runs in essentially two modes. System mode (owned by root) or User mode where it runs when the user logs in. For development you will want it in user mode if you intend to do development with docker-compose.
+Installation sudo curl -SL https://github.com/docker/compose/releases/download/v2.22.0/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose sudo chmod +x /usr/local/bin/docker-compose Switch Podman from System Mode to User Mode # may not be necessary sudo systemctl disable --now podman podman.</description>
+    </item>
+    
     <item>
       <title>Kubernetes on Redhat Enterprise Linux 8</title>
       <link>https://www.nathanobert.com/posts/blog-kubernetes-on-rhel8/</link>

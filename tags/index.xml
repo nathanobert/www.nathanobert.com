@@ -6,7 +6,43 @@
     <description>Recent content in Tags on Nathan Obert</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Oct 2023 08:28:10 -0700</lastBuildDate><atom:link href="https://www.nathanobert.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Oct 2023 05:28:10 -0700</lastBuildDate><atom:link href="https://www.nathanobert.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DOCKER</title>
+      <link>https://www.nathanobert.com/tags/docker/</link>
+      <pubDate>Fri, 13 Oct 2023 05:28:10 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DOCKER COMPOSE</title>
+      <link>https://www.nathanobert.com/tags/docker-compose/</link>
+      <pubDate>Fri, 13 Oct 2023 05:28:10 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/tags/docker-compose/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PODMAN</title>
+      <link>https://www.nathanobert.com/tags/podman/</link>
+      <pubDate>Fri, 13 Oct 2023 05:28:10 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/tags/podman/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RHEL 8</title>
+      <link>https://www.nathanobert.com/tags/rhel-8/</link>
+      <pubDate>Fri, 13 Oct 2023 05:28:10 -0700</pubDate>
+      
+      <guid>https://www.nathanobert.com/tags/rhel-8/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>CRI-O</title>
       <link>https://www.nathanobert.com/tags/cri-o/</link>
@@ -31,24 +67,6 @@
       <pubDate>Tue, 10 Oct 2023 08:28:10 -0700</pubDate>
       
       <guid>https://www.nathanobert.com/tags/kubernetes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>PODMAN</title>
-      <link>https://www.nathanobert.com/tags/podman/</link>
-      <pubDate>Tue, 10 Oct 2023 08:28:10 -0700</pubDate>
-      
-      <guid>https://www.nathanobert.com/tags/podman/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>RHEL 8</title>
-      <link>https://www.nathanobert.com/tags/rhel-8/</link>
-      <pubDate>Tue, 10 Oct 2023 08:28:10 -0700</pubDate>
-      
-      <guid>https://www.nathanobert.com/tags/rhel-8/</guid>
       <description></description>
     </item>
     
@@ -184,15 +202,6 @@
       <pubDate>Tue, 09 May 2023 12:28:10 -0700</pubDate>
       
       <guid>https://www.nathanobert.com/tags/cri-docker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>DOCKER</title>
-      <link>https://www.nathanobert.com/tags/docker/</link>
-      <pubDate>Tue, 09 May 2023 12:28:10 -0700</pubDate>
-      
-      <guid>https://www.nathanobert.com/tags/docker/</guid>
       <description></description>
     </item>
     

@@ -3,10 +3,34 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.nathanobert.com/categories/blog/</loc>
-    <lastmod>2023-10-10T08:28:10-07:00</lastmod>
+    <lastmod>2023-10-13T05:28:10-07:00</lastmod>
   </url><url>
     <loc>https://www.nathanobert.com/categories/</loc>
-    <lastmod>2023-10-10T08:28:10-07:00</lastmod>
+    <lastmod>2023-10-13T05:28:10-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nathanobert.com/tags/docker/</loc>
+    <lastmod>2023-10-13T05:28:10-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nathanobert.com/tags/docker-compose/</loc>
+    <lastmod>2023-10-13T05:28:10-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nathanobert.com/posts/blog-docker-compose-podman/</loc>
+    <lastmod>2023-10-13T05:28:10-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nathanobert.com/</loc>
+    <lastmod>2023-10-13T05:28:10-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nathanobert.com/tags/podman/</loc>
+    <lastmod>2023-10-13T05:28:10-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nathanobert.com/posts/</loc>
+    <lastmod>2023-10-13T05:28:10-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nathanobert.com/tags/rhel-8/</loc>
+    <lastmod>2023-10-13T05:28:10-07:00</lastmod>
+  </url><url>
+    <loc>https://www.nathanobert.com/tags/</loc>
+    <lastmod>2023-10-13T05:28:10-07:00</lastmod>
   </url><url>
     <loc>https://www.nathanobert.com/tags/cri-o/</loc>
     <lastmod>2023-10-10T08:28:10-07:00</lastmod>
@@ -18,21 +42,6 @@
     <lastmod>2023-10-10T08:28:10-07:00</lastmod>
   </url><url>
     <loc>https://www.nathanobert.com/posts/blog-kubernetes-on-rhel8/</loc>
-    <lastmod>2023-10-10T08:28:10-07:00</lastmod>
-  </url><url>
-    <loc>https://www.nathanobert.com/</loc>
-    <lastmod>2023-10-10T08:28:10-07:00</lastmod>
-  </url><url>
-    <loc>https://www.nathanobert.com/tags/podman/</loc>
-    <lastmod>2023-10-10T08:28:10-07:00</lastmod>
-  </url><url>
-    <loc>https://www.nathanobert.com/posts/</loc>
-    <lastmod>2023-10-10T08:28:10-07:00</lastmod>
-  </url><url>
-    <loc>https://www.nathanobert.com/tags/rhel-8/</loc>
-    <lastmod>2023-10-10T08:28:10-07:00</lastmod>
-  </url><url>
-    <loc>https://www.nathanobert.com/tags/</loc>
     <lastmod>2023-10-10T08:28:10-07:00</lastmod>
   </url><url>
     <loc>https://www.nathanobert.com/tags/alfresco/</loc>
@@ -102,9 +111,6 @@
     <lastmod>2023-05-09T12:28:10-07:00</lastmod>
   </url><url>
     <loc>https://www.nathanobert.com/tags/cri-docker/</loc>
-    <lastmod>2023-05-09T12:28:10-07:00</lastmod>
-  </url><url>
-    <loc>https://www.nathanobert.com/tags/docker/</loc>
     <lastmod>2023-05-09T12:28:10-07:00</lastmod>
   </url><url>
     <loc>https://www.nathanobert.com/posts/blog-kubernetes-on-ubuntu/</loc>
